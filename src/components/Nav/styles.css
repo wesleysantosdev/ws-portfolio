@@ -1,0 +1,145 @@
+.navbar{
+  width: 100vw;
+  height: 5rem;
+  display: flex;
+  background-color: var(--color-bg);
+  position: fixed;
+  z-index: 2; 
+}
+
+/* ON WINDOW SCROLL */
+.window-scroll{
+  background-color: var(--color-primary);
+}
+
+.window-scroll h2{
+  color: white;
+}
+
+.window-scroll .navbar__container strong{
+  color: var(--color-secondary);
+}
+
+.window-scroll  a{
+  color: white;
+}
+
+.window-scroll .navbar__container a:hover{
+  color: var(--color-secondary);
+}
+
+/* LOGO */
+.navbar__container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.navbar__container strong{
+  color: var(--color-primary);
+}
+
+/* NAVBAR LINKS */
+.navbar__list{
+  display: flex;
+  gap: 4.375rem; 
+}
+
+.navbar__list li a:hover{
+  color: var(--color-primary);
+  transition: var(--transition);
+}
+
+@media screen and (max-width: 768px){
+  /* Hidden navbar to match hamburguer menu on tablets/mobile devices*/
+  .navbar__list{
+    background-color: var(--color-bg);
+    flex-direction: column;
+    position: absolute;
+    right: -100%;
+    gap: 0;
+    top: 5rem;
+    transition: var(--transition);
+    width: 50vw;  
+  }
+
+  .navbar__list li{
+    display: flex; 
+    justify-content: center;
+  }
+
+  .navbar__list li a{
+    padding: 2.5rem 15vw;
+  }
+
+  .navbar__list li a:hover{
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar__list--active{
+    right: 0;
+  }
+
+  /* HAMBURGUER BAR AND ANIMATION */
+
+  .navbar__hamburguer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 2.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+  }
+
+  .bar{   
+    height: 5px;
+    width: 35px;
+    background: var(--color-secondary);
+    border-radius: 5px;
+    margin: 4px auto;
+    transform-origin: right;
+    transition: var(--transition);
+  }
+
+  .bar:nth-child(2){
+    background-color: var(--color-primary);
+  }
+
+  .navbar__hamburguer--active .bar:nth-child(1) {
+    transform: rotate(-50deg);
+    
+  }
+  .navbar__hamburguer--active .bar:nth-child(2) {
+    transform:translateX(1rem);
+    opacity: 0;
+  }
+  .navbar__hamburguer--active .bar:nth-child(3) {
+    transform: rotate(50deg);
+      
+  }
+
+  /* BARS ON WINDOW SCROLL */
+  .window-scroll .navbar__hamburguer .bar{
+    background-color: white;
+  }
+
+  .window-scroll .navbar__list{
+    background-color: var(--color-primary);
+  }
+
+  .window-scroll .navbar__list a:hover{
+    background-color: white;
+    color: var(--color-secondary);
+  }
+
+}
+
+@media screen and (max-width: 480px){
+  .navbar__list{
+    width: 70vw;
+  }
+}
+
