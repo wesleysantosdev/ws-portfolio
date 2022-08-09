@@ -64,6 +64,7 @@
 
 /* IMAGE */
 .header__me > img{
+  display: block;
   width: 50%;
   position: absolute;
   right: 4.15rem;
@@ -154,16 +155,13 @@
   }
 
   .header__me > img{
-    bottom: 0;
-    right: 50%;
-    transform: translateX(50%);
-    width: 40%;
+    display: none;
   }
   
   .header__bg{
-    width: 30rem;
-    height: 35rem;
-    bottom: -25rem;
+    width: 200rem;
+    height: 10rem;
+    bottom: -5rem;
     right: 50%;
     transform: translateX(50%);
   }
@@ -216,9 +214,5 @@
   .cta > a{
     font-size: 0.8rem;
     width: 100%;
-  }
-  
-  .header__me > img{
-    width: 60%;
   }
 }
