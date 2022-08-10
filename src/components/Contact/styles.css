@@ -45,7 +45,7 @@
 }
 
 .options__link > a:hover{
-  color: var(--color-secondary);
+  color: var(--color-primary);
   transition: var(--transition);
 }
 
@@ -67,6 +67,8 @@ input, textarea{
   width: 100%;
   resize: none;
   color: var(--color-secondary);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-primary);
   box-shadow: var(--box-shadow);
 }
 

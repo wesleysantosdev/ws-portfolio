@@ -21,6 +21,10 @@
   text-align: center;
 }
 
+.me__text > strong{
+  color: var(--color-primary);
+}
+
 /* SKILLS */
 .skills__title{
   margin-top: var(--font-size-medium);
@@ -46,6 +50,7 @@
 .card__icon{
   width: 85px;
   height: 85px;
+  color: var(--color-primary);
 }
 
 .skills__card{

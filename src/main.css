@@ -12,11 +12,11 @@
 }
 
 :root{
-  --color-bg: #F4F0FF;
-  --color-primary: #6356F0;
+  --color-bg: #0B0F1F;
+  --color-primary: #A39CED;
   --color-secondary: #0B0F1F;
   --color-gray: #9c9c9c;
-
+  --color-letters: #F4F0FF;
   --transition: all ease-in-out .4s;
 
   --font-size-title-1040: 1.7rem;
@@ -41,7 +41,7 @@ html{
 
 body{
   background-color: var(--color-bg);
-  color: var(--color-secondary);
+  color: var(--color-letters);
   line-height: 1.6;
 }
 
@@ -55,7 +55,7 @@ body{
 }
 
 a{
-  color: var(--color-secondary);
+  color: var(--color-letters);
 }
 
 h3 > strong{
@@ -69,7 +69,7 @@ h3 > strong{
 	font-size: var(--font-size-small);
   cursor: pointer;
   transition: var(--transition);
-  color: white;
+  color: var(--color-bg);
   background-color: var(--color-primary);
   border: 1px solid var(--color-primary);
   box-shadow: var(--box-shadow);

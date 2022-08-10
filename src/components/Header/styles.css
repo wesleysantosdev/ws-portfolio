@@ -20,11 +20,11 @@
 
 .header__title{
   font-size: var(--font-size-medium);
-  color: var(--color-primary);
+  color: var(--color-letters);
 }
 
 .header__title > strong{
-  color: var(--color-secondary);
+  color: var(--color-primary);
   font-size: var(--font-size-big);
 }
 
@@ -159,15 +159,15 @@
   }
   
   .header__bg{
-    width: 200rem;
-    height: 10rem;
-    bottom: -5rem;
-    right: 50%;
-    transform: translateX(50%);
+    display: none;
   }
 
   .socials-icons{
     color: var(--color-primary); 
+  }
+
+  .socials-icons:hover{
+    color: var(--color-letters);
   }
 
   .cta > a{

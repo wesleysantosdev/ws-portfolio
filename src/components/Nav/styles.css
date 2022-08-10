@@ -1,6 +1,6 @@
 .navbar{
   width: 100vw;
-  height: 5rem;
+  height: 4rem;
   display: flex;
   background-color: var(--color-bg);
   position: fixed;
@@ -58,7 +58,7 @@
     position: absolute;
     right: -100%;
     gap: 0;
-    top: 5rem;
+    top: 4rem;
     transition: var(--transition);
     width: 50vw;  
   }
@@ -97,7 +97,7 @@
   .bar{   
     height: 5px;
     width: 35px;
-    background: var(--color-secondary);
+    background: var(--color-letters);
     border-radius: 5px;
     margin: 4px auto;
     transform-origin: right;

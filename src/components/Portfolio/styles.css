@@ -48,6 +48,10 @@
 	background-color: var(--color-primary);
 }
 
+.swiper-pagination-bullet{
+	background-color: var(--color-primary);
+}
+
 @media screen and (max-width: 1040px){
 	.portfolio__title > small{
 		font-size: 0.8rem;
