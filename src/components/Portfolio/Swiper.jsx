@@ -4,7 +4,7 @@ import project3 from '../../assets/calculator-project.png'
 import project4 from '../../assets/profile-card-project.png'
 
 // import Swiper core and required modules
-import { Navigation, Pagination, A11y } from 'swiper';
+import { Navigation, Pagination, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
