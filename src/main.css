@@ -25,11 +25,14 @@
   --font-size-small: 1rem;    
   --font-size-smaller: 0.8rem; 
 
-  --container-width-large: 82%;
-  --container-width-medium: 90%;
-  --container-width-small: 95%;
+  --container-width-gt-1400: 1320px;
+  --container-width-gt-1200: 1140px;
+  --container-width-gt-992: 960px;
+  --container-width-gt-768: 720px;
+  --container-width-gt-576: 540px;
   --box-shadow: 2px 2px 5px #6356f013;
 }
+
 
 html{
   scroll-behavior: smooth;
@@ -82,18 +85,42 @@ h3 > strong{
 
 
 .container{
-  width: var(--container-width-large);
+  width: var(--container-width-gt-1400);
   margin: 0 auto;
 }
 
-@media screen and (max-width: 1040px){
+@media screen and (max-width: 1400px){
   .container{
-    width: var(--container-width-medium);
+    width: var(--container-width-gt-1400);
   }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1200px){
   .container{
-    width: var(--container-width-small);
+    width: var(--container-width-gt-1200);
+  }
+}
+
+@media screen and (max-width: 992px){
+  .container{
+    width: var(--container-width-gt-992);
+  }
+}
+
+@media screen and (max-width: 768px){
+  .container{
+    width: var(--container-width-gt-768);
+  }
+}
+
+@media screen and (max-width: 576px){
+  .container{
+    width: var(--container-width-gt-576);
+  }
+}
+
+@media screen and (max-width: 576px){
+  .container{
+    width: 100%;
   }
 }
