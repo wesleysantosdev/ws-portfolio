@@ -23,18 +23,18 @@ function Nav (){
 
   return (
     <nav className={navbar ? "navbar window-scroll" : "navbar"}>
-      <div className="container navbar__container" >       
-        <h2>WS<strong>.</strong></h2>
+      <div className="container navbar-container" >       
+        <h2>WS</h2>
             
-        <div className="navbar__wrap">
-          <ul className={active ? "navbar__list navbar__list--active" : "navbar__list"}>
-            <li><a href="#header" onClick={toggleMode}>Início</a></li>
-            <li><a href="#about" onClick={toggleMode}>Sobre mim</a></li>
-            <li><a href="#portfolio" onClick={toggleMode}>Projetos</a></li>
-            <li><a href="#contact" onClick={toggleMode}>Contatos</a></li>
+        <div className="navbar-wrap">
+          <ul className={active ? "navbar-list navbar-list--active" : "navbar-list"}>
+            <li><a href="#header" onClick={toggleMode}>Home</a></li>
+            <li><a href="#about" onClick={toggleMode}>About me</a></li>
+            <li><a href="#portfolio" onClick={toggleMode}>Projects</a></li>
+            <li><a href="#contact" onClick={toggleMode}>Contact</a></li>
           </ul>
 
-          <div className={active ? "navbar__hamburguer navbar__hamburguer--active" : "navbar__hamburguer"} onClick={toggleMode}>
+          <div className={active ? "navbar-hamburguer navbar-hamburguer--active" : "navbar-hamburguer"} onClick={toggleMode}>
               <span className="bar"></span>
               <span className="bar"></span>
               <span className="bar"></span>
