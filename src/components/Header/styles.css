@@ -1,9 +1,9 @@
 .header{
-  height: 100vh;    
-  overflow: hidden;  
+  height: 800px;    
+  overflow: hidden;
 }
 
-.header__container{
+.header-container{
   height: 100%;
   position: relative;
   display: flex;
@@ -11,29 +11,58 @@
 }
 
 /* INTRODUCTION */
-.header__left{
-  display: flex;
-  flex-direction: column;
+.header-left{
   width: 35%;
-  gap: 2rem;
 }
 
-.header__title{
-  font-size: var(--font-size-medium);
+.header-title{
+  font-size: 4.5rem;
+  line-height: 1.1;
+  font-weight: 500;
   color: var(--color-letters);
 }
 
-.header__title > strong{
-  color: var(--color-primary);
-  font-size: var(--font-size-big);
+.header-title span{
+  position: relative;
 }
 
-.header__text{
-  line-height: 1.8;
+.header-title span::before{
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 15px;
+  bottom: 15%;
+  right: 4%;
+  background-color: aqua;
+  z-index: -1;
+}
+
+.header-upper-title{
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.header-line-left{
+  width: 1px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 180px;
+}
+
+.header-line-right{
+  width: 1px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  height: 130px;
 }
 
 .cta{
   transition: var(--transition);
+  margin-top: 3.5rem;
 }
 
 .cta > a{
@@ -41,13 +70,13 @@
 }
 
 /* SOCIAL ICONS */
-.header__socials{
+.header-socials{
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   position: absolute;
   right: 0;
-  bottom: 7rem;
+  bottom: 10rem;
   z-index: 1;   
 }
 
@@ -63,7 +92,7 @@
 }
 
 /* IMAGE */
-.header__me > img{
+.header-me > img{
   display: block;
   width: 50%;
   position: absolute;
@@ -72,7 +101,7 @@
   z-index: 1;
 }
 
-.header__bg{
+.header-bg{
   position: absolute;
   width: 69rem;
   height: 69rem;
@@ -82,29 +111,29 @@
   bottom: -20rem;
 }
 
-.header__scroll-down{
+.header-scroll-down{
   display: none;
 }
 
 @media screen and (max-width: 1366px){
-  .header__title{
+  .header-title{
     font-size: 1.5rem;
   }
 
-  .header__title > strong{
+  .header-title > strong{
     font-size: 2.5rem;
   }
 
-  .header__text{
+  .header-text{
     font-size: 0.9rem;
   }
 
-  .header__socials{
+  .header-socials{
     bottom: 50%;
     transform: translateY(50%);   
   }
 
-  .header__bg{
+  .header-bg{
     width: 57rem;
     height: 57rem;
     bottom: 50%;
@@ -121,29 +150,29 @@
     padding-top: 5rem;
   }
   
-  .header__container{
+  .header-container{
     justify-content: center;
   }
 
-  .header__title{   
+  .header-title{   
     font-size: 1.2rem;
   }
 
-  .header__title > strong{   
+  .header-title > strong{   
     font-size: 2.1rem;
   }
 
-  .header__text{  
+  .header-text{  
     font-size: 0.9rem;
   }
 
-  .header__left{
+  .header-left{
     width: 50%;
     position: absolute;
     top: 10%;      
   }
 
-  .header__scroll-down{
+  .header-scroll-down{
     display: block;
     position: absolute;
     left: -2.5rem;
@@ -154,11 +183,11 @@
     font-size: var(--font-size-smaller);
   }
 
-  .header__me > img{
+  .header-me > img{
     display: none;
   }
   
-  .header__bg{
+  .header-bg{
     display: none;
   }
 
@@ -179,34 +208,34 @@
 }
 
 @media screen and (max-width: 600px){
-  .header__title{   
+  .header-title{   
     font-size: 1.2rem;
   }
 
-  .header__title > strong{   
+  .header-title > strong{   
     font-size: 2.3rem;
   }
 
-  .header__text{  
+  .header-text{  
     font-size: 0.85rem;
   }
 }
 
 @media screen and (max-width: 425px){
-  .header__left{
+  .header-left{
     width: 70%;
     align-items: center;
   }
   
-  .header__title{   
+  .header-title{   
     font-size: 1rem;
   }
 
-  .header__title > strong{   
+  .header-title > strong{   
     font-size: 2rem;
   }
 
-  .header__text{  
+  .header-text{  
     font-size: 0.9rem;
     text-align: center;
   }

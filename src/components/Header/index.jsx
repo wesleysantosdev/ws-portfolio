@@ -7,22 +7,26 @@ import './styles.css'
 function Header () {
   return (
     <header className="header" id="header">
-      <div className="container header__container">
-        <section className="header__left">
-          <h1 className="header__title">Olá! Eu sou o <hr /><strong>Wesley Santos</strong>.</h1>
-          <p className="header__text">Um estudante de Análise e Desenvolvimento de Sistemas em busca de se tornar um grande desenvolvedor Front-end.</p>
+      <div className="container header-container">
+        <section className="header-left">
+          <p className="header-upper-title">Hi, I'm Wesley Santos</p>
+          <h1 className="header-title">
+            Frontend<br></br>
+            Developerbr<br></br>
+            & <span>Dreamer</span>
+          </h1>
           <CTA />
         </section>
 
-        <h5 className="header__scroll-down">Role para baixo</h5>
-
-        <section className="header__right">
-          <div className="header__me">
+        <section className="header-right">
+          <div className="header-me">
             <img src={ME} alt="foto de perfil" />    
           </div>
-          <div className="header__bg"></div>
           <Social />
         </section>
+
+        <div className='header-line-left'></div>
+        <div className='header-line-right'></div>
       </div>
     </header>
   )
