@@ -50,7 +50,7 @@
   height: 8px;
   bottom: 9px;
   right: -5px;
-  background-color: aqua;
+  background-color: var(--color-primary);
   z-index: -1;
 }
 

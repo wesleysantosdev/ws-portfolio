@@ -1,5 +1,5 @@
 import CTA from './CTA'
-import ME from '../../assets/me-vector.png'
+import ME from '../../assets/header-image.svg'
 import Social from './Social'
 
 import './styles.css'
@@ -12,7 +12,7 @@ function Header () {
           <p className="header-upper-title">Hi, I'm Wesley Santos</p>
           <h1 className="header-title">
             Frontend<br></br>
-            Developerbr<br></br>
+            Developer<br></br>
             & <span>Dreamer</span>
           </h1>
           <CTA />

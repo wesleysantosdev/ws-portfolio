@@ -12,11 +12,11 @@
 }
 
 :root{
-  --color-bg: #0B0F1F;
-  --color-primary: #A39CED;
-  --color-secondary: #0B0F1F;
+  --color-bg: #14293E;
+  --color-primary: #E26061;
+  --color-secondary: #FFFDED;
   --color-gray: #9c9c9c;
-  --color-letters: #F4F0FF;
+  --color-letters: #FFFDED;
   --transition: all ease-in-out .4s;
 
   --font-size-title-1040: 1.7rem;

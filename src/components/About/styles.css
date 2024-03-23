@@ -1,59 +1,60 @@
-.about__section{
+.about-section{
   min-height: 100vh;
   padding: 5rem 0;
+  /* background-color: var(--color-secondary); */
 }
 
 /* ABOUT ME */
-.me__title{
+.me-title{
   padding: 2.5rem 0;
 }
 
-.me__title > small{
+.me-title > small{
   color: var(--color-gray);
 }
 
-.me__title > h3{
+.me-title > h3{
   font-size: var(--font-size-medium);
   margin-top: -0.7rem;
 }
 
-.me__text{
+.me-text{
   text-align: center;
 }
 
-.me__text > strong{
+.me-text > strong{
   color: var(--color-primary);
 }
 
 /* SKILLS */
-.skills__title{
+.skills-title{
   margin-top: var(--font-size-medium);
   padding: 2.5rem 0;
 }
 
-.skills__title > small{
+.skills-title > small{
   color: var(--color-gray);
 }
 
-.skills__title > h3{
+.skills-title > h3{
   font-size: var(--font-size-medium);
   margin-top: -0.7rem;
 }
 
 /* SKILLS CARDS */
-.skills__wrap{
+.skills-wrap{
   display: flex;
   justify-content: space-around;
   gap: 2rem;
 }
 
-.card__icon{
+.card-icon{
   width: 85px;
   height: 85px;
   color: var(--color-primary);
 }
 
-.skills__card{
+.skills-card{
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -63,49 +64,49 @@
 }
 
 @media screen and (max-width: 1040px){
-  .about__section{
+  .about-section{
     min-height: max-content;
   }
 
-  .me__title{
+  .me-title{
     text-align: center;
   }
   
-  .me__title > small{
+  .me-title > small{
     font-size: 0.8rem;
   }
 
-  .me__title > h3{
+  .me-title > h3{
     font-size: var(--font-size-title-1040);
   }
 
-  .me__text{
+  .me-text{
     font-size: 0.9rem;
     text-align: center;  
   }
 
-  .skills__wrap{
+  .skills-wrap{
     flex-wrap: wrap;
   }
 
-  .skills__title{
+  .skills-title{
     text-align: center;
   }
 
-  .skills__title > small{
+  .skills-title > small{
     font-size: 0.8rem;
   }
 
-  .skills__title > h3{
+  .skills-title > h3{
     font-size: var(--font-size-title-1040);
   }
   
-  .card__text{
+  .card-text{
     font-size: 0.9rem;
     text-align: start;
   }
 
-  .card__icon{
+  .card-icon{
     width: 70px;
     height: 70px;
   }
