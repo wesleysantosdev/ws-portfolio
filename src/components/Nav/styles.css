@@ -7,27 +7,6 @@
   z-index: 2; 
 }
 
-/* ON WINDOW SCROLL */
-.window-scroll{
-  background-color: var(--color-primary);
-}
-
-.window-scroll h2{
-  color: white;
-}
-
-.window-scroll .navbar-container strong{
-  color: var(--color-secondary);
-}
-
-.window-scroll  a{
-  color: white;
-}
-
-.window-scroll .navbar-container a:hover{
-  color: var(--color-secondary);
-}
-
 /* LOGO */
 .navbar-container{
   display: flex;
