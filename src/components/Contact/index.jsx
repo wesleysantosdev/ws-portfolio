@@ -1,5 +1,7 @@
-import {MdOutlineAlternateEmail} from 'react-icons/md'
-import {AiOutlineWhatsApp} from 'react-icons/ai'
+// import {MdOutlineAlternateEmail} from 'react-icons/md'
+import { CiMail } from "react-icons/ci";
+// import {AiOutlineWhatsApp} from 'react-icons/ai'
+import { PiWhatsappLogoLight } from "react-icons/pi";
 import {BsArrowUpRight} from 'react-icons/bs'
 
 import React, { useRef } from 'react'
@@ -25,38 +27,43 @@ function Contact () {
     }
 
     return (
-      <section className="contact__section" id="contact">     
-        <div className="contact__title">
-          <small>Vamos conversar!</small>
-          <h3>Contatos<strong>.</strong></h3>
+      <section className="contact-section" id="contact">     
+        <div className="contact-title">
+          <small>CONTACT ME</small>
+          <h3>
+            Get in touch with me
+          </h3>
         </div>
 
-        <div className="container contact__container">
-          <div className="contact__options">
-            
-            <div className="options__wrap">
-              <MdOutlineAlternateEmail className="options__icon"/>
-              <article className="options__link">
-                <h3>Email</h3>
-                <a href="mailto:wesleysantosdev@outlook.com">wesleysantosdev@outlook.com</a>
-              </article>
+        <div className="container contact-container">
+          <div className="contact-options">
+            <div className="options-title">
+              <h4>Contact information</h4>
+              <p>Feel free to contact me at any time and I’ll answer you as soon as I can!</p>
             </div>
 
-            <div className="options__wrap">
-              <AiOutlineWhatsApp className="options__icon"/>
-              <article className="options__link">
-                <h3>Whatsapp</h3>
-                <a href="https://api.whatsapp.com/send?phone=5511993142973" target="_blank">(11) 99314-2973 <BsArrowUpRight className="options__link-arrow"/></a>
-              </article>
+            <div className="options-wrap">
+              <CiMail className="options-icon"/>
+                <a href="mailto:wesleysantosdev@outlook.com">wesleysantosdev@outlook.com</a>
+            </div>
+
+            <div className="options-wrap">
+              <PiWhatsappLogoLight className="options-icon"/>
+              <a href="https://api.whatsapp.com/send?phone=5511993142973" target="_blank">(11) 99314-2973 <BsArrowUpRight className="options-link-arrow"/></a>
             </div>
           </div>
 
-          <form ref={form} onSubmit={sendEmail}>
-            <input type="text" name="name" placeholder="Seu nome" required />
-            <input type="email" name="email" placeholder="Seu email" required />
-            <textarea name="message" rows="7" placeholder="Sua mensagem" required></textarea>
-            <input type="submit" className="btn btn--colored" value="Mandar mensagem" />
-          </form>
+          <div className="contact-form">
+            <form ref={form} onSubmit={sendEmail}>
+              <input type="text" name="name" placeholder="Name" required />
+              <input type="email" name="email" placeholder="Email" required />
+              <textarea name="message" rows="7" placeholder="Message" required></textarea>
+              <input type="submit" className="btn btn--colored" value="Mandar mensagem" />
+            </form>
+          </div>
+
+          <div className='contact-line-left'></div>
+          <div className='contact-line-right'></div>
         </div>
       </section>
     )

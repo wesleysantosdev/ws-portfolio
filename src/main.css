@@ -12,18 +12,10 @@
 }
 
 :root{
-  --color-bg: #14293E;
-  --color-primary: #E26061;
+  --color-primary: #14293E;
   --color-secondary: #FFFDED;
-  --color-gray: #9c9c9c;
-  --color-letters: #FFFDED;
-  --transition: all ease-in-out .2s;
-
-  --font-size-title-1040: 1.7rem;
-  --font-size-big: 3rem;
-  --font-size-medium: 2rem;
-  --font-size-small: 1rem;    
-  --font-size-smaller: 0.8rem; 
+  --color-highlight: #E26061;
+  --transition: all .3s ease;
 
   --container-width-gt-1400: 1320px;
   --container-width-gt-1200: 1140px;
@@ -43,8 +35,8 @@ html{
 }
 
 body{
-  background-color: var(--color-bg);
-  color: var(--color-letters);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
   line-height: 1.6;
 }
 
@@ -54,15 +46,15 @@ body{
 
 .swiper-button-next,
 .swiper-button-prev{
-  color: var(--color-primary) !important;
+  color: var(--color-highlight) !important;
 }
 
 a{
-  color: var(--color-letters);
+  color: var(--color-secondary);
 }
 
 h3 > strong{
-  color: var(--color-primary);
+  color: var(--color-highlight);
 }
 
 
@@ -72,15 +64,15 @@ h3 > strong{
 	font-size: var(--font-size-small);
   cursor: pointer;
   transition: var(--transition);
-  color: var(--color-bg);
-  background-color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-highlight);
+  border: 1px solid var(--color-highlight);
   box-shadow: var(--box-shadow);
 }
 
 .btn:hover{
-  background-color: var(--color-bg);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-highlight);
 }
 
 

@@ -19,7 +19,7 @@
   font-size: 4.5rem;
   line-height: 1.1;
   font-weight: 500;
-  color: var(--color-letters);
+  color: var(--color-secondary);
 }
 
 .header-title span{
@@ -33,7 +33,7 @@
   height: 15px;
   bottom: 15%;
   right: 4%;
-  background-color: var(--color-primary);
+  background-color: var(--color-highlight);
   z-index: -1;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .socials-icons{
-  color: var(--color-primary);
+  color: var(--color-highlight);
   width: 20px;
   height: 20px;
   transition: var(--transition);
@@ -106,7 +106,7 @@
   width: 69rem;
   height: 69rem;
   border-radius: 50%;
-  background-color: var(--color-primary);
+  background-color: var(--color-highlight);
   right: -30rem;
   bottom: -20rem;
 }
@@ -172,16 +172,16 @@
     top: 10%;      
   }
 
-  .header-scroll-down{
+  /* .header-scroll-down{
     display: block;
     position: absolute;
     left: -2.5rem;
     bottom: 50%;
     transform: translateY(50%);
     transform: rotate(90deg);
-    color: var(--color-primary);
+    color: var(--color-highlight);
     font-size: var(--font-size-smaller);
-  }
+  } */
 
   .header-me > img{
     display: none;
@@ -192,11 +192,11 @@
   }
 
   .socials-icons{
-    color: var(--color-primary); 
+    color: var(--color-highlight); 
   }
 
   .socials-icons:hover{
-    color: var(--color-letters);
+    color: var(--color-secondary);
   }
 
   .cta > a{

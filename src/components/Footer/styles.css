@@ -1,102 +1,115 @@
 footer{
   padding-top: 3rem;
-  margin-top: 4rem;
   background-color: var(--color-primary);
   position: relative;
   color: white;
 }
 
-.footer__container{
+.footer-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  padding-bottom: 0.8rem;
 }
 
-.footer__container > small{
-  position: relative;
-  bottom: 0.5rem;
-}
-
-.footer__wrap{
+.footer-wrap{
   display: flex;
-  gap: 6rem;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.7rem;
 }
 
 /* TITLE */
-.footer__name{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.footer-name h2{
+  position: relative;
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  z-index: 2;
+  color: var(--color-highlight);
 }
 
-.footer__name > h3{
-  font-size: var(--font-size-big);
-}
-
-.footer__name > h5{
-  font-weight: 400;
+.footer-name h2::before{
+  content: '';
+  position: absolute;
+  width: 27px;
+  height: 8px;
+  bottom: 9px;
+  right: -5px;
+  background-color: var(--color-secondary);
+  z-index: -1;
 }
 
 /* NAV LINKS */
-.footer__nav{
+.footer-nav{
   display: flex;
   gap: 2.5rem;
   transition: var(--transition);
 }
 
-.footer__nav > a{
+.footer-nav > a{
   transition: var(--transition);
   color: white;
+  font-weight: 300;
 }
 
-.footer__nav > a:hover{
+.footer-nav > a:hover{
   color: var(--color-secondary);
 }
 
 /* ICONS */
-.footer__icons{
+.footer-icons{
   display: flex;
   gap: 1rem;
 }
 
-.footer__socials-icons{
+.footer-socials-icons{
   color: white;
   width: 20px;
   height: 20px;
   transition: var(--transition);
 }
 
-.footer__socials-icons:hover{
+.footer-socials-icons:hover{
   color: var(--color-secondary);
 }
 
+footer .credits{
+  border-top: 1px solid var(--color-secondary);
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+
 @media screen and (max-width: 1040px){
-  .footer__wrap{
+  .footer-wrap{
     gap: 2.5rem;  
   }
   
-  .footer__nav > a{
+  .footer-nav > a{
     font-size: 0.85rem;
   }
 }
 
 @media screen and (max-width: 768px){
-  .footer__wrap{
+  .footer-wrap{
     flex-direction: column;
     gap: 3.5rem;
   }
 
-  .footer__name > h3{
-    font-size: var(--font-size-medium);
+  .footer-name > h3{
+    font-size: 2rem;
   }
   
-  .footer__nav > a{
+  .footer-nav > a{
     font-size: 1rem;
   }
 
-  .footer__icons{
+  .footer-icons{
     align-self: center;
   }
 }
@@ -106,7 +119,7 @@ footer{
     margin-top: 1.2rem;
   }
   
-  .footer__nav{
+  .footer-nav{
     flex-direction: column;
   }
 }

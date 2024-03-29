@@ -7,28 +7,29 @@ import './styles.css'
 function Footer (){
   return (
     <footer>
-      <section className="container footer__container">
-        <div className="footer__wrap"> 
-          <article className="footer__name">
-            <h3>Wesley</h3>
-            <h5>Desenvolvedor Front-end</h5>
+      <section className="container footer-container">
+        <div className="footer-wrap"> 
+          <article className="footer-name">
+            <h2>WS</h2>
           </article>
 
-          <nav className="footer__nav">
-            <a href="#header">Início</a>
-            <a href="#about">Sobre mim</a>
-            <a href="#portfolio">Projetos</a>
-            <a href="#contact">Contatos</a>
+          <nav className="footer-icons">
+            <a href="https://www.instagram.com/wes.santosb/" target="_blank"><BsInstagram className="footer-socials-icons"/></a>
+            <a href="https://www.linkedin.com/in/wesleysantosdev/" target="_blank"><BsLinkedin className="footer-socials-icons"/></a>
+            <a href="https://github.com/wesleysantosdev" target="_blank"><BsGithub className="footer-socials-icons"/></a>
           </nav>
 
-          <nav className="footer__icons">
-            <a href="https://www.linkedin.com/in/wesleysantosdev/" target="_blank"><BsLinkedin className="footer__socials-icons"/></a>
-            <a href="https://github.com/wesleysantosdev" target="_blank"><BsGithub className="footer__socials-icons"/></a>
-            <a href="https://www.instagram.com/wes.santosb/" target="_blank"><BsInstagram className="footer__socials-icons"/></a>
+          <nav className="footer-nav">
+            <a href="#header">Home</a>
+            <a href="#about">About me</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
           </nav>
         </div>
 
-        <small>&copy; 2022 Wesley Santos</small>
+        <div className="credits">
+          <small>&copy; 2024 Wesley Santos</small>
+        </div>
       </section>
     </footer>
   )
