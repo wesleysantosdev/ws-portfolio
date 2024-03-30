@@ -1,32 +1,32 @@
 import CTA from './CTA'
-import ME from '../../assets/header-image.svg'
+import Vetor from '../../assets/header-image.svg'
 import Social from './Social'
 
 import './styles.css'
 
 function Header () {
   return (
-    <header className="header" id="header">
-      <div className="container header-container">
-        <section className="header-left">
-          <p className="header-upper-title">Hi, I'm Wesley Santos</p>
-          <h1 className="header-title">
+    <header className="banner" id="header">
+      <div className="container banner-container">
+        <article className="banner-left">
+          <p className="banner-upper-title">Hi, I'm Wesley Santos</p>
+          <h1 className="banner-title">
             Frontend<br></br>
             Developer<br></br>
             & <span>Dreamer</span>
           </h1>
           <CTA />
-        </section>
+        </article>
 
-        <section className="header-right">
-          <div className="header-me">
-            <img src={ME} alt="foto de perfil" />    
+        <section className="banner-right">
+          <div className="banner-vector">
+            <img src={Vetor} alt="Vetor" />    
           </div>
           <Social />
         </section>
 
-        <div className='header-line-left'></div>
-        <div className='header-line-right'></div>
+        <div className='banner-line-left'></div>
+        <div className='banner-line-right'></div>
       </div>
     </header>
   )

@@ -116,7 +116,6 @@ input, textarea{
   color: var(--color-primary);
   background-color: var(--color-secondary);
   border-bottom: 1px double var(--color-primary);
-  /* box-shadow: var(--box-shadow); */
 }
 
 .contact-form .btn{

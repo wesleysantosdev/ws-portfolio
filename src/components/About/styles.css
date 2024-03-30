@@ -86,7 +86,7 @@
   color: var(--color-secondary);
 }
 
-@media screen and (max-width: 1040px){
+@media screen and (max-width: 992px){
   .about-section{
     min-height: max-content;
   }

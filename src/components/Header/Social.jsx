@@ -4,7 +4,7 @@ import {BsInstagram} from 'react-icons/bs'
 
 function Social (){
   return (
-    <nav className="header-socials">
+    <nav className="banner-socials">
       <a href="https://www.linkedin.com/in/wesleysantosdev/" target="_blank"><BsLinkedin className="socials-icons"/></a>
       <a href="https://github.com/wesleysantosdev" target="_blank"><BsGithub className="socials-icons"/></a>
       <a href="https://www.instagram.com/wes.santosb/" target="_blank"><BsInstagram className="socials-icons"/></a>

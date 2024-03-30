@@ -1,32 +1,40 @@
-.header{
+.banner{
   height: 800px;    
   overflow: hidden;
 }
 
-.header-container{
+.banner-container{
   height: 100%;
   position: relative;
   display: flex;
   align-items: center;
 }
 
-/* INTRODUCTION */
-.header-left{
-  width: 35%;
+.banner-left{
+  width: 50%;
 }
 
-.header-title{
+.banner-right{
+  width: 50%;
+}
+
+.banner-upper-title{
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.banner-title{
   font-size: 4.5rem;
   line-height: 1.1;
   font-weight: 500;
   color: var(--color-secondary);
 }
 
-.header-title span{
+.banner-title span{
   position: relative;
 }
 
-.header-title span::before{
+.banner-title span::before{
   content: '';
   position: absolute;
   width: 40%;
@@ -37,12 +45,7 @@
   z-index: -1;
 }
 
-.header-upper-title{
-  font-weight: 300;
-  margin-bottom: 0;
-}
-
-.header-line-left{
+.banner-line-left{
   width: 1px;
   background-color: var(--color-secondary);
   position: absolute;
@@ -51,7 +54,7 @@
   height: 180px;
 }
 
-.header-line-right{
+.banner-line-right{
   width: 1px;
   background-color: var(--color-secondary);
   position: absolute;
@@ -69,8 +72,7 @@
   font-size: 0.95rem;
 }
 
-/* SOCIAL ICONS */
-.header-socials{
+.banner-socials{
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -91,157 +93,59 @@
   color: var(--color-secondary);
 }
 
-/* IMAGE */
-.header-me > img{
+/* .banner-vector img{
   display: block;
   width: 50%;
   position: absolute;
   right: 4.15rem;
   bottom: 3rem;
   z-index: 1;
-}
+} */
 
-.header-bg{
-  position: absolute;
-  width: 69rem;
-  height: 69rem;
-  border-radius: 50%;
-  background-color: var(--color-highlight);
-  right: -30rem;
-  bottom: -20rem;
-}
-
-.header-scroll-down{
-  display: none;
-}
-
-@media screen and (max-width: 1366px){
-  .header-title{
-    font-size: 1.5rem;
+@media screen and (max-width: 1200px){
+  .banner-title{
+    font-size: 3.8rem;
   }
 
-  .header-title > strong{
-    font-size: 2.5rem;
+  .banner-left{
+    width: 45%;
   }
 
-  .header-text{
-    font-size: 0.9rem;
-  }
-
-  .header-socials{
-    bottom: 50%;
-    transform: translateY(50%);   
-  }
-
-  .header-bg{
-    width: 57rem;
-    height: 57rem;
-    bottom: 50%;
-    transform: translateY(50%);
-  }
-
-  .cta > a{
-    font-size: 0.8rem;
+  .banner-right img{
+    max-width: 500px;
   }
 }
 
-@media screen and (max-width: 768px){
-  .header{
-    padding-top: 5rem;
+@media screen and (max-width: 992px){
+  .banner{
+    height: max-content;
   }
   
-  .header-container{
-    justify-content: center;
+  .banner-container{
+    padding: 10rem 0 15rem 0;
+  }
+  
+  .banner-left{
+    width: 100%;
   }
 
-  .header-title{   
-    font-size: 1.2rem;
+  .banner-right img{
+    display: none;
   }
+}
 
-  .header-title > strong{   
-    font-size: 2.1rem;
-  }
-
-  .header-text{  
-    font-size: 0.9rem;
-  }
-
-  .header-left{
-    width: 50%;
-    position: absolute;
-    top: 10%;      
-  }
-
-  /* .header-scroll-down{
+@media screen and (max-width: 576px){
+  .banner-container{
+    padding: 10rem 0 22rem 0;
     display: block;
-    position: absolute;
-    left: -2.5rem;
-    bottom: 50%;
-    transform: translateY(50%);
-    transform: rotate(90deg);
-    color: var(--color-highlight);
-    font-size: var(--font-size-smaller);
-  } */
-
-  .header-me > img{
-    display: none;
-  }
-  
-  .header-bg{
-    display: none;
   }
 
-  .socials-icons{
-    color: var(--color-highlight); 
+  .banner-title{
+    font-size: 3.3rem;
   }
 
-  .socials-icons:hover{
-    color: var(--color-secondary);
-  }
-
-  .cta > a{
-    font-size: 0.9rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;  
+  .banner-line-left{
+    height: 260px;
   }
 }
 
-@media screen and (max-width: 600px){
-  .header-title{   
-    font-size: 1.2rem;
-  }
-
-  .header-title > strong{   
-    font-size: 2.3rem;
-  }
-
-  .header-text{  
-    font-size: 0.85rem;
-  }
-}
-
-@media screen and (max-width: 425px){
-  .header-left{
-    width: 70%;
-    align-items: center;
-  }
-  
-  .header-title{   
-    font-size: 1rem;
-  }
-
-  .header-title > strong{   
-    font-size: 2rem;
-  }
-
-  .header-text{  
-    font-size: 0.9rem;
-    text-align: center;
-  }
-
-  .cta > a{
-    font-size: 0.8rem;
-    width: 100%;
-  }
-}

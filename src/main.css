@@ -22,7 +22,6 @@
   --container-width-gt-992: 960px;
   --container-width-gt-768: 720px;
   --container-width-gt-576: 540px;
-  --box-shadow: 2px 2px 5px #6356f013;
 }
 
 
@@ -44,10 +43,10 @@ body{
   font-size: 0.85rem;
 }
 
-.swiper-button-next,
+/* .swiper-button-next,
 .swiper-button-prev{
   color: var(--color-highlight) !important;
-}
+} */
 
 a{
   color: var(--color-secondary);
@@ -67,14 +66,18 @@ h3 > strong{
   color: var(--color-primary);
   background-color: var(--color-highlight);
   border: 1px solid var(--color-highlight);
-  box-shadow: var(--box-shadow);
+}
+
+.btn--alt{
+  color: white;
+  background-color: var(--color-highlight);
+  border: 1px solid var(--color-highlight);
 }
 
 .btn:hover{
-  background-color: var(--color-primary);
+  background-color: transparent;
   color: var(--color-highlight);
 }
-
 
 .container{
   width: var(--container-width-gt-1400);
@@ -83,29 +86,23 @@ h3 > strong{
 
 @media screen and (max-width: 1400px){
   .container{
-    width: var(--container-width-gt-1400);
+    width: var(--container-width-gt-1200);
   }
 }
 
 @media screen and (max-width: 1200px){
   .container{
-    width: var(--container-width-gt-1200);
+    width: var(--container-width-gt-992);
   }
 }
 
 @media screen and (max-width: 992px){
   .container{
-    width: var(--container-width-gt-992);
-  }
-}
-
-@media screen and (max-width: 768px){
-  .container{
     width: var(--container-width-gt-768);
   }
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 768px){
   .container{
     width: var(--container-width-gt-576);
   }
@@ -113,6 +110,12 @@ h3 > strong{
 
 @media screen and (max-width: 576px){
   .container{
-    width: 100%;
+    width: 95%;
   }
 }
+
+/* @media screen and (max-width: 576px){
+  .container{
+    width: 100%;
+  }
+} */
