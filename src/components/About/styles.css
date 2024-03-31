@@ -3,26 +3,25 @@
   background-color: var(--color-secondary);
 }
 
-/* ABOUT ME */
-.me-title{
+.about-title{
   padding: 0 0 1.5rem 0;
 }
 
-.me-title h3{
-  font-size: 2rem;
+.about-title h3{
+  font-size: 2.3rem;
   color: var(--color-primary);
   line-height: 1.3;
   font-weight: 600;
 }
 
-.me-title small{
+.about-title small{
   padding-left: 5rem;
   margin: 0;
   position: relative;
   color: var(--color-highlight);
 }
 
-.me-title small::before{
+.about-title small::before{
   content: '';
   position: absolute;
   left: 0;
@@ -33,19 +32,17 @@
   background-color: var(--color-highlight);
 }
 
-.me-text{
+.about-description p{
   text-align: start;
   margin-bottom: 1rem;
   color: var(--color-primary);
 }
 
-/* SKILLS */
 .skills-title{
   margin-top: 2rem;
   padding: 2.5rem 0;
 }
 
-/* SKILLS CARDS */
 .skills-wrap{
   display: flex;
   justify-content: space-around;
@@ -57,6 +54,7 @@
   width: 60px;
   height: 60px;
   color: var(--color-highlight);
+  transition: transform 0.5s ease;
 }
 
 .card-title{
@@ -86,30 +84,33 @@
   color: var(--color-secondary);
 }
 
+.skills-card:hover .card-icon{
+  transform: rotate(360deg);
+}
+
 @media screen and (max-width: 992px){
   .about-section{
     min-height: max-content;
   }
 
-  .me-title{
-    text-align: center;
-  }
-  
-  .me-title > small{
+  .about-title small{
     font-size: 0.8rem;
   }
 
-  .me-title > h3{
+  .about-title h3{
     font-size: 1.7rem;
   }
 
-  .me-text{
+  .about-description p{
     font-size: 0.9rem;
-    text-align: center;  
   }
 
   .skills-wrap{
     flex-wrap: wrap;
+  }
+
+  .skills-card{
+    flex: 0 0 48%;
   }
 
   .skills-title{
@@ -129,6 +130,12 @@
     height: 70px;
   }
 
+}
+
+@media screen and (max-width: 576px){
+  .skills-card{
+    flex: 0 0 47%;
+  }
 }
 
 

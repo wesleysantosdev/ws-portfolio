@@ -7,19 +7,19 @@ import './styles.css'
 
 function Portfolio () {
   return (
-    <section className="portfolio-section" id="portfolio">
-      <div className="container portfolio-container">
-        <div className="portfolio-title">
-          <div>
-            <small>PORTFOLIO</small>
-            <h3>
-              Featured projects
-            </h3>
-          </div>
-
-          <a href="#" className="btn">View All</a>
+    <section className="container portfolio-section" id="portfolio">
+      <div className="portfolio-title">
+        <div>
+          <small>PORTFOLIO</small>
+          <h3>
+            Featured projects
+          </h3>
         </div>
 
+        <a href="#" className="btn">View All</a>
+      </div>
+
+      <div className="portfolio-container">
         <div className='portfolio-row'>
           <article className="portfolio-card">
             <a href="https://wesleysantosdev.github.io/component-with-signup-form/" className="portfolio-card-image-container" target="_blank">

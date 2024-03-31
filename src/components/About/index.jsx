@@ -10,26 +10,25 @@ import './styles.css'
 function About () {
   return (
     <section className="about-section" id="about">     
-      <div className="container about-container">          
-        
-        <section className="about-me">
-          <div className="me-title">
-            <small>ABOUT ME</small>
-            <h3>
-              My passions<br></br> 
-              & current stacks
-            </h3>
-          </div>
+      <div className="container about-container"> 
+        <div className="about-title">
+          <small>ABOUT ME</small>
+          <h3>
+            My passions<br></br> 
+            & current stacks
+          </h3>
+        </div>
+    
+        <section className="about-description">
+          <p>I’m a Frontend Developer with a background in Systems Analysis and Development and 25 years old, I bring nearly two years of hands-on experience to the table. My passion lies in crafting visually stunning and seamlessly functional websites and landing pages that captivate audiences.</p>
 
-          <p className="me-text">I’m a Frontend Developer with a background in Systems Analysis and Development and 25 years old, I bring nearly two years of hands-on experience to the table. My passion lies in crafting visually stunning and seamlessly functional websites and landing pages that captivate audiences.</p>
+          <p>My journey in web development began with a curiosity to explore creativity, since I love drawing as well. Through dedicated learning and practical application, I've honed my skills in HTML, CSS, JavaScript and various frontend frameworks to transform ideas into polished digital experiences.</p>
 
-          <p className="me-text">My journey in web development began with a curiosity to explore creativity, since I love drawing as well. Through dedicated learning and practical application, I've honed my skills in HTML, CSS, JavaScript, and various frontend frameworks to transform ideas into polished digital experiences.</p>
+          <p>From responsive designs that adapt flawlessly across devices to optimized user experiences that enhance conversions, I approach each project with enthusiasm and a dedication to excellence.</p>
 
-          <p className="me-text">From responsive designs that adapt flawlessly across devices to optimized user experiences that enhance conversions, I approach each project with enthusiasm and a dedication to excellence.</p>
+          <p>Beyond code, I'm passionate about collaboration, problem-solving, and continuous growth. Whether I'm diving into a new project or refining existing ones, I thrive on challenges that push me to expand my skills and push the boundaries of what's possible in web development.</p>
 
-          <p className="me-text">Beyond code, I'm passionate about collaboration, problem-solving, and continuous growth. Whether I'm diving into a new project or refining existing ones, I thrive on challenges that push me to expand my skills and push the boundaries of what's possible in web development.</p>
-
-          <p className="me-text">Let's build something great together!</p>
+          <p>Let's build something great together!</p>
         </section>
 
         <section className="about-skills">

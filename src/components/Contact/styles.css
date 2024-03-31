@@ -4,6 +4,27 @@
   height: 800px;
 }
 
+.contact-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5rem;
+}
+
+.contact-title h3{
+  font-size: 2.3rem;
+  color: var(--color-primary);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.contact-title small{
+  margin: 0;
+  position: relative;
+  color: var(--color-highlight);
+}
+
 .contact-line-left{
   width: 1px;
   background-color: var(--color-primary);
@@ -22,28 +43,6 @@
   height: 280px;
 }
 
-.contact-title{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 5rem;
-}
-
-.contact-title h3{
-  font-size: 2rem;
-  color: var(--color-primary);
-  line-height: 1.3;
-  font-weight: 600;
-}
-
-.contact-title small{
-  margin: 0;
-  position: relative;
-  color: var(--color-highlight);
-}
-
-/* CONTACT ITEMS */
 .contact-container{
   height: 100%;
   position: relative;
@@ -61,7 +60,8 @@
 
 .options-title h4{
   color: var(--color-primary);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .options-title p{
@@ -90,6 +90,7 @@
 .options-wrap a:hover{
   color: var(--color-primary);
   transition: var(--transition);
+  text-decoration: underline;
 }
 
 .options-link-arrow{
@@ -118,24 +119,40 @@ input, textarea{
   border-bottom: 1px double var(--color-primary);
 }
 
-.contact-form .btn{
-  color: white;
-}
 
 @media screen and (max-width: 768px){
-  .contact-title > small{
+  .contact-section{
+    height: max-content;
+  }
+
+  .contact-title {
+    padding-bottom: 2rem;
+  }
+  
+  .contact-title small{
     font-size: 0.8rem;
   }
   
-  .contact-title > h3{
+  .contact-title h3{
     font-size: 1.7rem;
+  }
+
+  .contact-line-left,
+  .contact-line-right{
+    display: none;
   }
   
   .contact-container{
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+    gap: 3rem;
   }
 
+  .contact-options,
+  .contact-form{
+    width: 100%;
+  }
+ /*
   .contact-options{
     flex-direction: row;
   }
@@ -158,10 +175,10 @@ input, textarea{
   
   .options-link-arrow{
     font-size: 0.7rem;
-  }
+  } */
 }
 
-@media screen and (max-width: 480px){
+/* @media screen and (max-width: 480px){
   .contact-container{
     gap: 3rem;
   }
@@ -178,4 +195,4 @@ input, textarea{
   .options-link > a{
     font-size: 1rem;
   }
-}
+} */

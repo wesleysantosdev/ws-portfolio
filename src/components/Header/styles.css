@@ -86,21 +86,24 @@
   color: var(--color-highlight);
   width: 20px;
   height: 20px;
-  transition: var(--transition);
+  /* transition: var(--transition); */
+  transition: transform 0.5s ease;
 }
 
 .socials-icons:hover{
   color: var(--color-secondary);
+  transform: rotate(360deg);
 }
 
-/* .banner-vector img{
-  display: block;
-  width: 50%;
-  position: absolute;
-  right: 4.15rem;
-  bottom: 3rem;
-  z-index: 1;
-} */
+.banner-right img{
+  width: 600px;
+}
+
+@media screen and (max-width: 1400px){
+  .banner-right img{
+    max-width: 500px;
+  }
+}
 
 @media screen and (max-width: 1200px){
   .banner-title{
@@ -109,10 +112,6 @@
 
   .banner-left{
     width: 45%;
-  }
-
-  .banner-right img{
-    max-width: 500px;
   }
 }
 

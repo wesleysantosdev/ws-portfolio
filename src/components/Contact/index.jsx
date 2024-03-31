@@ -1,7 +1,5 @@
-// import {MdOutlineAlternateEmail} from 'react-icons/md'
-import { CiMail } from "react-icons/ci";
-// import {AiOutlineWhatsApp} from 'react-icons/ai'
-import { PiWhatsappLogoLight } from "react-icons/pi";
+import { CiMail } from "react-icons/ci"
+import { PiWhatsappLogoLight } from "react-icons/pi"
 import {BsArrowUpRight} from 'react-icons/bs'
 
 import React, { useRef } from 'react'
@@ -58,7 +56,7 @@ function Contact () {
               <input type="text" name="name" placeholder="Name" required />
               <input type="email" name="email" placeholder="Email" required />
               <textarea name="message" rows="7" placeholder="Message" required></textarea>
-              <input type="submit" className="btn btn--colored" value="Mandar mensagem" />
+              <input type="submit" className="btn btn--alt" value="Mandar mensagem" />
             </form>
           </div>
 
