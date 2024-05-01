@@ -56,7 +56,7 @@ footer{
 }
 
 .footer-nav > a:hover{
-  color: var(--color-secondary);
+  color: var(--color-highlight);
 }
 
 /* ICONS */
@@ -69,7 +69,6 @@ footer{
   color: white;
   width: 20px;
   height: 20px;
-  /* transition: var(--transition); */
   transition: transform 0.5s ease;
 }
 

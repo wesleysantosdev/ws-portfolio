@@ -10,22 +10,21 @@ function Header () {
   const [index, setIndex] = useState(0);
   const [displayedLetters, setDisplayedLetters] = useState(0);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setDisplayedLetters((prev) => {
-        const totalLetters = words[index].length;
-        const next = prev + 1;
-        if (next > totalLetters) {
-          setIndex((index + 1) % words.length); // Troca para a próxima palavra
-          return 0; // Reinicia a contagem de letras
-        }
-        return next;
-      });
-    }, 110);
-
-    return () => clearInterval(intervalId);
-  }, [index, words]);
-
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        setDisplayedLetters((prev) => {
+          const totalLetters = words[index].length;
+          const next = prev + 1;
+          if (next > totalLetters) {
+            setIndex((index + 1) % words.length); // Troca para a próxima palavra
+            return 0; // Reinicia a contagem de letras
+          }
+          return next;
+        });
+      }, 110);
+  
+      return () => clearInterval(intervalId);
+    }, [index, words]);
 
   return (
     <header className="banner" id="header">

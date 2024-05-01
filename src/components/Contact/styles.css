@@ -119,6 +119,46 @@ input, textarea{
   border-bottom: 1px double var(--color-primary);
 }
 
+.form-group {
+  position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.form-label {
+  position: absolute;
+  bottom: 0.9rem;
+  left: 0;
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  color: black;
+  font-size: 0.9rem;
+}
+
+textarea.form-input + .form-label {
+  position: absolute;
+  bottom: inherit;
+  top: 0;
+  left: 0;
+}
+
+textarea.form-input:focus + .form-label,
+textarea.form-input:valid + .form-label {
+  bottom: inherit;
+  top: -1rem;
+}
+
+.form-input:focus + .form-label,
+.form-input:valid + .form-label {
+  bottom: 2.5rem;
+  font-size: 0.8rem;
+  color: var(--color-highlight);
+}
+
+.form-input:focus,
+.form-input:valid{
+  border-color: var(--color-highlight);
+}
 
 @media screen and (max-width: 768px){
   .contact-section{

@@ -12,6 +12,7 @@
 
 .banner-left{
   width: 50%;
+  animation: slide-left .8s ease;
 }
 
 .banner-right{
@@ -52,6 +53,7 @@
   bottom: 0;
   left: 0;
   height: 180px;
+  animation: slide-bottom .8s ease;
 }
 
 .banner-line-right{
@@ -61,6 +63,7 @@
   bottom: 0;
   right: 10px;
   height: 130px;
+  animation: slide-bottom .8s ease;
 }
 
 .cta{
@@ -80,6 +83,7 @@
   right: 0;
   bottom: 10rem;
   z-index: 1;   
+  animation: slide-bottom .8s ease;
 }
 
 .socials-icons{
@@ -97,6 +101,7 @@
 
 .banner-right img{
   width: 600px;
+  animation: grow .8s ease;
 }
 
 @media screen and (max-width: 1400px){

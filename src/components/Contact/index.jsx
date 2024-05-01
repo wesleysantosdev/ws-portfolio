@@ -1,6 +1,6 @@
 import { CiMail } from "react-icons/ci"
 import { PiWhatsappLogoLight } from "react-icons/pi"
-import {BsArrowUpRight} from 'react-icons/bs'
+import { BsArrowUpRight } from 'react-icons/bs'
 
 import React, { useRef } from 'react'
 import emailjs from 'emailjs-com'
@@ -53,9 +53,21 @@ function Contact () {
 
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
-              <input type="text" name="name" placeholder="Name" required />
-              <input type="email" name="email" placeholder="Email" required />
-              <textarea name="message" rows="7" placeholder="Message" required></textarea>
+              <div class="form-group">
+                <input type="text" name="name" class="form-input" required />
+                <label for="name" class="form-label">Name</label>
+              </div>
+
+              <div class="form-group">
+                <input type="email" name="email" class="form-input" required />
+                <label for="email" class="form-label">Email</label>
+              </div>
+
+              <div class="form-group">
+                <textarea name="message" rows="7" class="form-input" required></textarea>
+                <label for="message" class="form-label">Message</label>
+              </div>
+              
               <input type="submit" className="btn btn--alt" value="Mandar mensagem" />
             </form>
           </div>

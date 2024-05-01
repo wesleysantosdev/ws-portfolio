@@ -16,7 +16,7 @@ function Portfolio () {
           </h3>
         </div>
 
-        <a href="#" className="btn">View All</a>
+        <a href="https://github.com/wesleysantosdev?tab=repositories" target='_blank' className="btn">View All</a>
       </div>
 
       <div className="portfolio-container">
