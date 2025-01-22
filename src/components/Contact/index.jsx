@@ -3,7 +3,7 @@ import { PiWhatsappLogoLight } from "react-icons/pi"
 import { BsArrowUpRight } from 'react-icons/bs'
 
 import React, { useRef } from 'react'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 
 
 import './styles.css'
