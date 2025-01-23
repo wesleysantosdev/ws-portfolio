@@ -142,21 +142,20 @@ textarea.form-input + .form-label {
   left: 0;
 }
 
-textarea.form-input:focus + .form-label,
-textarea.form-input:valid + .form-label {
+textarea.form-input.has-content + .form-label,
+textarea.form-input:focus + .form-label{
   bottom: inherit;
   top: -1rem;
 }
 
-.form-input:focus + .form-label,
-.form-input:valid + .form-label {
+.form-input.has-content + .form-label,
+.form-input:focus + .form-label{
   bottom: 2.5rem;
   font-size: 0.8rem;
   color: var(--color-highlight);
 }
 
-.form-input:focus,
-.form-input:valid{
+.form-input.has-content{
   border-color: var(--color-highlight);
 }
 

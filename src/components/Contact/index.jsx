@@ -2,7 +2,7 @@ import { CiMail } from "react-icons/ci"
 import { PiWhatsappLogoLight } from "react-icons/pi"
 import { BsArrowUpRight } from 'react-icons/bs'
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 
 
@@ -10,6 +10,9 @@ import './styles.css'
 
 function Contact () {
     const form = useRef()
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
     const sendEmail = (e) => {
       e.preventDefault()
@@ -54,17 +57,38 @@ function Contact () {
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
               <div class="form-group">
-                <input type="text" name="name" class="form-input" required />
+                <input                  
+                  type="text" 
+                  name="name" 
+                  className={`form-input ${name ? 'has-content' : ''}`} 
+                  value={name} 
+                  onChange={(e) => setName(e.target.value)} 
+                  required 
+                />
                 <label for="name" class="form-label">Name</label>
               </div>
 
               <div class="form-group">
-                <input type="email" name="email" class="form-input" required />
-                <label for="email" class="form-label">Email</label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  className={`form-input ${email ? 'has-content' : ''}`} 
+                  value={email} 
+                  onChange={(e) => setEmail(e.target.value)} 
+                  required 
+                />
+                <label for="email" class="form-label" >Email</label>
               </div>
 
               <div class="form-group">
-                <textarea name="message" rows="7" class="form-input" required></textarea>
+                <textarea 
+                  name="message" 
+                  rows="7"                 
+                  className={`form-input ${message ? 'has-content' : ''}`} 
+                  value={message} 
+                  onChange={(e) => setMessage(e.target.value)} 
+                  required 
+                ></textarea>
                 <label for="message" class="form-label">Message</label>
               </div>
               
