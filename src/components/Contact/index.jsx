@@ -2,97 +2,118 @@ import { CiMail } from "react-icons/ci"
 import { PiWhatsappLogoLight } from "react-icons/pi"
 import { BsArrowUpRight } from 'react-icons/bs'
 
-import React, { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
-
+import { useRef, useState } from 'react'
+import ContactField from '../ui/ContactField'
+import { contactContent, contactLinks } from '../../content/siteContent'
+import { sendContactEmail } from '../../lib/sendContactEmail'
 
 import './styles.css'
 
+const INITIAL_FORM_STATE = {
+  name: '',
+  email: '',
+  message: ''
+}
+
 function Contact () {
-    const form = useRef()
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const form = useRef(null)
+    const [formValues, setFormValues] = useState(INITIAL_FORM_STATE)
+    const [submitState, setSubmitState] = useState('idle')
 
-    const sendEmail = (e) => {
-      e.preventDefault()
-  
-      emailjs.sendForm('service_uzukwpp', 'template_3ahh9rq', form.current, 'WiNciNv3FQV4ymQs0')
-        .then((result) => {
-            console.log(result.text)
-        }, (error) => {
-            console.log(error.text)
-        })
+    const handleChange = (event) => {
+      const { name, value } = event.target
 
-        e.target.reset()
+      setFormValues((currentValues) => ({
+        ...currentValues,
+        [name]: value
+      }))
+    }
+
+    const handleSubmit = async (event) => {
+      event.preventDefault()
+      setSubmitState('sending')
+
+      try {
+        await sendContactEmail(form.current)
+        setFormValues(INITIAL_FORM_STATE)
+        setSubmitState('success')
+      } catch (error) {
+        setSubmitState('error')
+      }
     }
 
     return (
       <section className="contact-section" id="contact">     
         <div className="contact-title">
-          <small>CONTACT ME</small>
-          <h3>
-            Get in touch with me
-          </h3>
+          <small>{contactContent.eyebrow}</small>
+          <h3>{contactContent.title}</h3>
         </div>
 
         <div className="container contact-container">
           <div className="contact-options">
             <div className="options-title">
-              <h4>Contact information</h4>
-              <p>Feel free to contact me at any time and I’ll answer you as soon as I can!</p>
+              <h4>{contactContent.detailsTitle}</h4>
+              <p>{contactContent.detailsDescription}</p>
             </div>
 
-            <div className="options-wrap">
-              <CiMail className="options-icon"/>
-                <a href="mailto:wesleysantosdev@outlook.com">wesleysantosdev@outlook.com</a>
-            </div>
-
-            <div className="options-wrap">
-              <PiWhatsappLogoLight className="options-icon"/>
-              <a href="https://api.whatsapp.com/send?phone=5511993142973" target="_blank">(11) 99314-2973 <BsArrowUpRight className="options-link-arrow"/></a>
-            </div>
+            {contactLinks.map((contactLink) => (
+              <div className="options-wrap" key={contactLink.label}>
+                {contactLink.type === 'email' ? (
+                  <CiMail className="options-icon" aria-hidden="true" />
+                ) : (
+                  <PiWhatsappLogoLight className="options-icon" aria-hidden="true" />
+                )}
+                <a
+                  href={contactLink.href}
+                  target={contactLink.external ? '_blank' : undefined}
+                  rel={contactLink.external ? 'noreferrer' : undefined}
+                >
+                  {contactLink.value}
+                  {contactLink.external ? <BsArrowUpRight className="options-link-arrow" aria-hidden="true" /> : null}
+                </a>
+              </div>
+            ))}
           </div>
 
           <div className="contact-form">
-            <form ref={form} onSubmit={sendEmail}>
-              <div class="form-group">
-                <input                  
-                  type="text" 
-                  name="name" 
-                  className={`form-input ${name ? 'has-content' : ''}`} 
-                  value={name} 
-                  onChange={(e) => setName(e.target.value)} 
-                  required 
-                />
-                <label for="name" class="form-label">Name</label>
-              </div>
+            <form ref={form} onSubmit={handleSubmit}>
+              <ContactField
+                id="name"
+                type="text"
+                name="name"
+                label="Name"
+                value={formValues.name}
+                onChange={handleChange}
+              />
 
-              <div class="form-group">
-                <input 
-                  type="email" 
-                  name="email" 
-                  className={`form-input ${email ? 'has-content' : ''}`} 
-                  value={email} 
-                  onChange={(e) => setEmail(e.target.value)} 
-                  required 
-                />
-                <label for="email" class="form-label" >Email</label>
-              </div>
+              <ContactField
+                id="email"
+                type="email"
+                name="email"
+                label="Email"
+                value={formValues.email}
+                onChange={handleChange}
+              />
 
-              <div class="form-group">
-                <textarea 
-                  name="message" 
-                  rows="7"                 
-                  className={`form-input ${message ? 'has-content' : ''}`} 
-                  value={message} 
-                  onChange={(e) => setMessage(e.target.value)} 
-                  required 
-                ></textarea>
-                <label for="message" class="form-label">Message</label>
-              </div>
+              <ContactField
+                id="message"
+                as="textarea"
+                name="message"
+                label="Message"
+                value={formValues.message}
+                onChange={handleChange}
+                rows={7}
+              />
               
-              <input type="submit" className="btn btn--alt" value="Mandar mensagem" />
+              <input
+                type="submit"
+                className="btn btn--alt"
+                value={submitState === 'sending' ? 'Sending...' : contactContent.submitLabel}
+              />
+              <p className="form-status" role="status">
+                {submitState === 'success' ? 'Your message was sent successfully.' : null}
+                {submitState === 'error' ? 'Something went wrong. Please try again.' : null}
+              </p>
             </form>
           </div>
 

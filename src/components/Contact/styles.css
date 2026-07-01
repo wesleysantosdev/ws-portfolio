@@ -159,6 +159,14 @@ textarea.form-input:focus + .form-label{
   border-color: var(--color-highlight);
 }
 
+.form-status{
+  width: 100%;
+  min-height: 1.5rem;
+  color: var(--color-primary);
+  text-align: left;
+  font-size: 0.9rem;
+}
+
 @media screen and (max-width: 768px){
   .contact-section{
     height: max-content;

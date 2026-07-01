@@ -1,47 +1,30 @@
 import CTA from './CTA'
 import Vetor from '../../assets/header-image.svg'
 import Social from './Social'
-import { useState, useEffect } from 'react'
+import { heroContent, heroWords } from '../../content/siteContent'
+import { useRotatingText } from '../../hooks/useRotatingText'
 
 import './styles.css'
 
 function Header () {
-  const words = ["Dreamer", "Artist", "Explorer", "Creator"];
-  const [index, setIndex] = useState(0);
-  const [displayedLetters, setDisplayedLetters] = useState(0);
-
-    useEffect(() => {
-      const intervalId = setInterval(() => {
-        setDisplayedLetters((prev) => {
-          const totalLetters = words[index].length;
-          const next = prev + 1;
-          if (next > totalLetters) {
-            setIndex((index + 1) % words.length); // Troca para a próxima palavra
-            return 0; // Reinicia a contagem de letras
-          }
-          return next;
-        });
-      }, 110);
-  
-      return () => clearInterval(intervalId);
-    }, [index, words]);
+  const rotatingWord = useRotatingText(heroWords)
 
   return (
     <header className="banner" id="header">
       <div className="container banner-container">
         <article className="banner-left">
-          <p className="banner-upper-title">Hi, I'm Wesley Santos</p>
+          <p className="banner-upper-title">{heroContent.greeting}</p>
           <h1 className="banner-title">
-            Frontend<br></br>
-            Developer<br></br>
-            & <span>{words[index].substring(0, displayedLetters)}</span>
+            {heroContent.title[0]}<br />
+            {heroContent.title[1]}<br />
+            {heroContent.title[2]} <span>{rotatingWord}</span>
           </h1>
           <CTA />
         </article>
 
         <section className="banner-right">
           <div className="banner-vector">
-            <img src={Vetor} alt="Vetor" />    
+            <img src={Vetor} alt="Abstract illustration" />
           </div>
           <Social />
         </section>

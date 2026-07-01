@@ -1,9 +1,9 @@
-import CV from '../../assets/CV.pdf'
+import { heroContent } from '../../content/siteContent'
 
 function CTA () {
   return (
     <div className="cta">
-      <a href={CV} download className="btn">Download CV</a>
+      <a href={heroContent.resumeLink} download className="btn">{heroContent.resumeLabel}</a>
     </div>
   )
 }
