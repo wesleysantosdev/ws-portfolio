@@ -1,2 +1,19 @@
-# ws-portfolio
- My first full project using React, a portfolio full responsive that contains a little bit of information about me, my skills and what I'm capable of, all my contacts and a few recent projects.
+# WS Portfolio
+
+Portfolio pessoal de Wesley Santos, desenvolvido com React e Vite. A interface editorial apresenta projetos, experiencia e stack com temas claro/escuro, carrossel nativo acessivel e case studies em URLs proprias.
+
+## Rodando localmente
+
+```bash
+npm install
+npm run dev
+```
+
+## Verificacao
+
+```bash
+npm run test
+npm run build
+```
+
+O deploy foi preparado para Vercel. O `vercel.json` redireciona URLs como `/projetos/calculadora` para a aplicacao sem perder a rota.

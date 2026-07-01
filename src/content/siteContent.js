@@ -1,119 +1,91 @@
 import CV from '../assets/CV.pdf'
-import project1 from '../assets/form-project.png'
-import project2 from '../assets/dark-mode-project.png'
-import project3 from '../assets/calculator-project.png'
-import project4 from '../assets/profile-card-project.png'
-import { SiBootstrap, SiCss3, SiFigma, SiHtml5, SiJavascript, SiReact } from 'react-icons/si'
-
-export const heroWords = ['Dreamer', 'Artist', 'Explorer', 'Creator']
-
-export const heroContent = {
-  greeting: "Hi, I'm Wesley Santos",
-  title: ['Frontend', 'Developer', '&'],
-  resumeLink: CV,
-  resumeLabel: 'Download CV'
-}
+import calculatorPoster from '../assets/calculator-project.png'
+import darkModePoster from '../assets/dark-mode-project.png'
+import formPoster from '../assets/form-project.png'
+import profilePoster from '../assets/profile-card-project.png'
 
 export const navItems = [
-  { href: '#header', label: 'Home' },
-  { href: '#about', label: 'About me' },
-  { href: '#portfolio', label: 'Projects' },
-  { href: '#contact', label: 'Contact' }
+  { href: '#projetos', label: 'Projetos' },
+  { href: '#sobre', label: 'Sobre' },
+  { href: '#stack', label: 'Stack' },
+  { href: '#contato', label: 'Contato' }
 ]
 
-export const socialLinks = [
-  {
-    href: 'https://www.linkedin.com/in/wesleysantosdev/',
-    label: 'LinkedIn'
-  },
-  {
-    href: 'https://github.com/wesleysantosdev',
-    label: 'GitHub'
-  },
-  {
-    href: 'https://www.instagram.com/wes.santosb/',
-    label: 'Instagram'
-  }
-]
-
-export const aboutContent = {
-  eyebrow: 'ABOUT ME',
-  title: ['My passions', '& current stacks'],
-  paragraphs: [
-    "I'm a Frontend Developer with a background in Systems Analysis and Development and nearly two years of hands-on experience. My passion lies in crafting visually striking and highly functional websites and landing pages.",
-    "My journey in web development began with a curiosity to explore creativity, since I also love drawing. Through dedicated learning and practical application, I've honed my skills in HTML, CSS, JavaScript and frontend frameworks to transform ideas into polished digital experiences.",
-    "From responsive designs that adapt across devices to user experiences that support better conversions, I approach each project with enthusiasm and attention to detail.",
-    "Beyond code, I'm passionate about collaboration, problem-solving and continuous growth. Whether I'm diving into a new project or refining an existing one, I enjoy challenges that expand my skills and push the boundaries of what's possible on the web.",
-    "Let's build something great together!"
-  ]
+export const profile = {
+  name: 'Wesley Santos',
+  shortName: 'Wes',
+  role: 'Full stack developer · frontend-heavy',
+  location: 'São Paulo, Brasil',
+  availability: 'Disponível para novos desafios',
+  email: 'wesleysantosdev@outlook.com',
+  resumeUrl: CV,
+  linkedinUrl: 'https://www.linkedin.com/in/wesleysantosdev/',
+  githubUrl: 'https://github.com/wesleysantosdev'
 }
 
-export const skills = [
-  { label: 'HTML5', Icon: SiHtml5 },
-  { label: 'CSS3', Icon: SiCss3 },
-  { label: 'JavaScript', Icon: SiJavascript },
-  { label: 'React', Icon: SiReact },
-  { label: 'Figma', Icon: SiFigma },
-  { label: 'Bootstrap', Icon: SiBootstrap }
+export const aboutParagraphs = [
+  'Sou desenvolvedor full stack com mais de três anos de experiência e uma base forte em frontend. Já construí páginas, sistemas internos, plataformas SaaS e produtos digitais voltados ao cliente.',
+  'Gosto de acompanhar o trabalho de ponta a ponta: entender a necessidade do negócio, avaliar caminhos técnicos, cuidar da experiência, integrar APIs e apoiar o que chega à produção.',
+  'Hoje aprofundo arquitetura de software, testes e fluxos de desenvolvimento assistidos por IA para entregar código mais confiável e simples de manter.'
 ]
 
-export const portfolioContent = {
-  eyebrow: 'PORTFOLIO',
-  title: 'Featured projects',
-  cta: {
-    href: 'https://github.com/wesleysantosdev?tab=repositories',
-    label: 'View All'
-  }
-}
+export const stackGroups = [
+  { label: 'Frontend', items: ['React', 'Vue.js', 'TypeScript', 'JavaScript'] },
+  { label: 'Backend', items: ['Node.js', 'Prisma ORM', 'PostgreSQL'] },
+  { label: 'Infra & prática', items: ['Docker', 'Azure', 'Testes', 'Spec-Driven Development'] }
+]
 
 export const portfolioProjects = [
   {
-    title: 'Form with validation',
-    description:
-      'A project made from a Frontend Mentor challenge, where only the assets and design were provided. It includes validation for all user inputs.',
-    href: 'https://wesleysantosdev.github.io/component-with-signup-form/',
-    image: project1
+    slug: 'formulario-com-validacao',
+    title: 'Formulário com validação',
+    summary: 'Uma interface de cadastro que transforma regras de validação em orientações claras para quem está preenchendo.',
+    context: 'Exercício de frontend criado a partir de um layout e assets fornecidos, com foco no comportamento completo do formulário.',
+    decision: 'Centralizei a validação nos campos e mantive os erros próximos da ação que precisa ser corrigida.',
+    outcome: 'Uma experiência responsiva e previsível, com feedback para diferentes entradas inválidas.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    demoUrl: 'https://wesleysantosdev.github.io/component-with-signup-form/',
+    poster: formPoster,
+    mediaDescription: 'Tela do formulário de cadastro com campos e painel ilustrado.'
   },
   {
-    title: 'Login with dark mode',
-    description: 'A simple login form with a dark/light mode switch, focused entirely on frontend behavior.',
-    href: 'https://wesleysantosdev.github.io/login-dark-mode-switch/',
-    image: project2
+    slug: 'login-com-tema',
+    title: 'Login com tema claro e escuro',
+    summary: 'Um fluxo de login compacto em que a escolha de tema permanece coerente em toda a interface.',
+    context: 'Estudo de interface dedicado à troca entre temas claro e escuro sem depender de backend.',
+    decision: 'Modelei cores como tokens e concentrei a mudança de tema em um único controle.',
+    outcome: 'Uma tela de acesso adaptável, legível e consistente nos dois modos.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    demoUrl: 'https://wesleysantosdev.github.io/login-dark-mode-switch/',
+    poster: darkModePoster,
+    mediaDescription: 'Tela de login dividida entre formulário e ilustração abstrata.'
   },
   {
-    title: 'Calculator',
-    description: 'A simple and functional calculator able to execute the four main math operations.',
-    href: 'https://wesleysantosdev.github.io/calculator/',
-    image: project3
+    slug: 'calculadora',
+    title: 'Calculadora',
+    summary: 'Uma calculadora direta que organiza entrada, operação e resultado sem esconder o estado atual.',
+    context: 'Projeto de prática para consolidar manipulação de estado e operações matemáticas no navegador.',
+    decision: 'Separei entrada, operador e resultado para que cada nova ação tivesse um comportamento previsível.',
+    outcome: 'As quatro operações principais funcionam em uma interface simples e responsiva.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    demoUrl: 'https://wesleysantosdev.github.io/calculator/',
+    poster: calculatorPoster,
+    mediaDescription: 'Calculadora escura com teclado numérico e visor de resultado.'
   },
   {
-    title: 'Profile card',
-    description: 'A simple card that expands on hover, revealing social links and a short description.',
-    href: 'https://wesleysantosdev.github.io/animated-profile-card/',
-    image: project4
+    slug: 'card-de-perfil',
+    title: 'Card de perfil interativo',
+    summary: 'Um cartão compacto que revela contexto e contatos sem tirar o foco da identidade principal.',
+    context: 'Experimento de microinteração para apresentar uma pessoa e seus links sociais em pouco espaço.',
+    decision: 'Usei uma expansão progressiva e mantive os links disponíveis dentro do mesmo componente.',
+    outcome: 'Uma peça pequena que explora hierarquia, hover e transições de forma controlada.',
+    stack: ['HTML', 'CSS'],
+    demoUrl: 'https://wesleysantosdev.github.io/animated-profile-card/',
+    poster: profilePoster,
+    mediaDescription: 'Card vertical de perfil com retrato e ícones sociais.'
   }
 ]
 
-export const contactContent = {
-  eyebrow: 'CONTACT ME',
-  title: 'Get in touch with me',
-  detailsTitle: 'Contact information',
-  detailsDescription: "Feel free to contact me at any time and I'll answer you as soon as I can!",
-  submitLabel: 'Send message'
+export function getProjectBySlug(slug) {
+  return portfolioProjects.find((project) => project.slug === slug)
 }
-
-export const contactLinks = [
-  {
-    type: 'email',
-    label: 'Email',
-    value: 'wesleysantosdev@outlook.com',
-    href: 'mailto:wesleysantosdev@outlook.com'
-  },
-  {
-    type: 'whatsapp',
-    label: 'WhatsApp',
-    value: '(11) 99314-2973',
-    href: 'https://api.whatsapp.com/send?phone=5511993142973',
-    external: true
-  }
-]
