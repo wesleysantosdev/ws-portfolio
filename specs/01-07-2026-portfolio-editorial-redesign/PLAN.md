@@ -2,10 +2,11 @@
 
 ## Implementation Order
 
+0. Iteracao atual: fixar por teste a lista de projetos sem preview visual, os hovers em roxo e o refinamento de header/footer.
 1. Fixar por testes a nova composicao, copy e formato dos dados.
 2. Implementar tema persistente e controles globais acessiveis.
 3. Construir hero e navbar como uma abertura continua.
-4. Construir projetos com scroll-snap, controles e midia progressiva.
+4. Construir projetos como indice editorial com preview reativo e midia progressiva.
 5. Construir sobre, stack e footer/contato.
 6. Adicionar case study generico e resolucao de rotas na Vercel.
 7. Remover dependencias e codigo legado, validar testes, build e interface.

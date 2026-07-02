@@ -16,7 +16,7 @@ Reposicionar o portfolio de Wesley Santos como uma pagina unica, autoral e facil
 ## Tech Stack
 
 - Vite + React 18 + CSS tradicional + Vitest/React Testing Library.
-- Sem biblioteca de carrossel ou roteamento: scroll-snap nativo e resolucao pequena por `window.location.pathname` reduzem o bundle.
+- Sem biblioteca de carrossel ou roteamento: indice editorial com estado local e resolucao pequena por `window.location.pathname` reduzem o bundle.
 - `vercel.json` fornece fallback de SPA para URLs limpas de case study.
 
 ## Commands
@@ -44,9 +44,9 @@ Reposicionar o portfolio de Wesley Santos como uma pagina unica, autoral e facil
 
 ### Color
 
-- Canvas light `#FAF7F3`; ink light `#1A1A1A`.
-- Canvas dark `#0A0A0A`; ink dark `#F5F5F5`.
-- Violet signal light `#625287`; violet signal dark `#A78BFA`.
+- Canvas light `#E7E1DD`; ink light `#1A1A1A`.
+- Canvas dark `#1A1A1A`; ink dark `#E7E1DD`.
+- Violet signal nos dois temas `#7351A2`.
 - Muted light `#68636D`; muted dark `#B8B2C0`.
 - Surface light `#F1ECE7`; surface dark `#151318`.
 
@@ -79,7 +79,7 @@ mobile:  [nav compacta] [acoes]
 
 ### Signature
 
-Uma linha violeta fina chamada "linha de execucao" atravessa as transicoes do hero para projetos e reaparece discretamente no fechamento. Ela representa o fluxo real do trabalho — entender, construir e entregar — sem dividir a pagina em blocos independentes.
+O cargo "DESENVOLVEDOR FULL STACK" ocupa a dobra como materia grafica e recebe a assinatura inclinada "Wesley Santos". A continuidade acontece pelo ritmo tipografico e por entradas de texto no scroll; nao ha linha gestual decorativa.
 
 ### Design Critique
 
@@ -88,7 +88,7 @@ A primeira ideia dependia demais do conhecido portfolio creme/editorial. Para ev
 ## Testing Strategy
 
 - TDD com Vitest e React Testing Library.
-- Cobrir composicao e copy principal, tema/persistencia, carrossel acessivel, modelo de video e roteamento de case studies.
+- Cobrir composicao e copy principal, tema/persistencia, indice de projetos acessivel, modelo de video e roteamento de case studies.
 - Validar manualmente responsividade, foco visivel, reduced motion e temas.
 
 ## Boundaries
@@ -102,11 +102,18 @@ A primeira ideia dependia demais do conhecido portfolio creme/editorial. Para ev
 
 1. A home apresenta navbar flutuante, hero, projetos em scroll horizontal, sobre, stack e footer continuo.
 2. Light/dark mode tem paleta propria, respeita preferencia inicial e persiste a escolha.
-3. Carrossel funciona por swipe/scroll nativo, teclado e controles rotulados.
+3. Projetos aparecem em indice editorial acessivel, sem preview visual na home; hover e foco de cada linha expandem a descricao, aplicam o roxo de destaque ao texto e levam ao case study dedicado.
 4. Posters carregam sob demanda; videos opcionais nao reproduzem no carregamento e possuem alternativa textual.
 5. Cada projeto abre um case study interno simples em URL limpa e mantem a demo externa.
 6. Interface e copy sao responsivas, em portugues, acessiveis e respeitam `prefers-reduced-motion`.
 7. Swiper, EmailJS e codigo legado nao utilizado saem do bundle.
+8. O hero apresenta "DESENVOLVEDOR FULL STACK", inclui o nome de Wesley e nao exibe "Decisoes pequenas. Produtos que funcionam.".
+9. Secoes posteriores recebem reveals progressivos no scroll, com fallback imediato para reduced motion.
+10. O heading monumental permanece integralmente legivel em desktop, sem corte lateral, e as secoes seguintes repetem sua escala, peso e disciplina editorial.
+11. Titulos das secoes usam 5rem em desktop, eyebrows e tecnologias dos projetos usam a cor principal do tema, e todo o texto de sobre compartilha a mesma cor.
+12. A secao de projetos combina lista tipografica e preview visual, sem carrossel; as linhas de stack permanecem estaticas e recebem apenas reveal no scroll.
+13. A secao de projetos nao exibe titulo principal grande; a lista ocupa a largura util e cada item funciona como entrada clicavel unica.
+14. O indicador de disponibilidade pulsa de forma sutil, os controles de header compartilham uma divisoria reta sem cantos arredondados, e os links do footer sinalizam hover em roxo.
 
 ## Open Questions
 

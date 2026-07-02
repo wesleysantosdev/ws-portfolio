@@ -1,8 +1,7 @@
-import { useRef } from 'react'
+import { useState } from 'react'
 
 import { aboutParagraphs, getProjectBySlug, navItems, portfolioProjects, profile, stackGroups } from '../content/siteContent'
 import { useTheme } from '../hooks/useTheme'
-import ProjectMedia from '../components/ui/ProjectMedia'
 
 function Header() {
   const { theme, toggleTheme } = useTheme()
@@ -15,7 +14,8 @@ function Header() {
         {navItems.map((item) => <a href={`/${item.href}`} key={item.href}>{item.label}</a>)}
       </nav>
       <div className="site-actions">
-        <a href={profile.linkedinUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn de Wesley Santos">in</a>
+        <a className="site-action-linkedin" href={profile.linkedinUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn de Wesley Santos">in</a>
+        <span className="site-actions-divider" aria-hidden="true" />
         <button
           className="theme-toggle"
           type="button"
@@ -34,52 +34,53 @@ function Header() {
 function Hero() {
   return (
     <section className="hero" id="inicio" aria-labelledby="hero-title">
-      <p className="hero-kicker">{profile.role} <span>•</span> {profile.location}</p>
-      <h1 id="hero-title">Transformo necessidades de negócio em produtos web <em>claros</em>, rápidos e sustentáveis.</h1>
+      <div className="hero-topline">
+        <p className="hero-kicker">Portfólio · 2026</p>
+        <p className="hero-kicker">{profile.location}</p>
+      </div>
+      <h1 id="hero-title" aria-label="Desenvolvedor full stack Wesley Santos">
+        <span className="hero-title-line">Desenvolvedor</span>
+        <span className="hero-title-signature">Wesley Santos</span>
+        <span className="hero-title-line hero-title-bottom">Full stack</span>
+      </h1>
+      <p className="hero-summary">Transformo necessidades de negócio em produtos web claros, rápidos e sustentáveis.</p>
       <div className="hero-meta">
         <span className="availability"><i aria-hidden="true" />{profile.availability}</span>
-        <a href="#projetos">Ver projetos <span aria-hidden="true">↓</span></a>
       </div>
-      <div className="execution-line" aria-hidden="true"><span /></div>
     </section>
   )
 }
 
 function Projects() {
-  const trackRef = useRef(null)
-
-  function moveProjects(direction) {
-    const track = trackRef.current
-    if (!track) return
-    track.scrollBy({ left: track.clientWidth * direction * 0.78, behavior: 'smooth' })
-  }
+  const [activeSlug, setActiveSlug] = useState(null)
 
   return (
-    <section className="projects section-shell" id="projetos" aria-label="Projetos selecionados">
-      <div className="section-heading">
-        <p className="eyebrow">/Projetos selecionados</p>
-        <h2 id="projects-title">Decisões pequenas.<br />Produtos que funcionam.</h2>
-        <div className="carousel-controls" role="group" aria-label="Navegação do carrossel">
-          <button type="button" onClick={() => moveProjects(-1)} aria-label="Projeto anterior">←</button>
-          <button type="button" onClick={() => moveProjects(1)} aria-label="Próximo projeto">→</button>
-        </div>
-      </div>
-      <div className="projects-track" ref={trackRef} tabIndex="0" aria-label="Lista de projetos">
-        {portfolioProjects.map((project) => (
-          <article className="project-card" key={project.slug}>
-            <a className="project-media" href={`/projetos/${project.slug}`}>
-              <ProjectMedia
-                poster={project.poster}
-                video={project.video}
-                description={project.mediaDescription}
-              />
-            </a>
-            <div className="project-copy">
+    <section className="projects section-shell" id="projetos" aria-label="Projetos selecionados" data-reveal>
+      <p className="eyebrow">/Projetos selecionados</p>
+      <div className="project-list" aria-label="Lista de projetos">
+        {portfolioProjects.map((project, index) => (
+          <article
+            className="project-row"
+            key={project.slug}
+            aria-labelledby={`project-${project.slug}`}
+            data-active={project.slug === activeSlug}
+          >
+            <a
+              className="project-row-link"
+              href={`/projetos/${project.slug}`}
+              onMouseEnter={() => setActiveSlug(project.slug)}
+              onMouseLeave={() => setActiveSlug((current) => (current === project.slug ? null : current))}
+              onFocus={() => setActiveSlug(project.slug)}
+              onBlur={() => setActiveSlug((current) => (current === project.slug ? null : current))}
+            >
+              <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+              <div className="project-row-copy">
+                <h3 id={`project-${project.slug}`}>{project.title}</h3>
+                <p>{project.summary}</p>
+              </div>
               <p className="project-stack">{project.stack.join(' · ')}</p>
-              <h3><a href={`/projetos/${project.slug}`}>{project.title}</a></h3>
-              <p>{project.summary}</p>
-              <a className="text-link" href={`/projetos/${project.slug}`}>Ler case <span aria-hidden="true">↗</span></a>
-            </div>
+              <span className="project-arrow" aria-hidden="true">↗</span>
+            </a>
           </article>
         ))}
       </div>
@@ -89,7 +90,7 @@ function Projects() {
 
 function About() {
   return (
-    <section className="about section-shell" id="sobre" aria-label="Sobre mim">
+    <section className="about section-shell" id="sobre" aria-label="Sobre mim" data-reveal>
       <p className="eyebrow">/Sobre mim</p>
       <div className="about-copy">
         <h2 id="about-title">Código é uma parte.<br />Entender o problema é a outra.</h2>
@@ -101,7 +102,7 @@ function About() {
 
 function Stack() {
   return (
-    <section className="stack section-shell" id="stack" aria-label="Tecnologias">
+    <section className="stack section-shell" id="stack" aria-label="Tecnologias" data-reveal>
       <div className="section-heading compact">
         <p className="eyebrow">/Tecnologias</p>
         <h2 id="stack-title">Ferramentas que uso para tirar ideias do papel.</h2>
@@ -120,7 +121,7 @@ function Stack() {
 
 function Footer() {
   return (
-    <footer className="footer" id="contato">
+    <footer className="footer" id="contato" data-reveal>
       <div className="footer-word" aria-hidden="true">WES</div>
       <div className="footer-content section-shell">
         <div>
