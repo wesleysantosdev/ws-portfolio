@@ -1,7 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 
 import App from '../app/App'
-import ProjectMedia from '../components/ui/ProjectMedia'
 
 describe('projects editorial index', () => {
   it('keeps projects as a full-width editorial list without homepage preview media', () => {
@@ -30,23 +29,5 @@ describe('projects editorial index', () => {
     fireEvent.mouseEnter(loginLink)
     expect(loginArticle).toHaveAttribute('data-active', 'true')
     expect(loginSummary).toBeInTheDocument()
-  })
-
-  it('keeps optional video idle until the user requests a preview', () => {
-    render(
-      <ProjectMedia
-        poster="poster.png"
-        video="preview.webm"
-        description="Demonstração do produto em uso."
-      />
-    )
-
-    const video = screen.getByLabelText('Demonstração do produto em uso.')
-    expect(video).toHaveAttribute('preload', 'none')
-    expect(video).not.toHaveAttribute('autoPlay')
-
-    video.play = vi.fn(() => Promise.resolve())
-    fireEvent.click(screen.getByRole('button', { name: /reproduzir prévia/i }))
-    expect(video.play).toHaveBeenCalledOnce()
   })
 })

@@ -1,0 +1,22 @@
+.header { position:fixed; z-index:20; top:18px; left:50%; width:var(--page); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; pointer-events:none; transform:translateX(-50%); }
+.header a,.header button,.navigation { pointer-events:auto; }
+.brandSlot { justify-self:start; }
+.navigation { display:flex; gap:3px; padding:5px; border:1px solid var(--line); border-radius:999px; background:var(--glass); box-shadow:var(--shadow); backdrop-filter:blur(18px); }
+.navigation a { padding:9px 14px; border-radius:999px; color:var(--muted); font-size:.9rem; font-weight: 600; transition:color 180ms ease,background 180ms ease; }
+.navigation a:hover { color:var(--ink); background:var(--surface); }
+.actions { justify-self:end; display:inline-flex; align-items:center; min-height:42px; gap:14px; }
+.actions>a,.themeToggle { width:auto; height:auto; display:grid; place-items:center; padding:0; border:0; background:transparent; cursor:pointer; font-weight:600; transition:color 180ms ease,transform 180ms ease; }
+.actions>a { line-height:1; }
+.linkedin { font-size:1.4rem; letter-spacing:-.08em; text-transform:lowercase; }
+.icon { width:26px; height:26px; object-fit:contain; transition:filter 180ms ease,opacity 180ms ease; }
+.actions>a:hover,.themeToggle:hover { color:var(--accent); transform:translateY(-1px); }
+.actions>a:hover .icon,.themeToggle:hover .icon { opacity:.68; }
+.divider { width:1px; height:24px; background:var(--line); }
+.themeToggle { position:relative; overflow:visible; width:24px; height:24px; }
+.themeIcon { position:absolute; width: 18px; line-height:1; transition:opacity 250ms ease,transform 350ms ease; }
+.sun { opacity:1; transform:rotate(0deg) scale(1); }
+.moon { opacity:0; transform:rotate(-60deg) scale(.6); }
+:global([data-theme='dark']) .sun { opacity:0; transform:rotate(60deg) scale(.6); }
+:global([data-theme='dark']) .moon { opacity:1; transform:rotate(0deg) scale(1); }
+:global([data-theme='dark']) .icon { filter:invert(1); }
+@media (max-width:800px) { .header { grid-template-columns:auto 1fr auto; top:12px; } .brandSlot { display:none; } .navigation { justify-self:start; } .navigation a { padding:8px 10px; } .navigation a:nth-child(3),.navigation a:nth-child(4) { display:none; } .actions { min-height:36px; gap:10px; } .linkedin { font-size:1.2rem; } .divider { height:20px; } .themeToggle { width:20px; height:20px; } .icon { width:20px; height:20px; } }

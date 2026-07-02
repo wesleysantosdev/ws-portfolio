@@ -1,0 +1,15 @@
+.hero { min-height:100svh; position:relative; display:flex; flex-direction:column; justify-content:center; padding:122px max(32px,calc((100vw - 1480px)/2)) 12vh; isolation:isolate; }
+.topline { display:flex; justify-content:space-between; margin-bottom:clamp(45px,8vh,90px); }
+.kicker,.meta { font-family:'JetBrains Mono',monospace; font-size:.72rem; line-height:1.4; letter-spacing:.06em; text-transform:uppercase; }
+.kicker { margin:0; color:var(--muted); animation:enter 650ms both; }
+.hero h1 { position:relative; z-index:2; margin:0; font-size:clamp(4.7rem,10.3vw,10.3rem); line-height:.72; letter-spacing:-.095em; font-weight:700; text-transform:uppercase; animation:enter 700ms 80ms both; }
+.titleLine { display:block; white-space:nowrap; }
+.titleBottom { margin-top:.2em; text-align:right; }
+.signature { position:absolute; z-index:3; top:43%; left:50%; color:var(--accent); font-size:clamp(2.8rem,7.5vw,8rem); font-style:italic; font-weight:400; letter-spacing:-.07em; line-height:1; text-transform:none; white-space:nowrap; transform:translate(-42%,-50%) rotate(-4deg); }
+.summary { width:min(330px,29vw); margin:44px 0 0 auto; font-size:.9rem; line-height:1.4; }
+.meta { width:100%; display:flex; justify-content:space-between; align-items:center; margin-top:42px; color:var(--muted); font-size:.82rem; animation:enter 700ms 160ms both; }
+.availability { display:flex; align-items:center; gap:9px; text-transform: capitalize;}
+.availability i { width:7px; height:7px; border-radius:50%; background:#3c8c62; box-shadow:0 0 0 4px rgba(60,140,98,.12); animation:pulse 1.9s ease-out infinite; }
+@keyframes enter { from { opacity:0; transform:translateY(18px); } }
+@keyframes pulse { 0%,100% { transform:scale(.95); box-shadow:0 0 0 0 rgba(60,140,98,.28); } 70% { transform:scale(1); box-shadow:0 0 0 10px rgba(60,140,98,0); } }
+@media (max-width:800px) { .hero { min-height:780px; padding:125px 14px 130px; } .topline { margin-bottom:80px; } .hero h1 { font-size:clamp(4.1rem,21vw,7.5rem); line-height:.78; } .titleLine { white-space:normal; } .signature { top:47%; left:55%; font-size:clamp(2.5rem,13vw,4.8rem); } .summary { width:min(270px,72vw); margin-top:48px; } .meta { flex-direction:column; gap:22px; } }

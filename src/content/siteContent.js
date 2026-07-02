@@ -16,7 +16,7 @@ export const profile = {
   shortName: 'Wes',
   role: 'Full stack developer · frontend-heavy',
   location: 'São Paulo, Brasil',
-  availability: 'Disponível para novos desafios',
+  availability: 'Disponível para trabalho',
   email: 'wesleysantosdev@outlook.com',
   resumeUrl: CV,
   linkedinUrl: 'https://www.linkedin.com/in/wesleysantosdev/',

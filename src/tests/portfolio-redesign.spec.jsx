@@ -29,17 +29,46 @@ describe('portfolio editorial redesign', () => {
   it('uses the refined header actions and keeps footer contact links available', () => {
     render(<App />)
 
-    const siteActions = document.querySelector('.site-actions')
-    const availability = document.querySelector('.availability')
-    const divider = document.querySelector('.site-actions-divider')
+    const siteActions = screen.getByTestId('site-actions')
+    const availability = screen.getByTestId('availability')
+    const divider = screen.getByTestId('site-actions-divider')
 
     expect(siteActions).toBeInTheDocument()
-    expect(siteActions?.querySelector('a[aria-label*="LinkedIn"]')).toBeInTheDocument()
-    expect(siteActions?.querySelector('button.theme-toggle')).toBeInTheDocument()
+    const linkedInLink = screen.getByRole('link', { name: /linkedin de wesley santos/i })
+    const themeButton = screen.getByRole('button', { name: /ativar tema/i })
+
+    expect(screen.queryByRole('link', { name: /wesley santos — início/i })).not.toBeInTheDocument()
+    expect(linkedInLink.querySelector('img')).toHaveAttribute('src', expect.stringContaining('linkedin.svg'))
+    expect(themeButton.querySelectorAll('img')).toHaveLength(4)
     expect(divider).toBeInTheDocument()
     expect(screen.getByRole('navigation', { name: /redes e contato/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /linkedin ↗/i })).toHaveAttribute('href', expect.stringContaining('linkedin.com'))
-    expect(availability).toHaveTextContent(/disponível para novos desafios/i)
+    expect(availability).toHaveTextContent(/disponível para trabalho/i)
+  })
+
+  it('uses accessible rolling text on header and footer text links', () => {
+    render(<App />)
+
+    const mainNavigation = screen.getByRole('navigation', { name: /principal/i })
+    const contactNavigation = screen.getByRole('navigation', { name: /redes e contato/i })
+
+    expect(mainNavigation.querySelectorAll('[data-rolling-text]')).toHaveLength(4)
+    expect(contactNavigation.querySelectorAll('[data-rolling-text]')).toHaveLength(3)
+    expect(screen.getAllByRole('link', { name: 'Projetos' })).toHaveLength(2)
+  })
+
+  it('uses the same rolling motion for header action icons', () => {
+    render(<App />)
+
+    const siteActions = screen.getByTestId('site-actions')
+    const rollingIcons = siteActions.querySelectorAll('[data-rolling-icon]')
+    const themeButton = screen.getByRole('button', { name: /ativar tema/i })
+
+    expect(rollingIcons).toHaveLength(3)
+    rollingIcons.forEach((icon) => expect(icon.querySelectorAll('img')).toHaveLength(2))
+    themeButton.querySelectorAll('[data-rolling-icon]').forEach((icon) => {
+      expect(getComputedStyle(icon).width).toBe('18px')
+    })
   })
 
   it('keeps stack groups and replaceable case-study data outside components', () => {

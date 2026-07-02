@@ -1,0 +1,8 @@
+.root { display:block; overflow:hidden; }
+.track { display:flex; flex-direction:column; width:100%; transform:translateY(0); transition:transform 380ms cubic-bezier(.22,1,.36,1); }
+.track img { display:block; flex:0 0 auto; width:100%; height:100%; object-fit:contain; }
+:global(a:hover) .track,
+:global(a:focus-visible) .track,
+:global(button:hover) .track,
+:global(button:focus-visible) .track { transform:translateY(-50%); }
+@media (prefers-reduced-motion:reduce) { .track { transition:none; } :global(a:hover) .track,:global(a:focus-visible) .track,:global(button:hover) .track,:global(button:focus-visible) .track { transform:none; } }

@@ -1,0 +1,4 @@
+.page { width:var(--page); margin-inline:auto; min-height:100vh; display:flex; flex-direction:column; justify-content:center; }
+.page h1 { margin:18px 0; font-size:clamp(3.8rem,9vw,8.5rem); line-height:.92; letter-spacing:-.075em; font-weight:500; }
+.page>p { color:var(--muted); }
+.page>a { width:fit-content; padding-bottom:2px; border-bottom:1px solid var(--accent); font-size:.88rem; }

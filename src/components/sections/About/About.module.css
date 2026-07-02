@@ -1,0 +1,5 @@
+.about { width:var(--page); margin-inline:auto; display:grid; grid-template-columns:.55fr 2fr; gap:50px; padding-top:220px; content-visibility:auto; contain-intrinsic-size:700px; }
+.copy { max-width:1080px; }
+.copy h2 { margin:0 0 60px; font-size:5rem; line-height:.94; letter-spacing:-.055em; font-weight:700; text-transform:uppercase; }
+.copy p { max-width:650px; margin:0 0 20px; color:var(--ink); font-size:clamp(1.05rem,1.7vw,1.3rem); }
+@media (max-width:800px) { .about { grid-template-columns:1fr; gap:24px; padding-top:120px; } .copy h2 { margin-bottom:40px; font-size:clamp(2.8rem,13vw,5rem); } }
