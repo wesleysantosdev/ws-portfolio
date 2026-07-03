@@ -10,7 +10,7 @@ export function Hero() {
       </div>
       <h1 id="hero-title" aria-label="Desenvolvedor full stack Wesley Santos">
         <span className={styles.titleLine}>Desenvolvedor</span>
-        <span className={styles.signature}>Wesley Santos</span>
+        <span className={styles.signature} data-typographic-loop aria-hidden="true">Wesley Santos</span>
         <span className={`${styles.titleLine} ${styles.titleBottom}`}>Full stack</span>
       </h1>
       <p className={styles.summary}>Transformo necessidades de negócio em produtos web claros, rápidos e sustentáveis.</p>

@@ -13,6 +13,4 @@
 .row[data-active='true'] :is(.copy h3,.stack,.number,.arrow),.link:hover :is(.copy h3,.stack,.number,.arrow),.link:focus-visible :is(.copy h3,.stack,.number,.arrow) { color:var(--accent); }
 .row[data-active='true'] .copy p,.link:hover .copy p,.link:focus-visible .copy p { max-height:90px; margin-top:14px; opacity:1; color:var(--muted); }
 .row[data-active='true'] .arrow,.link:hover .arrow,.link:focus-visible .arrow { transform:translateX(4px) rotate(45deg); }
-@supports (animation-timeline:view()) { .row { animation:reveal linear both; animation-timeline:view(); animation-range:entry 0% cover 24%; } }
-@keyframes reveal { from { opacity:0; clip-path:inset(0 100% 0 0); } to { opacity:1; clip-path:inset(0); } }
 @media (max-width:800px) { .link { grid-template-columns:1fr; gap:12px; padding-block:22px; } .row[data-active='true'] .link,.link:hover,.link:focus-visible { padding-block:28px; } .copy h3 { font-size:clamp(2rem,10vw,3.5rem); } .number,.stack,.arrow { padding-top:0; } .stack { white-space:normal; } }

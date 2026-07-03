@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { portfolioProjects } from '../../../content/siteContent'
 import { SectionLabel } from '../../ui/SectionLabel/SectionLabel'
+import revealStyles from '../../../styles/ScrollReveal.module.css'
 import styles from './Projects.module.css'
 
 export function Projects() {
@@ -16,14 +17,15 @@ export function Projects() {
   }
 
   return (
-    <section className={styles.projects} id="projetos" aria-label="Projetos selecionados" data-reveal>
-      <SectionLabel>/Projetos selecionados</SectionLabel>
-      <div className={styles.list} aria-label="Lista de projetos">
+    <section className={`${styles.projects} ${revealStyles.section}`} id="projetos" aria-label="Projetos selecionados" data-reveal data-scroll-reveal>
+      <div className={revealStyles.item} data-scroll-reveal><SectionLabel>/Projetos selecionados</SectionLabel></div>
+      <div className={`${styles.list} ${revealStyles.item}`} aria-label="Lista de projetos" data-scroll-reveal>
         {portfolioProjects.map((project, index) => (
-          <article className={styles.row} key={project.slug} aria-labelledby={`project-${project.slug}`} data-active={project.slug === activeSlug}>
+          <article className={`${styles.row} ${revealStyles.item}`} key={project.slug} aria-labelledby={`project-${project.slug}`} data-active={project.slug === activeSlug} data-scroll-reveal>
             <a
               className={styles.link}
               href={`/projetos/${project.slug}`}
+              data-cursor-label="Ver projeto"
               onMouseEnter={() => activateProject(project.slug)}
               onMouseLeave={() => deactivateProject(project.slug)}
               onFocus={() => activateProject(project.slug)}

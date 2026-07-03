@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Almendra&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Ephesis&family=JetBrains+Mono:wght@400;500&family=Monsieur+La+Doulaise&family=Story+Script&family=UnifrakturMaguntia&display=swap');
 
-:root { color-scheme: light; --canvas:#e7e1dd; --ink:#1a1a1a; --muted:#68636d; --accent:#7351a2; --accent-soft:#d5c9da; --surface:#dbd3ce; --line:rgba(26,26,26,.14); --glass:rgba(231,225,221,.78); --shadow:0 12px 45px rgba(58,44,68,.08); --page:min(1480px,calc(100% - 64px)); font-family:'Archivo','Helvetica Neue',Arial,sans-serif; font-synthesis:none; }
+:root { color-scheme: light; --canvas:#e7e1dd; --ink:#1a1a1a; --muted:#68636d; --accent:#7351a2; --on-accent:#fff; --accent-soft:#d5c9da; --surface:#dbd3ce; --line:rgba(26,26,26,.14); --glass:rgba(231,225,221,.78); --shadow:0 12px 45px rgba(58,44,68,.08); --page:min(1480px,calc(100% - 64px)); font-family:'Archivo','Helvetica Neue',Arial,sans-serif; font-synthesis:none; }
 :root[data-theme='dark'] { color-scheme:dark; --canvas:#1a1a1a; --ink:#e7e1dd; --muted:#b8b2c0; --accent:#7351a2; --accent-soft:#2a2035; --surface:#242126; --line:rgba(245,245,245,.15); --glass:rgba(26,26,26,.76); --shadow:0 12px 45px rgba(0,0,0,.28); }
 *,*::before,*::after { box-sizing:border-box; }
 html { scroll-behavior:smooth; background:var(--canvas); }

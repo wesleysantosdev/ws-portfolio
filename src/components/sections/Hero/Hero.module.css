@@ -5,11 +5,19 @@
 .hero h1 { position:relative; z-index:2; margin:0; font-size:clamp(4.7rem,10.3vw,10.3rem); line-height:.72; letter-spacing:-.095em; font-weight:700; text-transform:uppercase; animation:enter 700ms 80ms both; }
 .titleLine { display:block; white-space:nowrap; }
 .titleBottom { margin-top:.2em; text-align:right; }
-.signature { position:absolute; z-index:3; top:43%; left:50%; color:var(--accent); font-size:clamp(2.8rem,7.5vw,8rem); font-style:italic; font-weight:400; letter-spacing:-.07em; line-height:1; text-transform:none; white-space:nowrap; transform:translate(-42%,-50%) rotate(-4deg); }
+.signature { position:absolute; z-index:3; top:43%; left:50%; color:var(--accent); font-family:'Alex Brush','Segoe Script',Arial,sans-serif; font-size:clamp(2.8rem,7.5vw,8rem); font-style:italic; font-weight:500; letter-spacing:-.07em; line-height:1; text-transform:none; white-space:nowrap; transform:translate(-42%,-50%) rotate(-4deg); animation:typographicSignature 2.1s steps(1,end) infinite; }
 .summary { width:min(330px,29vw); margin:44px 0 0 auto; font-size:.9rem; line-height:1.4; }
 .meta { width:100%; display:flex; justify-content:space-between; align-items:center; margin-top:42px; color:var(--muted); font-size:.82rem; animation:enter 700ms 160ms both; }
-.availability { display:flex; align-items:center; gap:9px; text-transform: capitalize;}
+.availability { display:flex; align-items:center; gap:9px; text-transform: initial;}
 .availability i { width:7px; height:7px; border-radius:50%; background:#3c8c62; box-shadow:0 0 0 4px rgba(60,140,98,.12); animation:pulse 1.9s ease-out infinite; }
 @keyframes enter { from { opacity:0; transform:translateY(18px); } }
 @keyframes pulse { 0%,100% { transform:scale(.95); box-shadow:0 0 0 0 rgba(60,140,98,.28); } 70% { transform:scale(1); box-shadow:0 0 0 10px rgba(60,140,98,0); } }
+@keyframes typographicSignature {
+  0%,16.66% { font-family:'Monsieur La Doulaise','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.03em; }
+  16.67%,33.32% { font-family:'Ephesis','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.035em; }
+  33.33%,49.99% { font-family:'Almendra',Georgia,serif; font-style:normal; font-weight:400; letter-spacing:-.055em; }
+  50%,66.66% { font-family:'UnifrakturMaguntia',Georgia,serif; font-style:normal; font-weight:400; letter-spacing:-.045em; }
+  66.67%,83.32% { font-family:'Story Script','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.04em; }
+  83.33%,100% { font-family:'Alex Brush','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.035em; }
+}
 @media (max-width:800px) { .hero { min-height:780px; padding:125px 14px 130px; } .topline { margin-bottom:80px; } .hero h1 { font-size:clamp(4.1rem,21vw,7.5rem); line-height:.78; } .titleLine { white-space:normal; } .signature { top:47%; left:55%; font-size:clamp(2.5rem,13vw,4.8rem); } .summary { width:min(270px,72vw); margin-top:48px; } .meta { flex-direction:column; gap:22px; } }

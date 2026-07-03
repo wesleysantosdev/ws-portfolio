@@ -1,4 +1,5 @@
 import { getProjectBySlug } from '../content/siteContent'
+import { CursorFollower } from '../components/ui/CursorFollower/CursorFollower'
 import { HomePage } from '../pages/HomePage/HomePage'
 import { NotFoundPage } from '../pages/NotFoundPage/NotFoundPage'
 import { ProjectCaseStudyPage } from '../pages/ProjectCaseStudyPage/ProjectCaseStudyPage'
@@ -8,12 +9,21 @@ function getProjectSlug(pathname) {
 }
 
 function App({ pathname = window.location.pathname }) {
-  if (!pathname.startsWith('/projetos/')) return <HomePage />
+  let page = <HomePage />
 
-  const project = getProjectBySlug(getProjectSlug(pathname))
-  return project
-    ? <ProjectCaseStudyPage project={project} />
-    : <NotFoundPage />
+  if (pathname.startsWith('/projetos/')) {
+    const project = getProjectBySlug(getProjectSlug(pathname))
+    page = project
+      ? <ProjectCaseStudyPage project={project} />
+      : <NotFoundPage />
+  }
+
+  return (
+    <>
+      <CursorFollower />
+      {page}
+    </>
+  )
 }
 
 export default App

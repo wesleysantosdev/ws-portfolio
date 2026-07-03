@@ -108,6 +108,14 @@ Crie `src/lib/` apenas quando existir uma integracao ou utilitario puro realment
 - Animacoes longas ou repetidas devem respeitar a regra global de movimento reduzido.
 - Nao use `!important`, exceto em overrides globais de acessibilidade documentados.
 
+## Motion e interacoes
+
+- Reutilize `RollingText`, `RollingIcon` e `ScrollReveal.module.css` antes de criar outro padrao de movimento.
+- Animacoes de entrada devem usar CSS Scroll-Driven Animations com fallback estatico; nao registre listeners de `scroll` para efeitos visuais.
+- Selecao visual pseudoaleatoria deve ser deterministica. Nunca use `Math.random()` durante renderizacao.
+- Restrinja animacoes a `transform`, `opacity` e blur leve; evite propriedades que provoquem layout continuo.
+- Todo movimento deve possuir comportamento equivalente e legivel em `prefers-reduced-motion: reduce`.
+
 ## Conteudo e assets
 
 - Textos, links sociais, stack e projetos vivem em `src/content/siteContent.js` ou em modulos de conteudo equivalentes.

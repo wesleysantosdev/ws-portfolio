@@ -26,6 +26,15 @@ describe('portfolio editorial redesign', () => {
     expect(document.querySelectorAll('[data-reveal]').length).toBeGreaterThanOrEqual(4)
   })
 
+  it('presents the name as a continuous typographic signature', () => {
+    render(<App />)
+
+    const signature = screen.getByText('Wesley Santos')
+
+    expect(signature).toHaveAttribute('data-typographic-loop')
+    expect(signature).toHaveAttribute('aria-hidden', 'true')
+  })
+
   it('uses the refined header actions and keeps footer contact links available', () => {
     render(<App />)
 
