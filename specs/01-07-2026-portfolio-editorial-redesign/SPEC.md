@@ -52,7 +52,7 @@ Reposicionar o portfolio de Wesley Santos como uma pagina unica, autoral e facil
 
 ### Type
 
-- Archivo: display, corpo e UI, com variacao de peso e italico como enfase.
+- Geist: display, corpo e UI, carregada como fonte variavel de 100 a 900 para permitir testes amplos de peso.
 - JetBrains Mono: labels tecnicos, tags e microcopy.
 - No maximo duas familias.
 
@@ -79,7 +79,7 @@ mobile:  [nav compacta] [acoes]
 
 ### Signature
 
-O cargo "DESENVOLVEDOR FULL STACK" ocupa a dobra como materia grafica e recebe a assinatura inclinada "Wesley Santos". A continuidade acontece pelo ritmo tipografico e por entradas de texto no scroll; nao ha linha gestual decorativa.
+O cargo "DESENVOLVEDOR FULL STACK" ocupa a dobra como materia grafica e recebe a assinatura inclinada "Wesley Santos". Quatro trilhas verticais neutras estruturam home e cases, recuam para tres no mobile e desaparecem antes do protagonismo do footer. Os antigos interludios saem: cada label de secao passa a ter uma segunda linha contextual e abre uma interrupcao legivel na trilha. O grao monocromatico minimo reduz a esterilidade do canvas; nao ha pulso colorido nas linhas.
 
 ### Design Critique
 
@@ -114,6 +114,10 @@ A primeira ideia dependia demais do conhecido portfolio creme/editorial. Para ev
 12. A secao de projetos combina lista tipografica e preview visual, sem carrossel; as linhas de stack permanecem estaticas e recebem apenas reveal no scroll.
 13. A secao de projetos nao exibe titulo principal grande; a lista ocupa a largura util e cada item funciona como entrada clicavel unica.
 14. O indicador de disponibilidade pulsa de forma sutil, os controles de header compartilham uma divisoria reta sem cantos arredondados, e os links do footer sinalizam hover em roxo.
+15. Home e cases apresentam quatro trilhas desktop, tres mobile e grao minimo; os elementos graficos sao ignorados por tecnologias assistivas e nao usam destaque roxo.
+16. Os interludios independentes sao substituidos por labels descritivos em Projetos, Sobre e Tecnologias; a mesma linguagem e atmosfera visual aparece nos cases, sem linha roxa.
+17. Disponibilidade e resumo do hero compartilham o mesmo eixo vertical, os conteudos recebem respiro das trilhas e nenhum reveal permanece borrado no fim da pagina.
+18. Labels nao criam placas de cor: permanecem transparentes e interrompem somente o pixel da trilha; reveals recuperam blur progressivo, mas o footer final e sempre estatico e nitido.
 
 ## Open Questions
 

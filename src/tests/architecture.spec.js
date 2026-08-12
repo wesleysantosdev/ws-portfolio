@@ -8,6 +8,7 @@ describe('React architecture', () => {
     const expectedModules = [
       'components/layout/Header/Header.jsx',
       'components/layout/Footer/Footer.jsx',
+      'components/layout/ExecutionAtmosphere/ExecutionAtmosphere.jsx',
       'components/sections/Hero/Hero.jsx',
       'components/sections/Projects/Projects.jsx',
       'components/sections/About/About.jsx',

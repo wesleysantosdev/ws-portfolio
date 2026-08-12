@@ -1,4 +1,5 @@
-.page { width:var(--page); margin-inline:auto; padding-top:150px; padding-bottom:120px; }
+.shell { position:relative; isolation:isolate; min-height:100vh; overflow:clip; background:var(--canvas); }
+.page { position:relative; z-index:1; width:var(--page); margin-inline:auto; padding:150px var(--rail-gutter) 120px; }
 .backLink { display:inline-block; margin-bottom:80px; color:var(--muted); font-size:.85rem; }
 .hero { max-width:900px; margin:auto; }
 .hero h1 { margin:18px 0; font-size:clamp(3.8rem,9vw,8.5rem); line-height:.92; letter-spacing:-.075em; font-weight:500; }

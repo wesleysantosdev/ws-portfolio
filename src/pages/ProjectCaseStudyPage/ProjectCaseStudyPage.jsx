@@ -1,12 +1,15 @@
+import { ExecutionAtmosphere } from '../../components/layout/ExecutionAtmosphere/ExecutionAtmosphere'
 import { Header } from '../../components/layout/Header/Header'
 import { SectionLabel } from '../../components/ui/SectionLabel/SectionLabel'
+import { caseStudyStages } from '../../content/siteContent'
 import revealStyles from '../../styles/ScrollReveal.module.css'
 import styles from './ProjectCaseStudyPage.module.css'
 
 export function ProjectCaseStudyPage({ project }) {
   return (
-    <>
+    <div className={styles.shell}>
       <Header />
+      <ExecutionAtmosphere />
       <main className={styles.page}>
         <a className={`${styles.backLink} ${revealStyles.item}`} data-scroll-reveal href="/">← Voltar ao portfólio</a>
         <header className={`${styles.hero} ${revealStyles.section}`} data-scroll-reveal>
@@ -20,11 +23,15 @@ export function ProjectCaseStudyPage({ project }) {
         </header>
         <img className={`${styles.poster} ${revealStyles.item}`} data-scroll-reveal src={project.poster} alt={project.mediaDescription} />
         <div className={styles.notes}>
-          <section className={revealStyles.item} data-scroll-reveal><SectionLabel>/Entender</SectionLabel><h2>Contexto</h2><p>{project.context}</p></section>
-          <section className={revealStyles.item} data-scroll-reveal><SectionLabel>/Construir</SectionLabel><h2>Decisão</h2><p>{project.decision}</p></section>
-          <section className={revealStyles.item} data-scroll-reveal><SectionLabel>/Entregar</SectionLabel><h2>Resultado</h2><p>{project.outcome}</p></section>
+          {caseStudyStages.map((stage) => (
+            <section className={revealStyles.item} data-scroll-reveal key={stage.field}>
+              <SectionLabel description={stage.description}>{stage.label}</SectionLabel>
+              <h2>{stage.heading}</h2>
+              <p>{project[stage.field]}</p>
+            </section>
+          ))}
         </div>
       </main>
-    </>
+    </div>
   )
 }

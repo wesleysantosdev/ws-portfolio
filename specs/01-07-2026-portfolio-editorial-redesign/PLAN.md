@@ -2,7 +2,7 @@
 
 ## Implementation Order
 
-0. Iteracao atual: fixar por teste a lista de projetos sem preview visual, os hovers em roxo e o refinamento de header/footer.
+0. Iteracao atual: remover placas de cor dos labels e restaurar blur progressivo com conclusao antecipada, mantendo o footer fora da timeline para garantir o estado final nitido.
 1. Fixar por testes a nova composicao, copy e formato dos dados.
 2. Implementar tema persistente e controles globais acessiveis.
 3. Construir hero e navbar como uma abertura continua.
@@ -19,6 +19,7 @@
 - `About` e `Stack`.
 - `Footer`.
 - `ProjectCaseStudy`.
+- `SectionLabel` descritivo e `ExecutionAtmosphere` compartilhado entre home e cases.
 
 ## Risks And Mitigations
 
@@ -38,3 +39,4 @@ Nao necessario. A composicao e pequena e os ciclos TDD sao dependentes.
 - Suite completa apos cada bloco de pagina.
 - Build de producao e inspecao visual desktop/mobile nos dois temas ao final.
 - Conferencia de bundle para confirmar retirada de Swiper e EmailJS.
+- Inspecao das quatro trilhas desktop, tres trilhas mobile, temas light/dark, fallback sem scroll-driven animation e reduced motion.

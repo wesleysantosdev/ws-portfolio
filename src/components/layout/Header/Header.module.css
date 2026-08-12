@@ -17,4 +17,4 @@
 :global([data-theme='dark']) .sun { opacity:0; transform:rotate(60deg) scale(.6); }
 :global([data-theme='dark']) .moon { opacity:1; transform:rotate(0deg) scale(1); }
 :global([data-theme='dark']) .linkedin .icon,:global([data-theme='dark']) .moon .icon { filter:brightness(0) invert(1); }
-@media (max-width:800px) { .header { grid-template-columns:auto 1fr auto; top:12px; } .brandSlot { display:none; } .navigation { justify-self:start; } .navigation a { padding:8px 10px; } .navigation a:nth-child(3),.navigation a:nth-child(4) { display:none; } .actions { min-height:36px; gap:10px; } .linkedin { font-size:1.2rem; } .divider { height:20px; } .themeToggle { width:20px; height:20px; } .icon { width:20px; height:20px; } }
+@media (max-width:800px) { .header { grid-template-columns:minmax(0,1fr) auto; top:12px; gap:10px; align-items:start; } .brandSlot { display:none; } .navigation { justify-self:start; gap:1px; padding:4px; max-width:100%; } .navigation a { padding:8px 8px; font-size:.72rem; } .actions { min-height:36px; gap:8px; } .linkedin { font-size:1.2rem; } .divider { height:20px; } .themeToggle { width:20px; height:20px; } .icon { width:20px; height:20px; } }

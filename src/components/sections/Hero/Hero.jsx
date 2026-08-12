@@ -13,9 +13,11 @@ export function Hero() {
         <span className={styles.signature} data-typographic-loop aria-hidden="true">Wesley Santos</span>
         <span className={`${styles.titleLine} ${styles.titleBottom}`}>Full stack</span>
       </h1>
-      <p className={styles.summary}>Transformo necessidades de negócio em produtos web claros, rápidos e sustentáveis.</p>
-      <div className={styles.meta}>
-        <span className={styles.availability} data-testid="availability"><i aria-hidden="true" />{profile.availability}</span>
+      <div className={styles.details} data-testid="hero-details">
+        <div className={styles.meta}>
+          <span className={styles.availability} data-testid="availability"><i aria-hidden="true" />{profile.availability}</span>
+        </div>
+        <p className={styles.summary}>Transformo necessidades de negócio em produtos web claros, rápidos e sustentáveis.</p>
       </div>
     </section>
   )

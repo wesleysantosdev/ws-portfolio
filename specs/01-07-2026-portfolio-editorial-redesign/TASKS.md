@@ -6,18 +6,18 @@
 
 ## Current Focus
 
-Ajustes editoriais aplicados; restou apenas revisao manual opcional no navegador.
+Labels uniformes e blur progressivo restaurados; footer permanece estatico e nitido no final da pagina.
 
 ## Decisions
 
 - Escopo STANDARD; brief e respostas fecharam as decisoes de produto.
-- Archivo + JetBrains Mono, paleta semantica light/dark e linha de execucao como assinatura.
+- Geist + JetBrains Mono, paleta semantica light/dark e trilhas de execucao como assinatura estrutural da home.
 - Remover formulario/EmailJS e Swiper.
 - Usar indice editorial sem biblioteca de carrossel e roteamento local leve com fallback Vercel.
 - Case studies simples e honestos, prontos para troca de conteudo.
 - Paleta solicitada: `#E7E1DD` / `#1A1A1A`, invertida no dark, com `#7351A2` como sinal.
 - Hero monumental com "DESENVOLVEDOR FULL STACK" e assinatura "Wesley Santos"; sem o titulo "Decisoes pequenas. Produtos que funcionam.".
-- A continuidade deve vir do ritmo tipografico e das entradas no scroll, sem linha/rabisco roxo decorativo.
+- A continuidade combina ritmo tipografico, entradas no scroll e trilhas neutras estruturais; nao ha rabisco roxo solto ou movimento sem funcao narrativa.
 - Container geral ampliado para aproveitar telas desktop sem cortar a palavra principal.
 - Eyebrows e stacks dos projetos usam a cor principal do tema; o roxo fica concentrado na assinatura do hero.
 - Titulos de secao usam 5rem em desktop e compartilham alinhamento; labels das linhas de stack usam 1rem.
@@ -28,8 +28,25 @@ Ajustes editoriais aplicados; restou apenas revisao manual opcional no navegador
 - Indicador de disponibilidade recebe pulso sutil; links do footer usam roxo no hover.
 - LinkedIn e toggle perdem o container circular e passam a compartilhar uma barra com divisoria clara e alinhamento vertical preciso.
 - Revisao atual remove o link "Ver projetos", elimina qualquer container visivel em volta das acoes do header e preserva a descricao dos projetos em cor neutra durante o hover.
+- Home e cases recebem quatro trilhas desktop e tres mobile com grao minimo; as linhas sao sempre neutras e o footer permanece visualmente dominante.
+- A revisao atual remove todo pulso roxo; labels descritivos substituem interludios, a atmosfera passa a ser compartilhada com cases e reveals deixam de usar blur.
 
 ## Task List
+
+[x] Uniformizar labels e restaurar blur seguro
+Acceptance criteria: SectionLabel nao possui bloco de fundo e interrompe somente a trilha; secoes e itens recuperam blur scroll-driven; footer nao participa da timeline e permanece nitido; reduced motion continua sem animacao.
+Verification command: `npm run test -- src/tests/home-execution-trace.spec.jsx && npm run test && npm run build && git diff --check`
+Expected file scope: `SectionLabel.module.css`, `ScrollReveal.module.css`, `Footer.jsx`, testes e specs
+
+[x] Integrar trilhas aos labels e expandir o sistema para cases
+Acceptance criteria: nao existe pulso roxo nem ProcessInterlude; labels de Projetos/Sobre/Tecnologias recebem complemento e interrompem a trilha; disponibilidade alinha com resumo; conteudo ganha gutter; cases usam a mesma atmosfera e labels descritivos; reveals nao usam blur.
+Verification command: `npm run test -- src/tests/home-execution-trace.spec.jsx src/tests/routing.spec.jsx && npm run test && npm run build && git diff --check`
+Expected file scope: `src/components/layout/ExecutionAtmosphere/`, `src/components/ui/SectionLabel/`, secoes da home, hero, `ProjectCaseStudyPage`, `ScrollReveal.module.css`, conteudo, testes e specs
+
+[x] Implementar trilhas de execucao na home
+Acceptance criteria: interludios aparecem na ordem definida e usam conteudo centralizado; fundo tem quatro trilhas desktop, tres mobile e grao minimo; pulso usa scroll-driven animation com fallback estatico e reduced motion; espacos existentes sao redistribuidos sem afetar cases e 404.
+Verification command: `npm run test -- src/tests/home-execution-trace.spec.jsx && npm run test && npm run build && git diff --check`
+Expected file scope: `src/pages/HomePage/`, `src/components/sections/ProcessInterlude/`, `src/content/siteContent.js`, estilos de About/Projects/Stack/Footer, `src/tests/`, specs desta feature
 
 [x] Ajustar composicao editorial e interacoes finas da home
 Acceptance criteria: secao de projetos nao exibe heading grande nem preview com imagem; linhas ocupam a largura util e direcionam ao case; hover/foco revela descricao e aplica roxo; ponto de disponibilidade pulsa; acoes do header usam divisoria reta sem cantos arredondados; links do footer usam roxo no hover.
@@ -98,6 +115,20 @@ Expected file scope: `package.json`, `package-lock.json`, `src/`, specs desta fe
 
 ## Verification Log
 
+- 2026-07-03: nova revisao solicitou remover placas de cor dos labels e restaurar blur de entrada sem regressao no final da pagina.
+- 2026-07-03: ciclo RED/GREEN focado passou com 4 testes; labels ficaram transparentes, blur retornou com conclusao antecipada e footer saiu da timeline de reveal.
+- 2026-07-03: `npm run test` passou com 11 arquivos e 27 testes; `npm run build` passou com CSS de 21,77 kB (5,53 kB gzip) e JS de 164,02 kB (53,41 kB gzip); `git diff --check` sem erros.
+- 2026-07-03: refinamento aprovado; tarefa reaberta para remover pulso roxo, integrar microcopy aos labels, corrigir blur/alinhamentos e levar atmosfera aos cases.
+- 2026-07-03: RED confirmado com 4 testes falhando por ausencia dos labels contextuais, alinhamento conjunto do hero, atmosfera compartilhada e reveal sem blur.
+- 2026-07-03: GREEN focado passou com 4 testes; ProcessInterlude foi removido, SectionLabel recebeu descricao opcional e ExecutionAtmosphere passou a atender home e cases sem pulso roxo.
+- 2026-07-03: terceiro ciclo RED/GREEN adicionou gutter ao footer e removeu a pasta orfa de ProcessInterlude; arquitetura atualizada para o novo layout compartilhado.
+- 2026-07-03: `npm run test` passou com 11 arquivos e 27 testes; `npm run build` passou com CSS de 21,54 kB (5,51 kB gzip) e JS de 164,19 kB (53,41 kB gzip); `git diff --check` sem erros e nenhuma pasta vazia em `src`.
+- 2026-07-03: plano de trilhas de execucao aprovado; spec reaberta e tarefa de implementacao iniciada com TDD.
+- 2026-07-03: RED confirmado com 2 testes falhando pela ausencia de `processStages`, interludios e atmosfera visual da home.
+- 2026-07-03: GREEN focado passou com 2 testes cobrindo ordem narrativa, fonte de conteudo, quatro/três trilhas, grao, pulso scroll-driven e reduced motion.
+- 2026-07-03: segundo ciclo RED/GREEN garantiu que as trilhas entram no footer e desaparecem gradualmente, sem corte seco.
+- 2026-07-03: `npm run test` passou com 11 arquivos e 25 testes; `npm run build` passou com CSS de 22,74 kB (5,66 kB gzip) e JS de 163,95 kB (53,33 kB gzip); `git diff --check` sem erros.
+
 - 2026-07-01: brief, seis referencias visuais, arquitetura atual e spec anterior revisados.
 - 2026-07-01: escopo classificado como STANDARD; formulario removido e hospedagem Vercel confirmados com o usuario.
 - 2026-07-01: plano visual criticado e revisado antes da implementacao.
@@ -140,4 +171,8 @@ Expected file scope: `package.json`, `package-lock.json`, `src/`, specs desta fe
 
 ## Next Suggested Step
 
-Revisar visualmente no navegador a respiracao dos hovers e o alinhamento fino dos controles do header em desktop e mobile.
+Revisar visualmente a progressao do blur e a interrupcao de 1px das trilhas em light/dark.
+
+- 2026-07-03: tipografia global migrada de Archivo para Geist variavel (100–900); titulo do hero passou ao peso 900 e ganhou maior ocupacao vertical; Playfair Display substituiu Monsieur La Doulaise na assinatura animada.
+- 2026-07-03: hero realinhado conforme referencias desktop/mobile, com segunda linha ancorada a esquerda e assinatura deslocada para a direita no desktop; Playfair Display removida e loop redistribuido entre cinco fontes.
+- 2026-07-03: loop da assinatura acelerado para 1,7s e posicao desktop movida de 78% para 72%, permitindo sobreposicao intencional com o titulo.

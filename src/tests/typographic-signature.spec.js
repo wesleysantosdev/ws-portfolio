@@ -8,7 +8,6 @@ describe('hero typographic signature', () => {
     const globalStyles = readSource('main.css')
     const heroStyles = readSource('components/sections/Hero/Hero.module.css')
     const animatedFonts = [
-      'Monsieur La Doulaise',
       'Ephesis',
       'Almendra',
       'UnifrakturMaguntia',
@@ -23,6 +22,12 @@ describe('hero typographic signature', () => {
     })
     expect(keyframes).not.toMatch(/Archivo|JetBrains Mono|Fontdiner Swanky|Poppins/)
     expect(`${globalStyles}${heroStyles}`).not.toMatch(/Cormorant Garamond|Caveat|Fontdiner Swanky|Poppins/)
-    expect(heroStyles).toContain('animation:typographicSignature 2.1s steps(1,end) infinite')
+    expect(heroStyles).toContain('animation:typographicSignature 1.7s steps(1,end) infinite')
+    expect(globalStyles).toContain('family=Geist:wght@100..900')
+    expect(globalStyles).toContain("font-family:'Geist','Helvetica Neue',Arial,sans-serif")
+    expect(`${globalStyles}${heroStyles}`).not.toMatch(/Archivo|Monsieur La Doulaise/)
+    expect(`${globalStyles}${heroStyles}`).not.toMatch(/Playfair Display/)
+    expect(keyframes).toContain('0%,20%')
+    expect(keyframes).toContain('80.01%,100%')
   })
 })

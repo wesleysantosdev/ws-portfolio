@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { portfolioProjects } from '../../../content/siteContent'
+import { portfolioProjects, sectionIntroductions } from '../../../content/siteContent'
 import { SectionLabel } from '../../ui/SectionLabel/SectionLabel'
 import revealStyles from '../../../styles/ScrollReveal.module.css'
 import styles from './Projects.module.css'
@@ -18,7 +18,7 @@ export function Projects() {
 
   return (
     <section className={`${styles.projects} ${revealStyles.section}`} id="projetos" aria-label="Projetos selecionados" data-reveal data-scroll-reveal>
-      <div className={revealStyles.item} data-scroll-reveal><SectionLabel>/Projetos selecionados</SectionLabel></div>
+      <div className={revealStyles.item} data-scroll-reveal><SectionLabel description={sectionIntroductions.projects.description} breakRail>{sectionIntroductions.projects.label}</SectionLabel></div>
       <div className={`${styles.list} ${revealStyles.item}`} aria-label="Lista de projetos" data-scroll-reveal>
         {portfolioProjects.map((project, index) => (
           <article className={`${styles.row} ${revealStyles.item}`} key={project.slug} aria-labelledby={`project-${project.slug}`} data-active={project.slug === activeSlug} data-scroll-reveal>

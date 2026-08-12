@@ -1,23 +1,29 @@
-.hero { min-height:100svh; position:relative; display:flex; flex-direction:column; justify-content:center; padding:122px max(32px,calc((100vw - 1480px)/2)) 12vh; isolation:isolate; }
-.topline { display:flex; justify-content:space-between; margin-bottom:clamp(45px,8vh,90px); }
+.hero { --hero-title-gutter:clamp(8.67px,.794vw,13px); min-height:100svh; position:relative; display:flex; flex-direction:column; justify-content:center; padding:122px max(32px,calc((100vw - 1480px)/2)) 12vh; isolation:isolate; }
+.topline,.details { width:100%; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:flex-start; column-gap:32px; padding-inline:var(--rail-gutter); }
+.topline { margin-bottom:clamp(45px,8vh,90px); }
+.topline>:last-child,.summary { justify-self:end; }
+.topline>:last-child { text-align:right; }
 .kicker,.meta { font-family:'JetBrains Mono',monospace; font-size:.72rem; line-height:1.4; letter-spacing:.06em; text-transform:uppercase; }
 .kicker { margin:0; color:var(--muted); animation:enter 650ms both; }
-.hero h1 { position:relative; z-index:2; margin:0; font-size:clamp(4.7rem,10.3vw,10.3rem); line-height:.72; letter-spacing:-.095em; font-weight:700; text-transform:uppercase; animation:enter 700ms 80ms both; }
+.hero h1 { position:relative; z-index:2; width:100%; margin:0; padding-inline:var(--hero-title-gutter); font-size:clamp(4.15rem,9.25vw,9.6rem); line-height:.86; letter-spacing:-.09em; font-weight:900; text-transform:uppercase; animation:enter 700ms 80ms both; }
 .titleLine { display:block; white-space:nowrap; }
-.titleBottom { margin-top:.2em; text-align:right; }
-.signature { position:absolute; z-index:3; top:43%; left:50%; color:var(--accent); font-family:'Alex Brush','Segoe Script',Arial,sans-serif; font-size:clamp(2.8rem,7.5vw,8rem); font-style:italic; font-weight:500; letter-spacing:-.07em; line-height:1; text-transform:none; white-space:nowrap; transform:translate(-42%,-50%) rotate(-4deg); animation:typographicSignature 2.1s steps(1,end) infinite; }
-.summary { width:min(330px,29vw); margin:44px 0 0 auto; font-size:.9rem; line-height:1.4; }
-.meta { width:100%; display:flex; justify-content:space-between; align-items:center; margin-top:42px; color:var(--muted); font-size:.82rem; animation:enter 700ms 160ms both; }
+.titleLine:first-child { transform:translateX(-.018em); }
+.titleBottom { margin-top:.3em; text-align:left; }
+.signature { position:absolute; z-index:3; top:58%; left:72%; color:var(--accent); font-family:'Alex Brush','Segoe Script',Arial,sans-serif; font-size:clamp(2.7rem,6.8vw,7.2rem); font-style:italic; font-weight:500; letter-spacing:-.07em; line-height:1; text-transform:none; white-space:nowrap; transform:translate(-50%,-50%) rotate(-4deg); animation:typographicSignature 1.7s steps(1,end) infinite; }
+.details { margin-top:38px; }
+.summary { width:min(360px,100%); margin:0; font-size:1rem; line-height:1.55; }
+.meta { color:var(--muted); font-size:.82rem; animation:enter 700ms 160ms both; }
 .availability { display:flex; align-items:center; gap:9px; text-transform: initial;}
 .availability i { width:7px; height:7px; border-radius:50%; background:#3c8c62; box-shadow:0 0 0 4px rgba(60,140,98,.12); animation:pulse 1.9s ease-out infinite; }
 @keyframes enter { from { opacity:0; transform:translateY(18px); } }
 @keyframes pulse { 0%,100% { transform:scale(.95); box-shadow:0 0 0 0 rgba(60,140,98,.28); } 70% { transform:scale(1); box-shadow:0 0 0 10px rgba(60,140,98,0); } }
 @keyframes typographicSignature {
-  0%,16.66% { font-family:'Monsieur La Doulaise','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.03em; }
-  16.67%,33.32% { font-family:'Ephesis','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.035em; }
-  33.33%,49.99% { font-family:'Almendra',Georgia,serif; font-style:normal; font-weight:400; letter-spacing:-.055em; }
-  50%,66.66% { font-family:'UnifrakturMaguntia',Georgia,serif; font-style:normal; font-weight:400; letter-spacing:-.045em; }
-  66.67%,83.32% { font-family:'Story Script','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.04em; }
-  83.33%,100% { font-family:'Alex Brush','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.035em; }
+  0%,20% { font-family:'Ephesis','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.035em; }
+  20.01%,40% { font-family:'Almendra',Georgia,serif; font-style:normal; font-weight:400; letter-spacing:-.055em; }
+  40.01%,60% { font-family:'UnifrakturMaguntia',Georgia,serif; font-style:normal; font-weight:400; letter-spacing:-.045em; }
+  60.01%,80% { font-family:'Story Script','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.04em; }
+  80.01%,100% { font-family:'Alex Brush','Segoe Script',cursive; font-style:normal; font-weight:400; letter-spacing:-.035em; }
 }
-@media (max-width:800px) { .hero { min-height:780px; padding:125px 14px 130px; } .topline { margin-bottom:80px; } .hero h1 { font-size:clamp(4.1rem,21vw,7.5rem); line-height:.78; } .titleLine { white-space:normal; } .signature { top:47%; left:55%; font-size:clamp(2.5rem,13vw,4.8rem); } .summary { width:min(270px,72vw); margin-top:48px; } .meta { flex-direction:column; gap:22px; } }
+@media (max-width:1024px) { .hero { padding-top:112px; } .hero h1 { font-size:clamp(3.75rem,10vw,7.4rem); line-height:.8; } .signature { font-size:clamp(2.5rem,8vw,5.8rem); } .summary { width:min(340px,100%); } }
+@media (max-width:800px) { .hero { min-height:720px; padding:120px 14px 110px; } .topline,.details { column-gap:18px; } .topline { margin-bottom:60px; } .kicker,.meta { font-size:.64rem; } .hero h1 { width:100%; margin:0; font-size:clamp(2.1rem,10.4vw,5.1rem); line-height:.86; text-align:left; } .titleLine { white-space:nowrap; text-align:left; } .titleBottom { margin-top:.88em; text-align:left; } .signature { top:50%; left:10px; font-size:clamp(2.05rem,9.2vw,3.75rem); transform:translateY(-50%) rotate(-4deg); } .details { margin-top:32px; } .summary { width:100%; font-size:.88rem; line-height:1.45; text-align:right; } .availability { align-items:flex-start; } }
+@media (max-width:480px) { .hero { min-height:680px; padding-top:112px; padding-bottom:96px; } .topline,.details { column-gap:12px; } .topline { margin-bottom:48px; } .kicker,.meta { font-size:.6rem; } .hero h1 { font-size:clamp(2rem,10.4vw,2.45rem); line-height:.92; letter-spacing:-.062em; } .titleBottom { margin-top:1.02em; } .signature { font-size:clamp(1.65rem,8.5vw,2rem); } .details { margin-top:26px; } .summary { font-size:.82rem; } }

@@ -29,6 +29,18 @@ export const aboutParagraphs = [
   'Hoje aprofundo arquitetura de software, testes e fluxos de desenvolvimento assistidos por IA para entregar código mais confiável e simples de manter.'
 ]
 
+export const sectionIntroductions = {
+  projects: { label: '/ Projetos selecionados', description: 'Interfaces, decisões e resultados' },
+  about: { label: '/ Sobre mim', description: 'Percurso, contexto e forma de trabalhar' },
+  stack: { label: '/ Tecnologias', description: 'Ferramentas escolhidas conforme o problema' }
+}
+
+export const caseStudyStages = [
+  { label: '/ Entender', description: 'O ponto de partida e as restrições', heading: 'Contexto', field: 'context' },
+  { label: '/ Construir', description: 'A decisão que orientou a solução', heading: 'Decisão', field: 'decision' },
+  { label: '/ Entregar', description: 'O resultado colocado em uso', heading: 'Resultado', field: 'outcome' }
+]
+
 export const stackGroups = [
   { label: 'Frontend', items: ['React', 'Vue.js', 'TypeScript', 'JavaScript'] },
   { label: 'Backend', items: ['Node.js', 'Prisma ORM', 'PostgreSQL'] },
