@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
+import { siteContent } from '../../../content/siteContent'
 import styles from './ProjectVideoGallery.module.css'
 
-export function ProjectVideoGallery({ projectTitle, videos }) {
+export function ProjectVideoGallery({ labels = siteContent.gallery, projectTitle, videos }) {
   const [activeVideoId, setActiveVideoId] = useState(videos[0].id)
   const activeVideoIndex = videos.findIndex((video) => video.id === activeVideoId)
   const activeVideo = videos[activeVideoIndex]
@@ -12,8 +13,8 @@ export function ProjectVideoGallery({ projectTitle, videos }) {
     <figure className={styles.gallery} aria-labelledby={`${projectTitle}-video-title`}>
       <div className={styles.stage}>
         <div className={styles.stageHeader} aria-hidden="true">
-          <span>Demo / {projectTitle}</span>
-          <span>Em execução</span>
+          <span>{labels.demoLabel} / {projectTitle}</span>
+          <span>{labels.runningLabel}</span>
         </div>
         <video
           key={activeVideo.id}
@@ -39,7 +40,7 @@ export function ProjectVideoGallery({ projectTitle, videos }) {
       </figcaption>
 
       {hasMultipleVideos ? (
-        <div className={styles.sceneNavigation} role="group" aria-label="Cenas da demonstração">
+        <div className={styles.sceneNavigation} role="group" aria-label={labels.scenesLabel}>
           {videos.map((video, index) => (
             <button
               className={styles.sceneButton}

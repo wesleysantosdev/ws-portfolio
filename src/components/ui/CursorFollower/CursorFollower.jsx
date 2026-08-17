@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
+import { siteContent } from '../../../content/siteContent'
 import styles from './CursorFollower.module.css'
 
 const CURSOR_OFFSET = 18
@@ -14,7 +15,7 @@ function clampToViewport(value, radius, viewportSize) {
   return Math.min(Math.max(value, edge), Math.max(edge, viewportSize - edge))
 }
 
-export function CursorFollower() {
+export function CursorFollower({ label = siteContent.projectsUi.cursorLabel }) {
   const cursorRef = useRef(null)
   const frameRef = useRef(null)
   const currentPositionRef = useRef({ x: 0, y: 0 })
@@ -154,7 +155,7 @@ export function CursorFollower() {
       data-visible={isVisible}
       data-expanded={isExpanded}
     >
-      <span className={styles.label}>Ver projeto</span>
+      <span className={styles.label}>{label}</span>
     </div>
   )
 }

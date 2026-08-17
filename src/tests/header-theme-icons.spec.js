@@ -20,4 +20,14 @@ describe('header icons in dark mode', () => {
     expect(styles).not.toContain('.actions>a:hover,.themeToggle:hover')
     expect(styles).not.toContain('.actions>a:hover .icon,.themeToggle:hover .icon')
   })
+
+  it('applies the navigation rolling effect to text buttons', () => {
+    const styles = readFileSync(
+      resolve(process.cwd(), 'src/components/ui/RollingText/RollingText.module.css'),
+      'utf8'
+    )
+
+    expect(styles).toContain(':global(button:hover) .characterTrack')
+    expect(styles).toContain(':global(button:focus-visible) .characterTrack')
+  })
 })

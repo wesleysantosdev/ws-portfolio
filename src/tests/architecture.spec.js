@@ -13,6 +13,7 @@ describe('React architecture', () => {
       'components/sections/Projects/Projects.jsx',
       'components/sections/About/About.jsx',
       'components/sections/Stack/Stack.jsx',
+      'hooks/useLocale.js',
       'pages/HomePage/HomePage.jsx',
       'pages/ProjectCaseStudyPage/ProjectCaseStudyPage.jsx',
       'pages/NotFoundPage/NotFoundPage.jsx'

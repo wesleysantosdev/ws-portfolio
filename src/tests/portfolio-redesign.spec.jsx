@@ -87,7 +87,7 @@ describe('portfolio editorial redesign', () => {
     const mainNavigation = screen.getByRole('navigation', { name: /principal/i })
     const contactNavigation = screen.getByRole('navigation', { name: /redes e contato/i })
 
-    expect(mainNavigation.querySelectorAll('[data-rolling-text]')).toHaveLength(4)
+    expect(mainNavigation.querySelectorAll('[data-rolling-text]')).toHaveLength(5)
     expect(contactNavigation.querySelectorAll('[data-rolling-text]')).toHaveLength(3)
     expect(screen.getAllByRole('link', { name: 'Projetos' })).toHaveLength(2)
   })

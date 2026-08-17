@@ -1,12 +1,13 @@
 import { useState } from 'react'
 
-import { portfolioProjects, sectionIntroductions } from '../../../content/siteContent'
+import { siteContent } from '../../../content/siteContent'
 import { SectionLabel } from '../../ui/SectionLabel/SectionLabel'
 import revealStyles from '../../../styles/ScrollReveal.module.css'
 import styles from './Projects.module.css'
 
-export function Projects() {
+export function Projects({ content = siteContent }) {
   const [activeSlug, setActiveSlug] = useState(null)
+  const { portfolioProjects, projectsUi, sectionIntroductions } = content
 
   function activateProject(slug) {
     setActiveSlug(slug)
@@ -17,16 +18,16 @@ export function Projects() {
   }
 
   return (
-    <section className={`${styles.projects} ${revealStyles.section}`} id="projetos" aria-label="Projetos selecionados" data-reveal data-scroll-reveal>
+    <section className={`${styles.projects} ${revealStyles.section}`} id="projetos" aria-label={projectsUi.ariaLabel} data-reveal data-scroll-reveal>
       <div className={revealStyles.item} data-scroll-reveal><SectionLabel description={sectionIntroductions.projects.description} breakRail>{sectionIntroductions.projects.label}</SectionLabel></div>
-      <div className={`${styles.list} ${revealStyles.item}`} aria-label="Lista de projetos" data-scroll-reveal>
+      <div className={`${styles.list} ${revealStyles.item}`} aria-label={projectsUi.listLabel} data-scroll-reveal>
         {portfolioProjects.map((project, index) => (
           <article className={`${styles.row} ${revealStyles.item}`} key={project.slug} aria-labelledby={`project-${project.slug}`} data-active={project.slug === activeSlug} data-scroll-reveal>
             <a
               className={styles.link}
               href={`/projetos/${project.slug}`}
-              aria-label={`Ver case ${project.title}`}
-              data-cursor-label="Ver projeto"
+              aria-label={`${projectsUi.viewCaseLabel} ${project.title}`}
+              data-cursor-label={projectsUi.cursorLabel}
               onMouseEnter={() => activateProject(project.slug)}
               onMouseLeave={() => deactivateProject(project.slug)}
               onFocus={() => activateProject(project.slug)}
@@ -38,7 +39,7 @@ export function Projects() {
                 <h3 id={`project-${project.slug}`}>{project.title}</h3>
                 <p className={styles.summary}>{project.summary}</p>
                 {project.tags.length > 0 ? (
-                  <ul className={styles.tags} aria-label={`Contexto de ${project.title}`}>
+                  <ul className={styles.tags} aria-label={`${projectsUi.contextLabel} ${project.title}`}>
                     {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
                   </ul>
                 ) : null}

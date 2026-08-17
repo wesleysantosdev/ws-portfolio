@@ -4,5 +4,7 @@
 .characterWindow { display:inline-block; height:1em; overflow:hidden; white-space:pre; }
 .characterTrack { display:flex; flex-direction:column; line-height:1; transform:translateY(0); transition:transform 380ms cubic-bezier(.22,1,.36,1); transition-delay:calc(var(--character-index) * 18ms); }
 :global(a:hover) .characterTrack,
-:global(a:focus-visible) .characterTrack { transform:translateY(-1em); }
-@media (prefers-reduced-motion:reduce) { .characterTrack { transition:none; } :global(a:hover) .characterTrack,:global(a:focus-visible) .characterTrack { transform:none; } }
+:global(a:focus-visible) .characterTrack,
+:global(button:hover) .characterTrack,
+:global(button:focus-visible) .characterTrack { transform:translateY(-1em); }
+@media (prefers-reduced-motion:reduce) { .characterTrack { transition:none; } :global(a:hover) .characterTrack,:global(a:focus-visible) .characterTrack,:global(button:hover) .characterTrack,:global(button:focus-visible) .characterTrack { transform:none; } }
