@@ -92,13 +92,21 @@ describe('portfolio editorial redesign', () => {
         slug: expect.any(String),
         title: expect.any(String),
         summary: expect.any(String),
-        context: expect.any(String),
-        decision: expect.any(String),
-        outcome: expect.any(String),
-        demoUrl: expect.stringMatching(/^https:/),
-        poster: expect.any(String),
-        mediaDescription: expect.any(String)
+        context: expect.arrayContaining([expect.any(String)]),
+        decision: expect.arrayContaining([expect.any(String)]),
+        outcome: expect.arrayContaining([expect.any(String)]),
+        stack: expect.arrayContaining([expect.any(String)]),
+        tags: expect.any(Array),
+        actions: expect.any(Array),
+        videos: expect.arrayContaining([
+          expect.objectContaining({
+            title: expect.any(String),
+            description: expect.any(String),
+            src: expect.any(String)
+          })
+        ])
       })
+      expect(project).not.toHaveProperty('highlights')
     })
   })
 })

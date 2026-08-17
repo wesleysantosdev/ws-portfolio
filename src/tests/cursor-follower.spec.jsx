@@ -44,7 +44,7 @@ describe('purple project cursor', () => {
     render(<App />)
 
     const cursor = screen.getByTestId('cursor-follower')
-    const projectLink = screen.getByRole('link', { name: /formulário com validação/i })
+    const projectLink = screen.getByRole('link', { name: /ver case shrten/i })
 
     fireEvent.pointerMove(projectLink, { clientX: 180, clientY: 220 })
     expect(cursor).toHaveAttribute('data-expanded', 'true')
@@ -63,7 +63,7 @@ describe('purple project cursor', () => {
 
   it('is globally mounted but remains inactive for reduced motion', () => {
     installMediaQueries({ reducedMotion: true })
-    render(<App pathname="/projetos/calculadora" />)
+    render(<App pathname="/projetos/shrten" />)
 
     const cursor = screen.getByTestId('cursor-follower')
     fireEvent.pointerMove(window, { clientX: 100, clientY: 100 })

@@ -1,13 +1,185 @@
-.shell { position:relative; isolation:isolate; min-height:100vh; overflow:clip; background:var(--canvas); }
-.page { position:relative; z-index:1; width:var(--page); margin-inline:auto; padding:150px var(--rail-gutter) 120px; }
-.backLink { display:inline-block; margin-bottom:80px; color:var(--muted); font-size:.85rem; }
-.hero { max-width:900px; margin:auto; }
-.hero h1 { margin:18px 0; font-size:clamp(3.8rem,9vw,8.5rem); line-height:.92; letter-spacing:-.075em; font-weight:500; }
-.hero>p { max-width:650px; color:var(--muted); font-size:1.2rem; }
-.meta { display:flex; justify-content:space-between; margin-top:46px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-family:'JetBrains Mono',monospace; font-size:.72rem; line-height:1.4; letter-spacing:.06em; text-transform:uppercase; }
-.meta a { color:var(--accent); }
-.poster { width:100%; max-height:700px; margin-top:90px; border-radius:24px; object-fit:cover; }
-.notes { max-width:900px; display:grid; grid-template-columns:repeat(3,1fr); gap:44px; margin:100px auto 0; }
-.notes h2 { margin:10px 0 18px; font-size:1.7rem; font-weight:500; }
-.notes p:last-child { color:var(--muted); }
-@media (max-width:800px) { .page { padding-top:110px; } .backLink { margin-bottom:55px; } .meta { flex-direction:column; gap:15px; } .poster { margin-top:60px; border-radius:15px; } .notes { grid-template-columns:1fr; margin-top:70px; gap:42px; } }
+.shell {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: clip;
+  background: var(--canvas);
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: var(--page);
+  margin-inline: auto;
+  padding: 150px var(--rail-gutter) 130px;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 78px;
+  color: var(--muted);
+  font-size: .82rem;
+  transition: color 200ms ease;
+}
+
+.backLink:hover {
+  color: var(--accent);
+}
+
+.hero {
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
+.hero h1 {
+  max-width: 100%;
+  margin: 24px 0 20px;
+  font-size: clamp(4.4rem, 11vw, 10rem);
+  line-height: .82;
+  letter-spacing: -.085em;
+  font-weight: 650;
+  text-wrap: balance;
+}
+
+.summary {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.42;
+  text-wrap: balance;
+}
+
+.heroDetails {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: start;
+  margin-top: 52px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.stack {
+  max-width: 740px;
+  margin: 0;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  line-height: 1.7;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 20px;
+}
+
+.actions a {
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .62rem;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+}
+
+.notes {
+  max-width: 1080px;
+  margin: 120px auto 0;
+  border-top: 1px solid var(--line);
+}
+
+.note {
+  display: grid;
+  grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr);
+  gap: 80px;
+  padding: 70px 0 76px;
+  border-bottom: 1px solid var(--line);
+}
+
+.noteHeading h2 {
+  margin: 18px 0 0;
+  font-size: clamp(2.3rem, 5vw, 4.25rem);
+  line-height: .95;
+  letter-spacing: -.06em;
+  font-weight: 550;
+}
+
+.noteHeading [data-section-label] {
+  padding-left: 0;
+}
+
+.noteCopy {
+  padding-top: 8px;
+}
+
+.noteCopy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  line-height: 1.7;
+}
+
+.noteCopy p + p {
+  margin-top: 22px;
+}
+
+@media (max-width: 800px) {
+  .page {
+    padding-top: 110px;
+    padding-bottom: 90px;
+  }
+
+  .backLink {
+    margin-bottom: 54px;
+  }
+
+  .hero h1 {
+    margin-top: 20px;
+    font-size: clamp(3.75rem, 19vw, 6.5rem);
+    line-height: .86;
+  }
+
+  .heroDetails {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 36px;
+  }
+
+  .actions {
+    justify-content: flex-start;
+  }
+
+  .notes {
+    margin-top: 84px;
+  }
+
+  .note {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 54px 0 58px;
+  }
+}

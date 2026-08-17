@@ -25,6 +25,7 @@ export function Projects() {
             <a
               className={styles.link}
               href={`/projetos/${project.slug}`}
+              aria-label={`Ver case ${project.title}`}
               data-cursor-label="Ver projeto"
               onMouseEnter={() => activateProject(project.slug)}
               onMouseLeave={() => deactivateProject(project.slug)}
@@ -33,8 +34,14 @@ export function Projects() {
             >
               <span className={styles.number} aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
               <div className={styles.copy}>
+                <p className={styles.category}>{project.category}</p>
                 <h3 id={`project-${project.slug}`}>{project.title}</h3>
-                <p>{project.summary}</p>
+                <p className={styles.summary}>{project.summary}</p>
+                {project.tags.length > 0 ? (
+                  <ul className={styles.tags} aria-label={`Contexto de ${project.title}`}>
+                    {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                  </ul>
+                ) : null}
               </div>
               <p className={styles.stack}>{project.stack.join(' · ')}</p>
               <span className={styles.arrow} aria-hidden="true">↗</span>

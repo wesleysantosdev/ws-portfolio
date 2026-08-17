@@ -1,8 +1,12 @@
 import CV from '../assets/CV.pdf'
-import calculatorPoster from '../assets/calculator-project.png'
-import darkModePoster from '../assets/dark-mode-project.png'
-import formPoster from '../assets/form-project.png'
-import profilePoster from '../assets/profile-card-project.png'
+import telehelpSaleVideo from '../assets/projetos/agente-telehelp/cadastro-de-venda.mp4'
+import telehelpAdminVideo from '../assets/projetos/agente-telehelp/navegacao-do-admin.mp4'
+import telehelpAgentVideo from '../assets/projetos/agente-telehelp/visao-do-agente.mp4'
+import pagliasFlowVideo from '../assets/projetos/paglias/fluxo-completo-paglias.mp4'
+import seniorAdminVideo from '../assets/projetos/senior-academy/administracao-autonoma.mp4'
+import seniorLiveVideo from '../assets/projetos/senior-academy/aulas-ao-vivo.mp4'
+import seniorSegmentsVideo from '../assets/projetos/senior-academy/experiencia-segmentada.mp4'
+import shrtenVideo from '../assets/projetos/shrten/shrten.mp4'
 
 export const navItems = [
   { href: '#projetos', label: 'Projetos' },
@@ -37,8 +41,8 @@ export const sectionIntroductions = {
 
 export const caseStudyStages = [
   { label: '/ Entender', description: 'O ponto de partida e as restrições', heading: 'Contexto', field: 'context' },
-  { label: '/ Construir', description: 'A decisão que orientou a solução', heading: 'Decisão', field: 'decision' },
-  { label: '/ Entregar', description: 'O resultado colocado em uso', heading: 'Resultado', field: 'outcome' }
+  { label: '/ Construir', description: 'As escolhas que orientaram a solução', heading: 'Decisões', field: 'decision' },
+  { label: '/ Entregar', description: 'O que mudou após a entrega', heading: 'Resultado', field: 'outcome' }
 ]
 
 export const stackGroups = [
@@ -49,52 +53,150 @@ export const stackGroups = [
 
 export const portfolioProjects = [
   {
-    slug: 'formulario-com-validacao',
-    title: 'Formulário com validação',
-    summary: 'Uma interface de cadastro que transforma regras de validação em orientações claras para quem está preenchendo.',
-    context: 'Exercício de frontend criado a partir de um layout e assets fornecidos, com foco no comportamento completo do formulário.',
-    decision: 'Centralizei a validação nos campos e mantive os erros próximos da ação que precisa ser corrigida.',
-    outcome: 'Uma experiência responsiva e previsível, com feedback para diferentes entradas inválidas.',
-    stack: ['HTML', 'CSS', 'JavaScript'],
-    demoUrl: 'https://wesleysantosdev.github.io/component-with-signup-form/',
-    poster: formPoster,
-    mediaDescription: 'Tela do formulário de cadastro com campos e painel ilustrado.'
+    slug: 'shrten',
+    title: 'Shrten',
+    category: 'Projeto pessoal · System design',
+    summary: 'Encurtamento de URLs como exercício de System Design, confiabilidade e operação real.',
+    context: [
+      'Criei o Shrten para aprofundar desenvolvimento full stack e estudar System Design a partir de um problema aparentemente simples: encurtar URLs.',
+      'O desafio real era projetar códigos sem colisões, reduzir leituras repetidas, manter redirecionamentos disponíveis durante falhas e controlar o crescimento dos dados.'
+    ],
+    decision: [
+      'Usei IDs sequenciais BIGINT do PostgreSQL, submetidos a uma permutação reversível antes da conversão para Base62. Assim, os códigos têm de quatro a seis caracteres sem armazenar outra chave ou consultar colisões.',
+      'No redirecionamento, Redis opera como cache-aside com entradas positivas e negativas. O PostgreSQL permanece como fonte da verdade e atende a leitura caso o cache fique indisponível.',
+      'A criação de links recebe rate limiting por IP anonimizado com HMAC-SHA-256, duas janelas móveis e operações atômicas em Lua. Links sem atividade por 180 dias são removidos em lotes e invalidados no cache.'
+    ],
+    outcome: [
+      'O resultado é uma aplicação full stack testada e preparada para operar em infraestrutura enxuta, com Docker, proxy reverso, HTTPS, CI/CD e deploy em VPS.',
+      'O projeto tornou concretos os trade-offs entre fonte da verdade e otimização, degradação aberta ou fechada e complexidade proporcional à escala atual.'
+    ],
+    stack: ['React', 'TypeScript', 'Node.js', 'Redis', 'PostgreSQL', 'Prisma', 'Docker', 'Azure'],
+    tags: [],
+    actions: [
+      { label: 'Acessar Shrten', href: 'https://shrten.pro' },
+      { label: 'Ver repositório', href: 'https://github.com/wesleysantosdev/url-shortener' }
+    ],
+    videos: [
+      {
+        id: 'produto-em-uso',
+        title: 'Produto em uso',
+        description: 'Criação, consulta e gerenciamento de links curtos em uma experiência completa e pronta para uso.',
+        src: shrtenVideo
+      }
+    ]
   },
   {
-    slug: 'login-com-tema',
-    title: 'Login com tema claro e escuro',
-    summary: 'Um fluxo de login compacto em que a escolha de tema permanece coerente em toda a interface.',
-    context: 'Estudo de interface dedicado à troca entre temas claro e escuro sem depender de backend.',
-    decision: 'Modelei cores como tokens e concentrei a mudança de tema em um único controle.',
-    outcome: 'Uma tela de acesso adaptável, legível e consistente nos dois modos.',
-    stack: ['HTML', 'CSS', 'JavaScript'],
-    demoUrl: 'https://wesleysantosdev.github.io/login-dark-mode-switch/',
-    poster: darkModePoster,
-    mediaDescription: 'Tela de login dividida entre formulário e ilustração abstrata.'
+    slug: 'paglias',
+    title: 'Paglias',
+    category: 'E-commerce B2B · Integração ERP',
+    summary: 'Um canal de autosserviço conectado ao ERP para eliminar a redigitação manual de pedidos.',
+    context: [
+      'Clientes, produtos e condições comerciais já viviam no Sige Cloud, mas os pedidos chegavam por WhatsApp e eram transcritos manualmente para o ERP.',
+      'A plataforma precisava liberar autosserviço sem duplicar regras do Sige e sem abrir indiscriminadamente catálogo, preços ou condições comerciais.'
+    ],
+    decision: [
+      'Mantive o ERP como fonte única da verdade. CPF ou CNPJ valida o cadastro; após o login, o pedido recente do cliente define tabela de preço, depósito, vendedor, pagamento e demais parâmetros comerciais.',
+      'O catálogo respeita a tabela vinculada ao cliente, remove itens indisponíveis e complementa categorias e imagens por chamadas ao ERP. O Cloudinary e o PostgreSQL evitam transferências repetidas de mídia.',
+      'Tratei instabilidades 503 com novas tentativas e espera progressiva. Antes de chegar ao Sige, o pedido é reconstruído com as condições do ERP e validado no backend.'
+    ],
+    outcome: [
+      'Clientes conhecidos pela operação podem criar uma conta, acessar preços próprios, pesquisar produtos, selecionar quantidades e confirmar o pedido no mesmo fluxo.',
+      'A jornada elimina a redigitação no canal digital, preserva o Sige como sistema central e reduz divergências nas condições comerciais.'
+    ],
+    stack: ['Vue 3', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Docker'],
+    tags: ['Demonstração', 'Dados fictícios', 'Repositório privado'],
+    actions: [],
+    videos: [
+      {
+        id: 'fluxo-completo',
+        title: 'Fluxo completo',
+        description: 'Da identificação do cliente à seleção de produtos e conclusão do pedido conectado ao ERP.',
+        src: pagliasFlowVideo
+      }
+    ]
   },
   {
-    slug: 'calculadora',
-    title: 'Calculadora',
-    summary: 'Uma calculadora direta que organiza entrada, operação e resultado sem esconder o estado atual.',
-    context: 'Projeto de prática para consolidar manipulação de estado e operações matemáticas no navegador.',
-    decision: 'Separei entrada, operador e resultado para que cada nova ação tivesse um comportamento previsível.',
-    outcome: 'As quatro operações principais funcionam em uma interface simples e responsiva.',
-    stack: ['HTML', 'CSS', 'JavaScript'],
-    demoUrl: 'https://wesleysantosdev.github.io/calculator/',
-    poster: calculatorPoster,
-    mediaDescription: 'Calculadora escura com teclado numérico e visor de resultado.'
+    slug: 'senior-academy',
+    title: 'Senior Academy',
+    category: 'Plataforma educacional · Zoom SDK',
+    summary: 'Uma página estática transformada em plataforma segmentada, gerenciável e com aulas ao vivo integradas.',
+    context: [
+      'A solução anterior reunia gravações e um link do Google Meet. Toda mudança de aula exigia editar o código, e não havia autenticação ou experiências por perfil.',
+      'A evolução precisava dar autonomia ao cliente sem perder a organização do catálogo nem separar os encontros ao vivo da jornada principal.'
+    ],
+    decision: [
+      'Modelei usuários, categorias, aulas gravadas e ao vivo, organizações, reservas e participações. Autenticação, papéis e clusters passaram a definir o conteúdo visto por cada público.',
+      'Criei um painel em que o cliente cadastra, edita, segmenta e desativa aulas. Para encontros ao vivo, integrei o Zoom Meeting SDK e colaborei no fluxo de criação de reuniões, assinaturas, start_url e token ZAK.',
+      'A integração exigiu pesquisa de documentação, testes de compatibilidade e ajustes no contrato entre frontend, backend e SDK até a reunião funcionar dentro da plataforma.'
+    ],
+    outcome: [
+      'O cliente passou a administrar o conteúdo sem depender de alterações no código. Usuários ganharam catálogo autenticado, reservas, aulas gravadas e encontros ao vivo na mesma experiência.',
+      'Interesses, participações e tempo de atividade também passaram a formar uma base para acompanhar o engajamento e orientar a evolução do produto.'
+    ],
+    stack: ['Vue 3', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Docker'],
+    tags: ['Demonstração', 'Dados fictícios', 'Repositório privado'],
+    actions: [],
+    videos: [
+      {
+        id: 'administracao-autonoma',
+        title: 'Administração autônoma',
+        description: 'O conteúdo antes era alterado diretamente no código. Criamos um painel para que o cliente administrasse as aulas de forma autônoma.',
+        src: seniorAdminVideo
+      },
+      {
+        id: 'experiencia-segmentada',
+        title: 'Experiência segmentada',
+        description: 'Autenticação, papéis e segmentação por clusters personalizam a experiência para clientes, visitantes e grupos parceiros.',
+        src: seniorSegmentsVideo
+      },
+      {
+        id: 'aulas-ao-vivo',
+        title: 'Aulas ao vivo',
+        description: 'Zoom Server-to-Server OAuth e Meeting SDK conectam a criação da reunião no backend à experiência incorporada no frontend.',
+        src: seniorLiveVideo
+      }
+    ]
   },
   {
-    slug: 'card-de-perfil',
-    title: 'Card de perfil interativo',
-    summary: 'Um cartão compacto que revela contexto e contatos sem tirar o foco da identidade principal.',
-    context: 'Experimento de microinteração para apresentar uma pessoa e seus links sociais em pouco espaço.',
-    decision: 'Usei uma expansão progressiva e mantive os links disponíveis dentro do mesmo componente.',
-    outcome: 'Uma peça pequena que explora hierarquia, hover e transições de forma controlada.',
-    stack: ['HTML', 'CSS'],
-    demoUrl: 'https://wesleysantosdev.github.io/animated-profile-card/',
-    poster: profilePoster,
-    mediaDescription: 'Card vertical de perfil com retrato e ícones sociais.'
+    slug: 'agente-telehelp',
+    title: 'Agente TeleHelp',
+    category: 'Operação comercial · Perfis e permissões',
+    summary: 'Uma jornada rastreável para registrar indicações e acompanhar cada avanço comercial.',
+    context: [
+      'A TeleHelp precisava digitalizar o processo de indicações comerciais. A plataforma não venderia nem processaria pagamentos: parceiros registrariam potenciais clientes e acompanhariam o atendimento conduzido pela empresa.',
+      'O principal requisito era criar visibilidade compartilhada sem misturar as responsabilidades do agente e da operação administrativa.'
+    ],
+    decision: [
+      'Separei a solução em uma área do agente, dedicada ao cadastro e acompanhamento, e uma área administrativa para ativação de agentes, edição de registros e avanço operacional.',
+      'Modelei cada indicação com cinco status e histórico de alterações. Autenticação JWT, permissões por perfil, validações e criptografia dos dados sensíveis sustentam o fluxo.'
+    ],
+    outcome: [
+      'A indicação passou a ser registrada uma única vez e acompanhada pelo parceiro sem consultas manuais.',
+      'A equipe administrativa trabalha em uma visão consolidada, com filtros, contadores, edição e histórico de cada mudança.'
+    ],
+    stack: ['Vue 3', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Docker', 'Azure'],
+    tags: ['Demonstração', 'Dados fictícios', 'Repositório privado'],
+    actions: [],
+    videos: [
+      {
+        id: 'navegacao-do-admin',
+        title: 'Visão administrativa',
+        description: 'O administrador edita registros e cada atualização de status fica registrada em um histórico.',
+        src: telehelpAdminVideo
+      },
+      {
+        id: 'visao-do-agente',
+        title: 'Visão do agente',
+        description: 'Cada agente registra possíveis vendas e acompanha sua evolução sem depender de consultas manuais.',
+        src: telehelpAgentVideo
+      },
+      {
+        id: 'cadastro-de-venda',
+        title: 'Cadastro de indicação',
+        description: 'Um fluxo guiado reúne as informações necessárias para dar continuidade ao atendimento.',
+        src: telehelpSaleVideo
+      }
+    ]
   }
 ]
 

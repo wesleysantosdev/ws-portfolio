@@ -16,4 +16,4 @@ npm run test
 npm run build
 ```
 
-O deploy foi preparado para Vercel. O `vercel.json` redireciona URLs como `/projetos/calculadora` para a aplicacao sem perder a rota.
+O deploy foi preparado para Vercel. O `vercel.json` redireciona URLs como `/projetos/shrten` para a aplicacao sem perder a rota.

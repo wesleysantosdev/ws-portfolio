@@ -12,7 +12,7 @@ describe('editorial scroll reveal', () => {
   })
 
   it('keeps progressive reveals on a project case without kinetic-letter animation', () => {
-    render(<App pathname="/projetos/calculadora" />)
+    render(<App pathname="/projetos/shrten" />)
 
     expect(document.querySelectorAll('[data-scroll-reveal]').length).toBeGreaterThanOrEqual(6)
     expect(document.querySelector('[data-kinetic-text]')).not.toBeInTheDocument()

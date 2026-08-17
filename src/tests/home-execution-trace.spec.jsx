@@ -85,7 +85,7 @@ describe('execution trace system', () => {
     expect(revealStyles).toContain('transform:none')
     expect(revealStyles).toContain('filter:none')
     expect(homeStyles).toContain('overflow:clip')
-    expect(caseStudyStyles).toContain('overflow:clip')
+    expect(caseStudyStyles).toMatch(/overflow:\s*clip/)
     expect(footerSource).not.toContain('revealStyles')
     expect(footerSource).not.toContain('data-scroll-reveal')
     expect(footerSource).toContain('data-reveal')
