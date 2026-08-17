@@ -27,10 +27,14 @@ export const profile = {
   githubUrl: 'https://github.com/wesleysantosdev'
 }
 
+export const heroSummary = 'Desenvolvo soluções web eficientes que resolvem problemas reais do seu negócio.'
+
+export const aboutHeading = 'Código é importante. Entender o problema é essencial.'
+
 export const aboutParagraphs = [
-  'Sou desenvolvedor full stack com mais de três anos de experiência e uma base forte em frontend. Já construí páginas, sistemas internos, plataformas SaaS e produtos digitais voltados ao cliente.',
+  'Sou desenvolvedor full stack com 3+ anos de experiência e uma base forte em frontend. Já construí páginas, sistemas internos, plataformas SaaS e produtos digitais voltados ao cliente.',
   'Gosto de acompanhar o trabalho de ponta a ponta: entender a necessidade do negócio, avaliar caminhos técnicos, cuidar da experiência, integrar APIs e apoiar o que chega à produção.',
-  'Hoje aprofundo arquitetura de software, testes e fluxos de desenvolvimento assistidos por IA para entregar código mais confiável e simples de manter.'
+  'Hoje busco aprofundar meus estudos em arquitetura de software, system design e fluxos de desenvolvimento assistidos por IA para entregar código ainda mais confiável, escalável e simples de manter.'
 ]
 
 export const sectionIntroductions = {
@@ -46,9 +50,11 @@ export const caseStudyStages = [
 ]
 
 export const stackGroups = [
-  { label: 'Frontend', items: ['React', 'Vue.js', 'TypeScript', 'JavaScript'] },
-  { label: 'Backend', items: ['Node.js', 'Prisma ORM', 'PostgreSQL'] },
-  { label: 'Infra & prática', items: ['Docker', 'Azure', 'Testes', 'Spec-Driven Development'] }
+  { label: 'Frontend', items: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'] },
+  { label: 'Backend & dados', items: ['Node.js', 'Express.js', 'APIs RESTful', 'Prisma ORM', 'PostgreSQL', 'REDIS', 'JSON Web Token (JWT)'] },
+  { label: 'Cloud & entrega', items: ['Docker', 'GitHub Actions', 'CI/CD', 'Microsoft Azure', 'VPS'] },
+  { label: 'Práticas & ferramentas', items: ['Test-Driven Development (TDD)', 'Git', 'GitHub', 'Postman', 'Swagger/OpenAPI', 'System Design'] },
+  { label: 'IA', items: ['Spec-Driven Development (SDD)', 'Engenharia de Harness', 'Criação de AI Skills/Tools', 'Orquestração de LLMs'] }
 ]
 
 export const portfolioProjects = [
@@ -121,7 +127,7 @@ export const portfolioProjects = [
     category: 'Plataforma educacional · Zoom SDK',
     summary: 'Uma página estática transformada em plataforma segmentada, gerenciável e com aulas ao vivo integradas.',
     context: [
-      'A solução anterior reunia gravações e um link do Google Meet. Toda mudança de aula exigia editar o código, e não havia autenticação ou experiências por perfil.',
+      'Na solução anterior, as aulas ao vivo eram através de um link do Google Meet. Toda mudança de aula exigia editar o código, e não havia autenticação ou experiências por perfil.',
       'A evolução precisava dar autonomia ao cliente sem perder a organização do catálogo nem separar os encontros ao vivo da jornada principal.'
     ],
     decision: [

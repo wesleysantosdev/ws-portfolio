@@ -1,4 +1,4 @@
-import { profile } from '../../../content/siteContent'
+import { heroSummary, profile } from '../../../content/siteContent'
 import styles from './Hero.module.css'
 
 export function Hero() {
@@ -17,7 +17,7 @@ export function Hero() {
         <div className={styles.meta}>
           <span className={styles.availability} data-testid="availability"><i aria-hidden="true" />{profile.availability}</span>
         </div>
-        <p className={styles.summary}>Transformo necessidades de negócio em produtos web claros, rápidos e sustentáveis.</p>
+        <p className={styles.summary}>{heroSummary}</p>
       </div>
     </section>
   )

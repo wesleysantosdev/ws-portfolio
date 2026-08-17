@@ -35,7 +35,7 @@ describe('execution trace system', () => {
     const footerStyles = readSource('components/layout/Footer/Footer.module.css')
 
     expect(details).toHaveTextContent(/disponível para trabalho/i)
-    expect(details).toHaveTextContent(/transformo necessidades de negócio/i)
+    expect(details).toHaveTextContent(/desenvolvo soluções web eficientes/i)
     expect(heroStyles).toContain('.topline,.details {')
     expect(heroStyles).toContain('grid-template-columns:repeat(2,minmax(0,1fr))')
     expect(heroStyles).toContain('align-items:flex-start')

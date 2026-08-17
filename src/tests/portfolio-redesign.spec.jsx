@@ -26,6 +26,32 @@ describe('portfolio editorial redesign', () => {
     expect(document.querySelectorAll('[data-reveal]').length).toBeGreaterThanOrEqual(4)
   })
 
+  it('presents the approved hero, about, technology and Senior Academy copy', () => {
+    render(<App />)
+
+    expect(screen.getByText('Desenvolvo soluções web eficientes que resolvem problemas reais do seu negócio.')).toBeInTheDocument()
+    expect(screen.getByRole('heading', {
+      level: 2,
+      name: 'Código é importante. Entender o problema é essencial.'
+    })).toBeInTheDocument()
+    expect(screen.getByText(/sou desenvolvedor full stack com 3\+ anos de experiência/i)).toBeInTheDocument()
+    expect(screen.getByText(/system design e fluxos de desenvolvimento assistidos por IA/i)).toBeInTheDocument()
+
+    expect(stackGroups).toEqual([
+      { label: 'Frontend', items: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'] },
+      { label: 'Backend & dados', items: ['Node.js', 'Express.js', 'APIs RESTful', 'Prisma ORM', 'PostgreSQL', 'REDIS', 'JSON Web Token (JWT)'] },
+      { label: 'Cloud & entrega', items: ['Docker', 'GitHub Actions', 'CI/CD', 'Microsoft Azure', 'VPS'] },
+      { label: 'Práticas & ferramentas', items: ['Test-Driven Development (TDD)', 'Git', 'GitHub', 'Postman', 'Swagger/OpenAPI', 'System Design'] },
+      { label: 'IA', items: ['Spec-Driven Development (SDD)', 'Engenharia de Harness', 'Criação de AI Skills/Tools', 'Orquestração de LLMs'] }
+    ])
+
+    const seniorAcademy = portfolioProjects.find((project) => project.slug === 'senior-academy')
+    expect(seniorAcademy.context).toEqual([
+      'Na solução anterior, as aulas ao vivo eram através de um link do Google Meet. Toda mudança de aula exigia editar o código, e não havia autenticação ou experiências por perfil.',
+      'A evolução precisava dar autonomia ao cliente sem perder a organização do catálogo nem separar os encontros ao vivo da jornada principal.'
+    ])
+  })
+
   it('presents the name as a continuous typographic signature', () => {
     render(<App />)
 
@@ -83,8 +109,10 @@ describe('portfolio editorial redesign', () => {
   it('keeps stack groups and replaceable case-study data outside components', () => {
     expect(stackGroups.map((group) => group.label)).toEqual([
       'Frontend',
-      'Backend',
-      'Infra & prática'
+      'Backend & dados',
+      'Cloud & entrega',
+      'Práticas & ferramentas',
+      'IA'
     ])
 
     portfolioProjects.forEach((project) => {
