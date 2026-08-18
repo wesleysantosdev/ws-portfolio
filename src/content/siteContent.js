@@ -183,19 +183,19 @@ const copyByLocale = {
       },
       paglias: {
         category: 'E-commerce B2B · Integração ERP',
-        summary: 'Um canal de autosserviço conectado ao ERP para eliminar a redigitação manual de pedidos.',
+        summary: 'Um canal de autosserviço conectado ao ERP para reduzir a redigitação manual de pedidos.',
         context: [
-          'Clientes, produtos e condições comerciais já viviam no Sige Cloud, mas os pedidos chegavam por WhatsApp e eram transcritos manualmente para o ERP.',
+          'O processo de pedidos dependia de atendimento via WhatsApp e posterior registro no ERP. A nova plataforma precisava criar um canal de autosserviço integrado ao SIGE Cloud sem duplicar as regras comerciais já existentes.',
           'A plataforma precisava liberar autosserviço sem duplicar regras do Sige e sem abrir indiscriminadamente catálogo, preços ou condições comerciais.'
         ],
         decision: [
-          'Mantive o ERP como fonte única da verdade. CPF ou CNPJ valida o cadastro; após o login, o pedido recente do cliente define tabela de preço, depósito, vendedor, pagamento e demais parâmetros comerciais.',
-          'O catálogo respeita a tabela vinculada ao cliente, remove itens indisponíveis e complementa categorias e imagens por chamadas ao ERP. O Cloudinary e o PostgreSQL evitam transferências repetidas de mídia.',
-          'Tratei instabilidades 503 com novas tentativas e espera progressiva. Antes de chegar ao Sige, o pedido é reconstruído com as condições do ERP e validado no backend.'
+          'Mantive o ERP como fonte única da verdade. A identificação do cliente valida seu acesso e permite recuperar do SIGE as condições comerciais necessárias para montar o catálogo e processar o pedido.',
+          'O catálogo é montado de acordo com as condições retornadas pelo ERP e complementado com categorias e imagens dos produtos. O Cloudinary e o PostgreSQL evitam transferências repetidas de mídia.',
+          'Tratei instabilidades 503 com novas tentativas e espera progressiva. Antes do envio ao ERP, o pedido é reconstruído e validado no backend a partir dos dados confiáveis da integração, evitando depender de valores enviados pelo cliente.'
         ],
         outcome: [
-          'Clientes conhecidos pela operação podem criar uma conta, acessar preços próprios, pesquisar produtos, selecionar quantidades e confirmar o pedido no mesmo fluxo.',
-          'A jornada elimina a redigitação no canal digital, preserva o Sige como sistema central e reduz divergências nas condições comerciais.'
+          'Clientes previamente cadastrados podem criar uma conta, acessar seu catálogo, pesquisar produtos, selecionar quantidades e confirmar o pedido em um único fluxo.',
+          'A jornada elimina a redigitação no canal digital e preserva o SIGE como sistema central para dados e regras comerciais.'
         ],
         tags: ['Demonstração', 'Dados fictícios', 'Repositório privado'],
         actionLabels: [],
@@ -215,12 +215,12 @@ const copyByLocale = {
         ],
         decision: [
           'Modelei usuários, categorias, aulas gravadas e ao vivo, organizações, reservas e participações. Autenticação, papéis e clusters passaram a definir o conteúdo visto por cada público.',
-          'Criei um painel em que o cliente cadastra, edita, segmenta e desativa aulas. Para encontros ao vivo, integrei o Zoom Meeting SDK e colaborei no fluxo de criação de reuniões, assinaturas, start_url e token ZAK.',
+          'Criei um painel em que o cliente cadastra, edita, segmenta e desativa aulas. Para encontros ao vivo, integrei o Zoom Meeting SDK e colaborei no fluxo de criação e autenticação das reuniões entre backend, SDK e frontend.',
           'A integração exigiu pesquisa de documentação, testes de compatibilidade e ajustes no contrato entre frontend, backend e SDK até a reunião funcionar dentro da plataforma.'
         ],
         outcome: [
           'O cliente passou a administrar o conteúdo sem depender de alterações no código. Usuários ganharam catálogo autenticado, reservas, aulas gravadas e encontros ao vivo na mesma experiência.',
-          'Interesses, participações e tempo de atividade também passaram a formar uma base para acompanhar o engajamento e orientar a evolução do produto.'
+          'Interações e participações também passaram a fornecer indicadores de uso para acompanhar a evolução do produto.'
         ],
         tags: ['Demonstração', 'Dados fictícios', 'Repositório privado'],
         actionLabels: [],
@@ -235,7 +235,7 @@ const copyByLocale = {
           },
           'aulas-ao-vivo': {
             title: 'Aulas ao vivo',
-            description: 'Zoom Server-to-Server OAuth e Meeting SDK conectam a criação da reunião no backend à experiência incorporada no frontend.'
+            description: 'A integração com o Zoom Meeting SDK conecta a criação das reuniões no backend à experiência incorporada diretamente na plataforma.'
           }
         }
       },
@@ -248,7 +248,7 @@ const copyByLocale = {
         ],
         decision: [
           'Separei a solução em uma área do agente, dedicada ao cadastro e acompanhamento, e uma área administrativa para ativação de agentes, edição de registros e avanço operacional.',
-          'Modelei cada indicação com cinco status e histórico de alterações. Autenticação JWT, permissões por perfil, validações e criptografia dos dados sensíveis sustentam o fluxo.'
+          'Modelei o ciclo de cada indicação por status, mantendo também um histórico das alterações realizadas. Autenticação, permissões por perfil, validações e proteção dos dados sensíveis sustentam o fluxo.'
         ],
         outcome: [
           'A indicação passou a ser registrada uma única vez e acompanhada pelo parceiro sem consultas manuais.',
@@ -263,7 +263,7 @@ const copyByLocale = {
           },
           'visao-do-agente': {
             title: 'Visão do agente',
-            description: 'Cada agente registra possíveis vendas e acompanha sua evolução sem depender de consultas manuais.'
+            description: 'Cada agente acompanha suas indicações e a evolução de cada atendimento sem depender de consultas manuais.'
           },
           'cadastro-de-venda': {
             title: 'Cadastro de indicação',

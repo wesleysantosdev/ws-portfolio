@@ -63,7 +63,7 @@ describe('project routes', () => {
     fireEvent.click(liveClassesButton)
 
     expect(liveClassesButton).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByText(/zoom server-to-server oauth e meeting sdk/i)).toBeInTheDocument()
+    expect(screen.getByText(/integração com o zoom meeting sdk conecta a criação das reuniões/i)).toBeInTheDocument()
     expect(container.querySelector('video')).toHaveAttribute('src', expect.stringMatching(/aulas-ao-vivo\.mp4$/))
   })
 
