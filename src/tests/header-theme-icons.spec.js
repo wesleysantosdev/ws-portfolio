@@ -21,6 +21,29 @@ describe('header icons in dark mode', () => {
     expect(styles).not.toContain('.actions>a:hover .icon,.themeToggle:hover .icon')
   })
 
+  it('does not fill navigation items on hover', () => {
+    const styles = readFileSync(
+      resolve(process.cwd(), 'src/components/layout/Header/Header.module.css'),
+      'utf8'
+    )
+
+    const hoverRule = styles.match(/\.navigation a:hover,\.localeToggle:hover \{([^}]*)\}/)?.[1]
+
+    expect(hoverRule).toBeDefined()
+    expect(hoverRule).not.toMatch(/\bbackground\s*:/)
+  })
+
+  it('uses 4px by 16px padding on the responsive navigation', () => {
+    const styles = readFileSync(
+      resolve(process.cwd(), 'src/components/layout/Header/Header.module.css'),
+      'utf8'
+    )
+
+    expect(styles).toMatch(
+      /@media \(max-width:800px\).*?\.navigation \{[^}]*padding:4px 16px;/s
+    )
+  })
+
   it('applies the navigation rolling effect to text buttons', () => {
     const styles = readFileSync(
       resolve(process.cwd(), 'src/components/ui/RollingText/RollingText.module.css'),
