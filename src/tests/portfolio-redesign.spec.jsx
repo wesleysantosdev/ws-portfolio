@@ -32,7 +32,7 @@ describe('portfolio editorial redesign', () => {
     expect(screen.getByText('Desenvolvo soluções web eficientes que resolvem problemas reais do seu negócio.')).toBeInTheDocument()
     expect(screen.getByRole('heading', {
       level: 2,
-      name: 'Código é importante. Entender o problema é essencial.'
+      name: 'Construo interfaces e os sistemas que dão suporte a elas.'
     })).toBeInTheDocument()
     expect(screen.getByText(/sou desenvolvedor full stack com 3\+ anos de experiência/i)).toBeInTheDocument()
     expect(screen.getByText(/system design e fluxos de desenvolvimento assistidos por IA/i)).toBeInTheDocument()

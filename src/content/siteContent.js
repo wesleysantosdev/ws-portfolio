@@ -85,7 +85,7 @@ const copyByLocale = {
       summary: 'Desenvolvo soluções web eficientes que resolvem problemas reais do seu negócio.'
     },
     about: {
-      heading: 'Código é importante. Entender o problema é essencial.',
+      heading: 'Construo interfaces e os sistemas que dão suporte a elas.',
       paragraphs: [
         'Sou desenvolvedor full stack com 3+ anos de experiência e uma base forte em frontend. Já construí páginas, sistemas internos, plataformas SaaS e produtos digitais voltados ao cliente.',
         'Gosto de acompanhar o trabalho de ponta a ponta: entender a necessidade do negócio, avaliar caminhos técnicos, cuidar da experiência, integrar APIs e apoiar o que chega à produção.',
@@ -298,7 +298,7 @@ const copyByLocale = {
       summary: 'I build efficient web solutions that solve real business problems.'
     },
     about: {
-      heading: 'Code matters. Understanding the problem is essential.',
+      heading: 'I build interfaces and the systems that support them.',
       paragraphs: [
         'I’m a full stack developer with 3+ years of experience and a strong frontend foundation. I’ve built websites, internal systems, SaaS platforms, and customer-facing digital products.',
         'I like to work end to end: understanding the business need, evaluating technical paths, shaping the experience, integrating APIs, and supporting what reaches production.',

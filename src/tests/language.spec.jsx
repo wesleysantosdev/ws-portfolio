@@ -88,7 +88,7 @@ describe('portfolio language preference', () => {
 
     expect(screen.getByRole('button', { name: 'Mudar para português' })).toHaveTextContent('PT')
     expect(screen.getAllByRole('link', { name: 'Projects' })[0]).toHaveAttribute('href', '/#projetos')
-    expect(screen.getByRole('heading', { name: 'Code matters. Understanding the problem is essential.' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'I build interfaces and the systems that support them.' })).toBeInTheDocument()
     expect(screen.getByText('Tools I use to turn ideas into working products.')).toBeInTheDocument()
     expect(screen.getByText(/I build efficient web solutions that solve real business problems/i)).toBeInTheDocument()
     expect(screen.getAllByText('Demo').length).toBeGreaterThan(0)
