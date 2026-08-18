@@ -110,8 +110,8 @@ const copyByLocale = {
       heading: 'Ferramentas que uso para tirar ideias do papel.',
       groups: [
         { label: 'Frontend', items: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'] },
-        { label: 'Backend & dados', items: ['Node.js', 'Express.js', 'APIs RESTful', 'Prisma ORM', 'PostgreSQL', 'REDIS', 'JSON Web Token (JWT)'] },
-        { label: 'Cloud & entrega', items: ['Docker', 'GitHub Actions', 'CI/CD', 'Microsoft Azure', 'VPS'] },
+        { label: 'Backend & dados', items: ['Node.js', 'Express.js', 'APIs RESTful', 'Prisma ORM', 'PostgreSQL', 'REDIS'] },
+        { label: 'Cloud & entrega', items: ['Docker', 'CI/CD', 'Microsoft Azure', 'VPS'] },
         { label: 'Práticas & ferramentas', items: ['Test-Driven Development (TDD)', 'Git', 'GitHub', 'Postman', 'Swagger/OpenAPI', 'System Design'] },
         { label: 'IA', items: ['Spec-Driven Development (SDD)', 'Engenharia de Harness', 'Criação de AI Skills/Tools', 'Orquestração de LLMs'] }
       ]
@@ -323,8 +323,8 @@ const copyByLocale = {
       heading: 'Tools I use to turn ideas into working products.',
       groups: [
         { label: 'Frontend', items: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'] },
-        { label: 'Backend & data', items: ['Node.js', 'Express.js', 'RESTful APIs', 'Prisma ORM', 'PostgreSQL', 'REDIS', 'JSON Web Token (JWT)'] },
-        { label: 'Cloud & delivery', items: ['Docker', 'GitHub Actions', 'CI/CD', 'Microsoft Azure', 'VPS'] },
+        { label: 'Backend & data', items: ['Node.js', 'Express.js', 'RESTful APIs', 'Prisma ORM', 'PostgreSQL', 'REDIS'] },
+        { label: 'Cloud & delivery', items: ['Docker', 'CI/CD', 'Microsoft Azure', 'VPS'] },
         { label: 'Practices & tools', items: ['Test-Driven Development (TDD)', 'Git', 'GitHub', 'Postman', 'Swagger/OpenAPI', 'System Design'] },
         { label: 'AI', items: ['Spec-Driven Development (SDD)', 'Harness Engineering', 'AI Skills/Tools Development', 'LLM Orchestration'] }
       ]

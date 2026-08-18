@@ -129,4 +129,13 @@ describe('portfolio language preference', () => {
     expect(projectStructure(english)).toEqual(projectStructure(portuguese))
     expect(getSiteContent('fr')).toBe(english)
   })
+
+  it('omits retired technologies from both language catalogs', () => {
+    for (const locale of ['pt-BR', 'en']) {
+      const technologies = getSiteContent(locale).stack.groups.flatMap((group) => group.items)
+
+      expect(technologies).not.toContain('JSON Web Token (JWT)')
+      expect(technologies).not.toContain('GitHub Actions')
+    }
+  })
 })
