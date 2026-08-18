@@ -24,7 +24,7 @@ const projectDefinitions = [
   {
     slug: 'shrten',
     title: 'Shrten',
-    stack: ['React', 'TypeScript', 'Node.js', 'Redis', 'PostgreSQL', 'Prisma', 'Docker', 'Azure'],
+    stack: ['React', 'TypeScript', 'Node.js', 'Redis', 'PostgreSQL', 'Prisma', 'Docker'],
     actionHrefs: ['https://shrten.pro', 'https://github.com/wesleysantosdev/url-shortener'],
     videoAssets: [{ id: 'produto-em-uso', src: shrtenVideo }]
   },
@@ -38,7 +38,7 @@ const projectDefinitions = [
   {
     slug: 'senior-academy',
     title: 'Senior Academy',
-    stack: ['Vue 3', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Docker'],
+    stack: ['Vue 3', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Docker', 'Azure'],
     actionHrefs: [],
     videoAssets: [
       { id: 'administracao-autonoma', src: seniorAdminVideo },

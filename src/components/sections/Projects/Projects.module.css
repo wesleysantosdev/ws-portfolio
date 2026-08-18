@@ -189,4 +189,14 @@
   .stack {
     text-align: left;
   }
+
+  .arrow {
+    justify-self: start;
+  }
+
+  .row[data-active='true'] .arrow,
+  .link:hover .arrow,
+  .link:focus-visible .arrow {
+    transform: rotate(45deg);
+  }
 }

@@ -99,4 +99,20 @@ describe('projects editorial index', () => {
     expect(projectStyles).toMatch(/\.stack\s*{[^}]*text-align:\s*left/s)
     expect(projectStyles).not.toMatch(/\.stack\s*{[^}]*text-align:\s*right/s)
   })
+
+  it('keeps the mobile project arrow anchored while its hover state changes', () => {
+    const projectStyles = readSource('components/sections/Projects/Projects.module.css')
+    const mobileStyles = projectStyles.slice(projectStyles.indexOf('@media (max-width: 800px)'))
+
+    expect(mobileStyles).toMatch(/\.arrow\s*{[^}]*justify-self:\s*start/s)
+    expect(mobileStyles).toMatch(/\.row\[data-active='true'\] \.arrow,[^{]*\.link:hover \.arrow,[^{]*\.link:focus-visible \.arrow\s*{[^}]*transform:\s*rotate\(45deg\)/s)
+  })
+
+  it('assigns Azure to Senior Academy instead of Shrten', () => {
+    const shrten = getProjectBySlug('shrten')
+    const seniorAcademy = getProjectBySlug('senior-academy')
+
+    expect(shrten.stack).not.toContain('Azure')
+    expect(seniorAcademy.stack).toContain('Azure')
+  })
 })
