@@ -1,6 +1,6 @@
 # Wesley Santos — Portfolio
 
-A bilingual portfolio for Wesley Santos, a full stack developer with a strong frontend foundation. The experience combines an editorial interface with detailed case studies covering product context, technical decisions, and outcomes.
+A bilingual personal portfolio. I'm Wesley, a full stack developer with a strong frontend foundation. This portfolio navigation experience combines an editorial interface with detailed case studies covering product context, technical decisions, and outcomes.
 
 ## Highlights
 
