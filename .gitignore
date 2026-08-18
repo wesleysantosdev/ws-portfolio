@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Local planning and agent guidance
+/AGENTS.md
+/specs/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
