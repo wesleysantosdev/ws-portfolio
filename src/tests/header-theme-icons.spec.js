@@ -44,6 +44,20 @@ describe('header icons in dark mode', () => {
     )
   })
 
+  it('keeps 10px inline spacing around the locale divider on every mobile width', () => {
+    const styles = readFileSync(
+      resolve(process.cwd(), 'src/components/layout/Header/Header.module.css'),
+      'utf8'
+    )
+
+    const narrowMobileRule = styles.match(/@media \(max-width:360px\) \{([^}]|\}[^@])*$/s)?.[0]
+
+    expect(styles).toMatch(
+      /@media \(max-width:800px\).*?\.navigationDivider \{[^}]*margin-inline:10px;/s
+    )
+    expect(narrowMobileRule).not.toContain('.navigationDivider')
+  })
+
   it('applies the navigation rolling effect to text buttons', () => {
     const styles = readFileSync(
       resolve(process.cwd(), 'src/components/ui/RollingText/RollingText.module.css'),
