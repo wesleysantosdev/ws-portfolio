@@ -1,11 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio de Wesley Santos, desenvolvedor full stack com base forte em frontend." />
+    <meta name="theme-color" content="#FAF7F3" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="shortcut icon" href="src/assets/logo.svg" type="image/x-icon">
-    <title>Portfólio | WS.</title>
+    <title>Wesley Santos — Full Stack Developer</title>
+    <script>
+      const preferredLocale = (navigator.languages?.[0] || navigator.language || '').toLowerCase()
+      let locale = preferredLocale === 'pt-br' ? 'pt-BR' : 'en'
+
+      try {
+        const savedLocale = localStorage.getItem('portfolio-locale')
+        if (savedLocale === 'pt-BR' || savedLocale === 'en') locale = savedLocale
+      } catch {}
+
+      document.documentElement.lang = locale
+      document.documentElement.dataset.locale = locale
+      document.title = locale === 'pt-BR'
+        ? 'Wesley Santos — Desenvolvedor Full Stack'
+        : 'Wesley Santos — Full Stack Developer'
+      document.querySelector('meta[name="description"]').content = locale === 'pt-BR'
+        ? 'Portfólio de Wesley Santos, desenvolvedor full stack com base forte em frontend.'
+        : 'Portfolio of Wesley Santos, a full stack developer with a strong frontend foundation.'
+
+      try {
+        const saved = localStorage.getItem('portfolio-theme')
+        const theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        document.documentElement.dataset.theme = theme
+      } catch {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

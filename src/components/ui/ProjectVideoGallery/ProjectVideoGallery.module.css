@@ -1,0 +1,158 @@
+.gallery {
+  width: 100%;
+  margin: 96px 0 0;
+}
+
+.stage {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #0f0f10;
+  box-shadow: var(--shadow);
+}
+
+.stageHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, .13);
+  color: rgba(255, 255, 255, .68);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.stageHeader span:last-child::before {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #9b75cd;
+  box-shadow: 0 0 0 4px rgba(155, 117, 205, .14);
+  content: '';
+}
+
+.video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0f0f10;
+  object-fit: contain;
+}
+
+.caption {
+  display: grid;
+  grid-template-columns: minmax(54px, .2fr) minmax(0, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  min-height: 142px;
+  margin: 0 auto;
+  padding: 26px 0 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.counter {
+  margin: 7px 0 0;
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: .08em;
+}
+
+.activeCopy h2 {
+  margin: 0 0 6px;
+  font-size: clamp(1.3rem, 2vw, 1.85rem);
+  font-weight: 550;
+  letter-spacing: -.035em;
+}
+
+.activeCopy p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.sceneNavigation {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 900px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--line);
+}
+
+.sceneButton {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 9px;
+  min-width: 0;
+  padding: 18px 16px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .82rem;
+  line-height: 1.35;
+  text-align: left;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+.sceneButton:first-child {
+  border-left: 1px solid var(--line);
+}
+
+.sceneButton span {
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .62rem;
+  letter-spacing: .06em;
+}
+
+.sceneButton:hover,
+.sceneButton[aria-pressed='true'] {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.sceneButton[aria-pressed='true'] span {
+  color: var(--accent);
+}
+
+@media (max-width: 800px) {
+  .gallery {
+    margin-top: 62px;
+  }
+
+  .stage {
+    margin-inline: calc((100vw - 100%) / -2);
+    border-inline: 0;
+    border-radius: 0;
+  }
+
+  .stageHeader {
+    padding-inline: 14px;
+  }
+
+  .caption {
+    grid-template-columns: 38px minmax(0, 1fr);
+    min-height: 164px;
+    padding-block: 22px;
+  }
+
+  .sceneNavigation {
+    grid-template-columns: 1fr;
+  }
+
+  .sceneButton,
+  .sceneButton:first-child {
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+
+  .sceneButton:last-child {
+    border-bottom: 0;
+  }
+}

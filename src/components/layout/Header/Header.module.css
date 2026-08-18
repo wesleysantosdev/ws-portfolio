@@ -1,0 +1,23 @@
+.header { position:fixed; z-index:20; top:18px; left:50%; width:var(--page); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; pointer-events:none; transform:translateX(-50%); }
+.header a,.header button,.navigation { pointer-events:auto; }
+.brandSlot { justify-self:start; }
+.navigation { display:flex; align-items:center; gap:3px; padding:5px; border:1px solid var(--line); border-radius:999px; background:var(--glass); box-shadow:var(--shadow); backdrop-filter:blur(18px); }
+.navigation a,.localeToggle { padding:9px 14px; border-radius:999px; color:var(--muted); font-size:.9rem; font-weight:600; transition:color 180ms ease; }
+.navigation a:hover,.localeToggle:hover { color:var(--ink); }
+.navigationDivider { width:1px; height:18px; margin-inline:2px; background:var(--line); }
+.localeToggle { border:0; background:transparent; cursor:pointer; }
+.actions { justify-self:end; display:inline-flex; align-items:center; min-height:42px; gap:14px; }
+.actions>a,.themeToggle { width:auto; height:auto; display:grid; place-items:center; padding:0; border:0; background:transparent; cursor:pointer; font-weight:600; }
+.actions>a { line-height:1; }
+.linkedin { font-size:1.4rem; letter-spacing:-.08em; text-transform:lowercase; }
+.icon { width:26px; height:26px; object-fit:contain; transition:filter 180ms ease; }
+.divider { width:1px; height:24px; background:var(--line); }
+.themeToggle { position:relative; overflow:visible; width:24px; height:24px; }
+.themeIcon { position:absolute; width: 18px; line-height:1; transition:opacity 250ms ease,transform 350ms ease; }
+.sun { opacity:1; transform:rotate(0deg) scale(1); }
+.moon { opacity:0; transform:rotate(-60deg) scale(.6); }
+:global([data-theme='dark']) .sun { opacity:0; transform:rotate(60deg) scale(.6); }
+:global([data-theme='dark']) .moon { opacity:1; transform:rotate(0deg) scale(1); }
+:global([data-theme='dark']) .linkedin .icon,:global([data-theme='dark']) .moon .icon { filter:brightness(0) invert(1); }
+@media (max-width:800px) { .header { grid-template-columns:minmax(0,1fr) auto; top:12px; gap:8px; align-items:start; } .brandSlot { display:none; } .navigation { justify-self:start; gap:1px; padding:4px 16px; max-width:100%; } .navigation a,.localeToggle { padding:8px 6px; font-size:.7rem; } .navigationDivider { height:16px; margin-inline:10px; } .actions { min-height:36px; gap:7px; } .linkedin { font-size:1.2rem; } .divider { height:20px; } .themeToggle { width:20px; height:20px; } .icon { width:20px; height:20px; } }
+@media (max-width:360px) { .navigation a,.localeToggle { padding-inline:4px; font-size:.64rem; } .actions { gap:5px; } }

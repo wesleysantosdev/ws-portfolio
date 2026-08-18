@@ -1,0 +1,9 @@
+.atmosphere { position:absolute; z-index:0; inset:0; overflow:hidden; pointer-events:none; }
+.atmosphere::before { position:absolute; inset:0; content:""; opacity:.025; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.7'/%3E%3C/svg%3E"); background-size:180px 180px; }
+.rails { position:absolute; inset:0 auto; left:50%; width:var(--page); transform:translateX(-50%); -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 88%,transparent 100%); mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 88%,transparent 100%); }
+.rail { position:absolute; top:0; bottom:0; width:1px; background:var(--ink); opacity:.1; }
+.rail:nth-child(1) { left:0; }
+.rail:nth-child(2) { left:33.333%; }
+.rail:nth-child(3) { left:66.666%; }
+.rail:nth-child(4) { right:0; }
+@media (max-width:800px) { .rail:nth-child(2) { left:50%; } .rail:nth-child(3) { right:0; left:auto; } .rail:nth-child(4) { display:none; } }
